@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QtSql>
 #include <QSqlDatabase>
+#include <QStandardPaths>
 #include <QSqlDriver>
 #include <QSqlQuery>
 #include <QSqlError>
@@ -33,7 +34,14 @@ public:
     bool connOpen()
     {
         mydb=QSqlDatabase::addDatabase("QSQLITE");
-        mydb.setDatabaseName("C:/Users/kaito/Documents/GitHub/CS1C_Project_2/Project2/database.db"); //COPY PASTE YOUR FILE LOCATION WHERE YOU PUT IT
+
+        //notes leave for ayako
+        //QString homeLocation = QStandardPaths::locate(QStandardPaths::HomeLocation, QString(), QStandardPaths::LocateDirectory);
+        // QString databaseFile = QStandardPaths::displayName(QStandardPaths::DocumentsLocation) + "/GitHub/CS1C_Project_2/Project2/database.db" ;
+
+
+        QString databaseFile = QStandardPaths::locate(QStandardPaths::DocumentsLocation,QString("/GitHub/CS1C_Project_2/Project2/database.db"))  ;
+        mydb.setDatabaseName(databaseFile); //COPY PASTE YOUR FILE LOCATION WHERE YOU PUT IT
 
         if (!mydb.open())
         {
@@ -42,7 +50,7 @@ public:
         }
         else
         {
-            qDebug() << ("Database Conneceted...");
+            qDebug() << ("Database Connected...");
             return true;
         }
     }
