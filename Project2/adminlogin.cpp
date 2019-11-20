@@ -43,5 +43,8 @@ void adminLogin::on_backLogin_clicked()
 
 void adminLogin::on_MemberListButton_clicked()
 {
+hide();
+Admin_Member_Database *admin_member_database =new Admin_Member_Database();
+admin_member_database->show();
 
 }
