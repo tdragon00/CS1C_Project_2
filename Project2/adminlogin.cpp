@@ -1,6 +1,7 @@
 #include "adminlogin.h"
 #include "ui_adminlogin.h"
 #include "mainwindow.h"
+#include "admin_member_database.h"
 //#include "viewdatabase.h"
 //#include "employeedata.h"
 
@@ -36,3 +37,14 @@ void adminLogin::on_backLogin_clicked()
 //    employee.setModal(true);
 //    employee.exec();
 //}
+
+
+
+
+void adminLogin::on_MemberListButton_clicked()
+{
+hide();
+Admin_Member_Database *admin_member_database =new Admin_Member_Database();
+admin_member_database->show();
+
+}
