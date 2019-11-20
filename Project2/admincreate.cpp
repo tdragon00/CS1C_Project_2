@@ -38,26 +38,38 @@ void adminCreate::on_pushConfirm_clicked()
     QString password = ui->linePass->text();
     QString passwordCon = ui->linePass2->text();
 
-    if (!conn.connOpen())
+    if(passwordCon == password)
     {
-        qDebug() << "Failed To Open the Database";
-    }
-    conn.connOpen();
-    QSqlQuery qry;
-    qry.prepare("insert into userDatabase (userID, password, firstName, lastName, rank)"
-                "values ('"+userID+"','"+password+"','"+firstName+"','"+lastName+"','"+rank+"')");
+        if (!conn.connOpen())
+        {
+            qDebug() << "Failed To Open the Database";
+        }
+        conn.connOpen();
+        QSqlQuery qry;
+        qry.prepare("insert into userDatabase (userID, password, firstName, lastName, rank)"
+                    "values ('"+userID+"','"+password+"','"+firstName+"','"+lastName+"','"+rank+"')");
 
-    if (qry.exec())
-    {
-        conn.connClose();
-        accountConfirm account;
-        account.setModal(true);
-        account.exec();
-        hide();
+        if (qry.exec())
+        {
+            conn.connClose();
+            accountConfirm account;
+            account.setModal(true);
+            account.exec();
+            hide();
+        }
+        else
+        {
+            QMessageBox::critical(this,tr("ERROR"),qry.lastError().text());
+        }
     }
     else
     {
-        QMessageBox::critical(this,tr("ERROR"),qry.lastError().text());
+        QMessageBox::warning(this, "Error" , QString("Passwords do no match ! ! !").arg(password).arg(password));
     }
+}
+
+void adminCreate::on_checkPassword_stateChanged(int arg1)
+{
+    ui->linePass->setEchoMode(ui->checkPassword->checkState() == Qt::Checked ? QLineEdit::Normal : QLineEdit::Password );
 
 }
