@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
     QPixmap pix("/Users/LamsonBui/Desktop/School/CS1C/Project 2/Project2/BulkClubLogo.png");
     int w = ui->Logo->width();
     int h = ui->Logo->height();
