@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QPixmap pix("/Users/LamsonBui/Desktop/School/CS1C/Project 2/Project2/BulkClubLogo.png");
+    QPixmap pix(":/images/Resource Stuff/BulkClubLogo.png");
     int w = ui->Logo->width();
     int h = ui->Logo->height();
     ui->Logo->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));

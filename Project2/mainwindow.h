@@ -33,7 +33,7 @@ public:
     bool connOpen()
     {
         mydb=QSqlDatabase::addDatabase("QSQLITE");
-        mydb.setDatabaseName("/Users/LamsonBui/Desktop/School/CS1C/Project 2/Project2/database.db"); //COPY PASTE YOUR FILE LOCATION WHERE YOU PUT IT
+        mydb.setDatabaseName("C:/Users/kaito/Documents/GitHub/CS1C_Project_2/Project2/database.db"); //COPY PASTE YOUR FILE LOCATION WHERE YOU PUT IT
 
         if (!mydb.open())
         {
