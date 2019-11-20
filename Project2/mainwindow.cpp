@@ -114,3 +114,9 @@ void MainWindow::on_pushLogin_clicked()
         }
     }
 }
+
+void MainWindow::on_checkPassword_stateChanged(int arg1)
+{
+    ui->linePassword->setEchoMode(ui->checkPassword->checkState() == Qt::Checked ? QLineEdit::Normal : QLineEdit::Password );
+
+}

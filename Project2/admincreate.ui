@@ -195,6 +195,9 @@
      <height>21</height>
     </rect>
    </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Password</enum>
+   </property>
   </widget>
   <widget class="QLineEdit" name="linePass2">
    <property name="geometry">
@@ -204,6 +207,22 @@
      <width>181</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Password</enum>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkPassword">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>330</y>
+     <width>101</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Show Password</string>
    </property>
   </widget>
  </widget>

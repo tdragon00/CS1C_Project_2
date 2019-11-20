@@ -21,8 +21,6 @@ public:
 private slots:
     void on_backLogin_clicked();
 
-    void on_pushButton_clicked();
-
     void on_MemberListButton_clicked();
 
 private:

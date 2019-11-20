@@ -22,6 +22,8 @@ private slots:
 
     void on_pushConfirm_clicked();
 
+    void on_checkPassword_stateChanged(int arg1);
+
 private:
     Ui::managerCreate *ui;
 };
