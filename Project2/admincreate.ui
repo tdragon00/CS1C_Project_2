@@ -44,8 +44,8 @@
     <rect>
      <x>40</x>
      <y>10</y>
-     <width>401</width>
-     <height>61</height>
+     <width>438</width>
+     <height>40</height>
     </rect>
    </property>
    <property name="text">
@@ -57,8 +57,8 @@
     <rect>
      <x>60</x>
      <y>90</y>
-     <width>191</width>
-     <height>31</height>
+     <width>283</width>
+     <height>30</height>
     </rect>
    </property>
    <property name="text">
@@ -70,8 +70,8 @@
     <rect>
      <x>60</x>
      <y>240</y>
-     <width>191</width>
-     <height>31</height>
+     <width>238</width>
+     <height>30</height>
     </rect>
    </property>
    <property name="text">

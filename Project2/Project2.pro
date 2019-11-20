@@ -17,34 +17,43 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     accountconfirm.cpp \
+    admin_item_database.cpp \
     admin_member_database.cpp \
     admincreate.cpp \
     adminlogin.cpp \
     createcheck.cpp \
     main.cpp \
     mainwindow.cpp \
+    manager_item_database.cpp \
+    manager_member_database.cpp \
     managercreate.cpp \
     managerlogin.cpp \
     userdata.cpp
 
 HEADERS += \
     accountconfirm.h \
+    admin_item_database.h \
     admin_member_database.h \
     admincreate.h \
     adminlogin.h \
     createcheck.h \
     mainwindow.h \
+    manager_item_database.h \
+    manager_member_database.h \
     managercreate.h \
     managerlogin.h \
     userdata.h
 
 FORMS += \
     accountconfirm.ui \
+    admin_item_database.ui \
     admin_member_database.ui \
     admincreate.ui \
     adminlogin.ui \
     createcheck.ui \
     mainwindow.ui \
+    manager_item_database.ui \
+    manager_member_database.ui \
     managercreate.ui \
     managerlogin.ui
 

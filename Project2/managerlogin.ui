@@ -62,6 +62,32 @@
     <string>[+] Status</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>150</y>
+     <width>201</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Item Data</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>160</y>
+     <width>161</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Member Data</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
