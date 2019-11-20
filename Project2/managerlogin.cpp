@@ -15,7 +15,7 @@ managerLogin::managerLogin( QString userID, QWidget *parent) :
     if (!conn.connOpen())
         ui->statusLine->setText("Failed to open the database");
     else
-        ui->statusLine->setText("Database Conneceted...");
+        ui->statusLine->setText("Database Connected...");
 
 //    ui->lineEdit->setText(username);
 }
