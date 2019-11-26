@@ -40,7 +40,7 @@ void Admin_Member_Database::on_pushButton_2_clicked()
     MainWindow conn;
     conn.connOpen();
     QSqlQuery* qry = new QSqlQuery(conn.mydb);
-qry->prepare("select name, id, status, expDay, expMonth from customers ExpYear ");
+qry->prepare("select name, id, status, expDay, expMonth, expYear from customers ");
 //qry->prepare("Select last, first, email, phone from customers where rank = '1' order by last ASC");
 
 
