@@ -88,10 +88,6 @@ void adminLogin::on_pushButton_clicked()
 
             db.exec("insert into customers (name, memberNum, status, expDate)"
                     "values ('"+name+"','"+memberNum+"','"+status+"','"+expDate+"')");
-            if(!db.exec())
-            {
-                qDebug() << "ERROR";
-            }
         }
     }
     {//Refreshing Day 1 Sales Report db
@@ -126,10 +122,6 @@ void adminLogin::on_pushButton_clicked()
 
             db.exec("insert into salesReport (purchaseDate, id, productName, price, purchaseQty, status, day)"
                     "values ('"+purchaseDate+"','"+id+"','"+productName+"','"+price+"','"+purchaseQty+"','"+status+"','"+"1"+"')");
-            if(!db.exec())
-            {
-                qDebug() << "ERROR";
-            }
         }
     }
     {//Refreshing Day 2 Sales Report db
