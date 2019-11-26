@@ -64,5 +64,3 @@ Propel Fitness Water
 12.50	
 3
 Regular
-
- 
