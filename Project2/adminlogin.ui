@@ -92,7 +92,7 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>170</x>
       <y>130</y>
       <width>101</width>
       <height>23</height>
@@ -100,6 +100,62 @@
     </property>
     <property name="text">
      <string>Refresh DB</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="dbBox">
+    <property name="geometry">
+     <rect>
+      <x>68</x>
+      <y>130</y>
+      <width>91</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Customers</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Items</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Sales Report</string>
+     </property>
+    </item>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>100</y>
+     <width>381</width>
+     <height>301</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Sales Reports</string>
+   </property>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>131</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Purchases</string>
     </property>
    </widget>
   </widget>
