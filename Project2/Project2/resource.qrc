@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>Resource Stuff/BulkClubLogo.png</file>
+    </qresource>
+    <qresource prefix="/textfiles">
+        <file>Resource Stuff/Database textfiles/day1.txt</file>
+        <file>Resource Stuff/Database textfiles/day2.txt</file>
+        <file>Resource Stuff/Database textfiles/day3.txt</file>
+        <file>Resource Stuff/Database textfiles/day4.txt</file>
+        <file>Resource Stuff/Database textfiles/day5.txt</file>
+        <file>Resource Stuff/Database textfiles/day6.txt</file>
+        <file>Resource Stuff/Database textfiles/day7.txt</file>
+        <file>Resource Stuff/Database textfiles/items.txt</file>
+        <file>Resource Stuff/Database textfiles/warehouse shoppers.txt</file>
+    </qresource>
+</RCC>
