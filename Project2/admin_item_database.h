@@ -2,6 +2,7 @@
 #define ADMIN_ITEM_DATABASE_H
 
 #include <QDialog>
+#include "mainwindow.h"
 
 namespace Ui {
 class admin_item_database;
@@ -12,6 +13,7 @@ class admin_item_database : public QDialog
     Q_OBJECT
 
 public:
+    MainWindow conn;
     explicit admin_item_database(QWidget *parent = nullptr);
     ~admin_item_database();
 

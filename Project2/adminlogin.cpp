@@ -26,23 +26,6 @@ void adminLogin::on_backLogin_clicked()
     mainWindow->show();
 }
 
-//void adminLogin::on_pushButton_clicked()
-//{
-//    viewDatabase database;
-//    database.setModal(true);
-//    database.exec();
-//}
-
-//void adminLogin::on_pushButton_2_clicked()
-//{
-//    employeeData employee;
-//    employee.setModal(true);
-//    employee.exec();
-//}
-
-
-
-
 void adminLogin::on_MemberListButton_clicked()
 {
 hide();

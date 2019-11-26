@@ -75,7 +75,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Read Text to dab</string>
+    <string>Refresh DB</string>
    </property>
   </widget>
  </widget>
