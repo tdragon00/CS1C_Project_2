@@ -70,7 +70,7 @@ private slots:
 
     void on_pushLogin_clicked();
 
-    void on_checkPassword_stateChanged(int arg1);
+    void on_checkPassword_stateChanged();
 
 protected:
         void keyPressEvent(QKeyEvent* pe);

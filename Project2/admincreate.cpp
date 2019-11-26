@@ -68,7 +68,7 @@ void adminCreate::on_pushConfirm_clicked()
     }
 }
 
-void adminCreate::on_checkPassword_stateChanged(int arg1)
+void adminCreate::on_checkPassword_stateChanged()
 {
     ui->linePass->setEchoMode(ui->checkPassword->checkState() == Qt::Checked ? QLineEdit::Normal : QLineEdit::Password );
 

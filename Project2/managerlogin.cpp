@@ -7,7 +7,7 @@
 #include <QMessageBox>
 
 
-managerLogin::managerLogin( QString userID, QWidget *parent) :
+managerLogin::managerLogin( QWidget *parent) :
     QDialog(parent),
     ui(new Ui::managerLogin)
 {

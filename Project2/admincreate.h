@@ -22,7 +22,7 @@ private slots:
 
     void on_pushConfirm_clicked();
 
-    void on_checkPassword_stateChanged(int arg1);
+    void on_checkPassword_stateChanged();
 
 private:
     Ui::adminCreate *ui;

@@ -23,6 +23,8 @@ private slots:
 
     void on_MemberListButton_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::adminLogin *ui;
 };

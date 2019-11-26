@@ -83,10 +83,10 @@ void MainWindow::on_pushLogin_clicked()
         }
         if(count ==1)
         {
-            QMessageBox::information(this, "Login", "Username and password is correct");
+            //QMessageBox::information(this, "Login", "Username and password is correct");
             hide();
             connClose();
-            managerLogin *manLogin = new managerLogin(userID);
+            managerLogin *manLogin = new managerLogin();
             manLogin->show();
         }
         else if (count != 1)
@@ -100,7 +100,7 @@ void MainWindow::on_pushLogin_clicked()
             }
             if(count ==1)
             {
-                QMessageBox::information(this, "Login", "Username and password is correct");
+                //QMessageBox::information(this, "Login", "Username and password is correct");
                 hide();
                 connClose();
                 adminLogin *administratorLogin = new adminLogin;
@@ -115,7 +115,7 @@ void MainWindow::on_pushLogin_clicked()
     }
 }
 
-void MainWindow::on_checkPassword_stateChanged(int arg1)
+void MainWindow::on_checkPassword_stateChanged()
 {
     ui->linePassword->setEchoMode(ui->checkPassword->checkState() == Qt::Checked ? QLineEdit::Normal : QLineEdit::Password );
 
