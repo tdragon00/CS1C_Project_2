@@ -30,10 +30,12 @@ admin_item_database::admin_item_database(QWidget *parent) :
         }
         else if(ui->comboBox->currentText() != "TOTAL" && ui->checkMemberFilter->isChecked() == false)
         {
+            ui->memberFilter->setEnabled(false);
             qry->prepare("Select purchaseDate, id, productName, price, purchaseQty, status from salesReport where purchaseDate='"+ui->comboBox->currentText()+"'");
         }
         else
         {
+            ui->memberFilter->setEnabled(false);
             qry->prepare("Select purchaseDate, id, productName, price, purchaseQty, status from salesReport");
         }
         if(qry->exec())
@@ -155,18 +157,22 @@ void admin_item_database::on_checkMemberFilter_stateChanged()
     QSqlQuery* qry = new QSqlQuery(conn.mydb);
     if(ui->comboBox->currentText() != "TOTAL" && ui->checkMemberFilter->isChecked() == true)
     {
+        ui->memberFilter->setEnabled(true);
         qry->prepare("select purchaseDate, id, productName, price, purchaseQty, status from salesReport where purchaseDate='"+ui->comboBox->currentText()+"' and id='"+ui->memberFilter->currentText()+"'");
     }
     else if(ui->comboBox->currentText() == "TOTAL" && ui->checkMemberFilter->isChecked() == true)
     {
+        ui->memberFilter->setEnabled(true);
         qry->prepare("Select purchaseDate, id, productName, price, purchaseQty, status from salesReport where id='"+ui->memberFilter->currentText()+"'");
     }
     else if(ui->comboBox->currentText() != "TOTAL" && ui->checkMemberFilter->isChecked() == false)
     {
+        ui->memberFilter->setEnabled(false);
         qry->prepare("Select purchaseDate, id, productName, price, purchaseQty, status from salesReport where purchaseDate='"+ui->comboBox->currentText()+"'");
     }
     else
     {
+        ui->memberFilter->setEnabled(false);
         qry->prepare("Select purchaseDate, id, productName, price, purchaseQty, status from salesReport");
     }
 
