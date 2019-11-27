@@ -5,6 +5,7 @@
 #include <QFile>
 #include <QMessageBox>
 #include <QTextStream>
+#include "admin_item_database.h"
 //#include "viewdatabase.h"
 //#include "employeedata.h"
 
@@ -332,4 +333,11 @@ void adminLogin::on_pushButton_clicked()
 void adminLogin::on_comboBox_currentIndexChanged(const QString &arg1)
 {
 
+}
+
+void adminLogin::on_Item_Database_clicked()
+{
+    hide();
+    admin_item_database *Admin_Item_database =new admin_item_database();
+    Admin_Item_database->show();
 }

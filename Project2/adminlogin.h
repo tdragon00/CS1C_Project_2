@@ -27,6 +27,8 @@ private slots:
 
     void on_comboBox_currentIndexChanged(const QString &arg1);
 
+    void on_Item_Database_clicked();
+
 private:
     Ui::adminLogin *ui;
 };
