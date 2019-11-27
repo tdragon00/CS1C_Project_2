@@ -13,6 +13,19 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <widget class="QPushButton" name="returnButton">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>450</y>
+     <width>159</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Return to admin page</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

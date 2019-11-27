@@ -17,6 +17,11 @@ public:
     explicit admin_item_database(QWidget *parent = nullptr);
     ~admin_item_database();
 
+private slots:
+    void on_returnButton_clicked();
+
+    void on_comboBox_currentIndexChanged();
+
 private:
     Ui::admin_item_database *ui;
 };

@@ -2,11 +2,10 @@
 #include "ui_adminlogin.h"
 #include "mainwindow.h"
 #include "admin_member_database.h"
+#include "admin_item_database.h"
 #include <QFile>
 #include <QMessageBox>
 #include <QTextStream>
-//#include "viewdatabase.h"
-//#include "employeedata.h"
 
 adminLogin::adminLogin(QWidget *parent) :
     QDialog(parent),
@@ -32,6 +31,13 @@ void adminLogin::on_MemberListButton_clicked()
     hide();
     Admin_Member_Database *admin_member_database =new Admin_Member_Database();
     admin_member_database->show();
+}
+
+void adminLogin::on_itemsButton_clicked()
+{
+    hide();
+    admin_item_database *Admin_Item_Database =new admin_item_database();
+    Admin_Item_Database->show();
 }
 
 void adminLogin::on_pushButton_clicked()
@@ -327,9 +333,4 @@ void adminLogin::on_pushButton_clicked()
       default:
           break;
     }
-}
-
-void adminLogin::on_comboBox_currentIndexChanged(const QString &arg1)
-{
-
 }
