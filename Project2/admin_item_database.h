@@ -26,6 +26,8 @@ private slots:
 
     void on_checkMemberFilter_stateChanged();
 
+    void on_checkDateFilter_stateChanged();
+
 private:
     Ui::admin_item_database *ui;
 };
