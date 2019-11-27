@@ -62,7 +62,7 @@
     <string>[+] Status</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="Item_Data">
    <property name="geometry">
     <rect>
      <x>440</x>
@@ -75,7 +75,7 @@
     <string>Item Data</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="Member_Data">
    <property name="geometry">
     <rect>
      <x>110</x>

@@ -25,6 +25,10 @@ private slots:
 
 //    void on_checkout_clicked();
 
+    void on_Member_Data_clicked();
+
+    void on_Item_Data_clicked();
+
 private:
     Ui::managerLogin *ui;
 };
