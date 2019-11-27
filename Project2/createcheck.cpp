@@ -1,10 +1,11 @@
 #include "createcheck.h"
 #include "ui_createcheck.h"
+
 #include "mainwindow.h"
-#include <QMessageBox>
 #include "managercreate.h"
 #include "admincreate.h"
-//#include "employeecreate.h"
+
+#include <QMessageBox>
 
 CreateCheck::CreateCheck(QWidget *parent) :
     QDialog(parent),
@@ -36,4 +37,12 @@ void CreateCheck::on_typeConfirm_clicked()
     {
         QMessageBox::warning(this,"Error", "Type of user must be selected.");
     }
+}
+
+//button to return to login screen
+void CreateCheck::on_pushButton_clicked()
+{
+    hide();
+    MainWindow *mainWindow = new MainWindow();
+    mainWindow->show();
 }
