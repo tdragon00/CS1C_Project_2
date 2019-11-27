@@ -59,28 +59,18 @@
      <x>20</x>
      <y>20</y>
      <width>831</width>
-     <height>311</height>
+     <height>321</height>
     </rect>
    </property>
    <property name="title">
     <string/>
    </property>
-   <widget class="QListView" name="listView">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>40</y>
-      <width>211</width>
-      <height>261</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QTableView" name="tableView">
     <property name="geometry">
      <rect>
-      <x>240</x>
+      <x>260</x>
       <y>10</y>
-      <width>581</width>
+      <width>561</width>
       <height>291</height>
      </rect>
     </property>
@@ -93,43 +83,48 @@
      <rect>
       <x>100</x>
       <y>10</y>
-      <width>121</width>
+      <width>151</width>
       <height>22</height>
      </rect>
     </property>
     <item>
      <property name="text">
-      <string comment="1">1</string>
+      <string>TOTAL</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string comment="2">2</string>
+      <string>11/12/2019</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string comment="3">3</string>
+      <string>11/13/2019</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string comment="4">4</string>
+      <string>11/14/2019</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string comment="5">5</string>
+      <string>11/15/2019</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string comment="6">6</string>
+      <string>11/16/2019</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string comment="7">7</string>
+      <string>11/17/2019</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>11/18/2019</string>
      </property>
     </item>
    </widget>
@@ -143,7 +138,69 @@
      </rect>
     </property>
     <property name="text">
-     <string>Day Selection</string>
+     <string>Date Filter</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="memberFilter">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>50</y>
+      <width>91</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>TOTAL</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Member Filter</string>
+    </property>
+   </widget>
+   <widget class="QTableView" name="memberTable">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>241</width>
+      <height>221</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>80</y>
+      <width>101</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout"/>
+   </widget>
+   <widget class="QCheckBox" name="checkMemberFilter">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>50</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ENABLE</string>
     </property>
    </widget>
   </widget>

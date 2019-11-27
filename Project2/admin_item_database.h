@@ -22,6 +22,10 @@ private slots:
 
     void on_comboBox_currentIndexChanged();
 
+    void on_memberFilter_currentIndexChanged();
+
+    void on_checkMemberFilter_stateChanged();
+
 private:
     Ui::admin_item_database *ui;
 };
