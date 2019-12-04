@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+
 //#include "customerlogin.h"
 //#include "secadminlogin.h"
 //#include "viewdatabase.h"
@@ -8,6 +9,7 @@
 #include "managerlogin.h"
 #include "accountconfirm.h"
 #include "createcheck.h"
+
 #include <QMessageBox>
 #include <QPixmap>
 #include <QDesktopServices>

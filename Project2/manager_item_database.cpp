@@ -1,6 +1,8 @@
 #include "manager_item_database.h"
 #include "ui_manager_item_database.h"
+
 #include "managerlogin.h"
+
 #include <QMessageBox>
 #include <QPixmap>
 #include <QDesktopServices>
