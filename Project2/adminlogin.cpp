@@ -1,8 +1,11 @@
 #include "adminlogin.h"
 #include "ui_adminlogin.h"
+
 #include "mainwindow.h"
 #include "admin_member_database.h"
 #include "admin_item_database.h"
+#include "admin_rebate.h"
+
 #include <QFile>
 #include <QMessageBox>
 #include <QTextStream>
@@ -333,4 +336,11 @@ void adminLogin::on_pushButton_clicked()
       default:
           break;
     }
+}
+
+void adminLogin::on_rebateButton_clicked()
+{
+    hide();
+    admin_rebate *adminRebate =new admin_rebate();
+    adminRebate->show();
 }

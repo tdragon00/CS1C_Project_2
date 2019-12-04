@@ -19,6 +19,7 @@ SOURCES += \
     accountconfirm.cpp \
     admin_item_database.cpp \
     admin_member_database.cpp \
+    admin_rebate.cpp \
     admincreate.cpp \
     adminlogin.cpp \
     createcheck.cpp \
@@ -26,6 +27,7 @@ SOURCES += \
     mainwindow.cpp \
     manager_item_database.cpp \
     manager_member_database.cpp \
+    manager_rebate.cpp \
     managercreate.cpp \
     managerlogin.cpp \
     userdata.cpp
@@ -34,12 +36,14 @@ HEADERS += \
     accountconfirm.h \
     admin_item_database.h \
     admin_member_database.h \
+    admin_rebate.h \
     admincreate.h \
     adminlogin.h \
     createcheck.h \
     mainwindow.h \
     manager_item_database.h \
     manager_member_database.h \
+    manager_rebate.h \
     managercreate.h \
     managerlogin.h \
     userdata.h
@@ -48,12 +52,14 @@ FORMS += \
     accountconfirm.ui \
     admin_item_database.ui \
     admin_member_database.ui \
+    admin_rebate.ui \
     admincreate.ui \
     adminlogin.ui \
     createcheck.ui \
     mainwindow.ui \
     manager_item_database.ui \
     manager_member_database.ui \
+    manager_rebate.ui \
     managercreate.ui \
     managerlogin.ui
 

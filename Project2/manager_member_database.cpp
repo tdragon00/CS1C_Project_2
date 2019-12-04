@@ -1,10 +1,14 @@
 #include "manager_member_database.h"
 #include "ui_manager_member_database.h"
+
 #include "managerlogin.h"
+
 #include <QMessageBox>
 #include <QPixmap>
 #include <QDesktopServices>
 #include <QUrl>
+
+
 manager_member_database::manager_member_database(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::manager_member_database)

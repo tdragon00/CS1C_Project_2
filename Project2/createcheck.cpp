@@ -1,10 +1,13 @@
 #include "createcheck.h"
 #include "ui_createcheck.h"
+
 #include "mainwindow.h"
-#include <QMessageBox>
 #include "managercreate.h"
 #include "admincreate.h"
 //#include "employeecreate.h"
+
+#include <QMessageBox>
+
 
 CreateCheck::CreateCheck(QWidget *parent) :
     QDialog(parent),

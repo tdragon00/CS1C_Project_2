@@ -27,6 +27,8 @@ private slots:
 
     void on_itemsButton_clicked();
 
+    void on_rebateButton_clicked();
+
 private:
     Ui::adminLogin *ui;
 };
