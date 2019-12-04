@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>726</width>
-    <height>582</height>
+    <width>967</width>
+    <height>620</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,13 +17,220 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>520</y>
+     <y>30</y>
      <width>149</width>
      <height>28</height>
     </rect>
    </property>
    <property name="text">
     <string>Return to Admin Page</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="title">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>30</y>
+     <width>446</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>30</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Rebate Status Admin</string>
+   </property>
+  </widget>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>90</y>
+     <width>921</width>
+     <height>521</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="executiveList">
+    <attribute name="title">
+     <string>Executive List</string>
+    </attribute>
+    <widget class="QTableView" name="executiveTable">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>871</width>
+       <height>381</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="membershipChange">
+    <attribute name="title">
+     <string>Membership Change</string>
+    </attribute>
+    <widget class="QTableView" name="EtoRtable">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>90</y>
+       <width>261</width>
+       <height>301</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTableView" name="RtoEtable">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>90</y>
+       <width>261</width>
+       <height>301</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="EtoRlable">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>191</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Executive to Regular</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="RtoElable">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>50</y>
+       <width>241</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Regular to Executive: 
+Cost for Executive Member $</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>630</x>
+       <y>40</y>
+       <width>217</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Choose a member from the list to 
+change membership</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>100</y>
+       <width>62</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Name</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>170</y>
+       <width>142</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Membership Currently:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="nameLineEdit">
+     <property name="geometry">
+      <rect>
+       <x>632</x>
+       <y>130</y>
+       <width>241</width>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="currentLineEdit">
+     <property name="geometry">
+      <rect>
+       <x>630</x>
+       <y>200</y>
+       <width>241</width>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>250</y>
+       <width>159</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Changing Membership to:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_3">
+     <property name="geometry">
+      <rect>
+       <x>630</x>
+       <y>280</y>
+       <width>241</width>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>670</x>
+       <y>350</y>
+       <width>161</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Change Membership</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="loadButton">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>30</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Load Data</string>
    </property>
   </widget>
  </widget>

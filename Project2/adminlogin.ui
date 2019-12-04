@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Return to login Screen</string>
+    <string>Return to Login Screen</string>
    </property>
   </widget>
   <widget class="QLabel" name="label">
@@ -105,9 +105,9 @@
    <widget class="QComboBox" name="dbBox">
     <property name="geometry">
      <rect>
-      <x>68</x>
+      <x>48</x>
       <y>130</y>
-      <width>91</width>
+      <width>111</width>
       <height>22</height>
      </rect>
     </property>
@@ -128,37 +128,6 @@
     </item>
    </widget>
   </widget>
-  <widget class="QGroupBox" name="groupBox_2">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>100</y>
-     <width>381</width>
-     <height>301</height>
-    </rect>
-   </property>
-   <property name="title">
-    <string>Sales Reports</string>
-   </property>
-   <widget class="QPushButton" name="pushButton_3">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>30</y>
-      <width>131</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>20</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Purchases</string>
-    </property>
-   </widget>
-  </widget>
   <widget class="QPushButton" name="rebateButton">
    <property name="geometry">
     <rect>
@@ -175,6 +144,24 @@
    </property>
    <property name="text">
     <string>Rebate</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>160</y>
+     <width>201</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Sales Report</string>
    </property>
   </widget>
  </widget>
