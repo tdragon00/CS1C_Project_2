@@ -88,6 +88,19 @@
     <string>Member Data</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="rebateButton">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>390</y>
+     <width>191</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Rebate</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

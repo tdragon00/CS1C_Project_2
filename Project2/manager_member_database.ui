@@ -16,7 +16,7 @@
   <widget class="QGroupBox" name="Selections">
    <property name="geometry">
     <rect>
-     <x>240</x>
+     <x>290</x>
      <y>150</y>
      <width>691</width>
      <height>311</height>
@@ -77,154 +77,86 @@
     <rect>
      <x>0</x>
      <y>180</y>
-     <width>231</width>
-     <height>161</height>
+     <width>291</width>
+     <height>211</height>
     </rect>
    </property>
    <property name="title">
     <string/>
    </property>
-   <widget class="QLabel" name="label_2">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>50</y>
-      <width>81</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Member #</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="memberNumEdit">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>50</y>
-      <width>121</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="readOnly">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="expirationEdit">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>130</y>
-      <width>121</width>
-      <height>20</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
+      <x>10</x>
       <y>10</y>
-      <width>41</width>
-      <height>16</height>
+      <width>271</width>
+      <height>181</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Name</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="nameEdit">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>10</y>
-      <width>161</width>
-      <height>20</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>130</y>
-      <width>81</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Exp Date</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="statusEdit">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>90</y>
-      <width>151</width>
-      <height>20</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>90</y>
-      <width>41</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Status</string>
-    </property>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_3">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>231</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_5"/>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_4">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>40</y>
-      <width>231</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_6"/>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_5">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>80</y>
-      <width>231</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_7"/>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_6">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>120</y>
-      <width>231</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_8"/>
+    <layout class="QFormLayout" name="formLayout">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
+     </property>
+     <property name="fieldGrowthPolicy">
+      <enum>QFormLayout::ExpandingFieldsGrow</enum>
+     </property>
+     <property name="labelAlignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <property name="formAlignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="verticalSpacing">
+      <number>20</number>
+     </property>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Name</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="nameEdit"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Member #</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="memberNumEdit">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>Status</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="statusEdit"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Exp Date</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="expirationEdit"/>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QPushButton" name="returnButton">
