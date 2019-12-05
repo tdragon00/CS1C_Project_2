@@ -18,6 +18,8 @@ public:
 private slots:
     void on_returnButton_clicked();
 
+    void on_loadButton_clicked();
+
 private:
     Ui::manager_rebate *ui;
 };

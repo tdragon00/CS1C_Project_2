@@ -80,7 +80,7 @@
       <rect>
        <x>20</x>
        <y>50</y>
-       <width>581</width>
+       <width>871</width>
        <height>181</height>
       </rect>
      </property>
@@ -90,7 +90,7 @@
       <rect>
        <x>20</x>
        <y>300</y>
-       <width>581</width>
+       <width>871</width>
        <height>181</height>
       </rect>
      </property>
@@ -120,102 +120,6 @@
      <property name="text">
       <string>Regular to Executive: 
 Cost for Executive Member $120</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label">
-     <property name="geometry">
-      <rect>
-       <x>650</x>
-       <y>50</y>
-       <width>217</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Choose a member from the list to 
-change membership</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_2">
-     <property name="geometry">
-      <rect>
-       <x>620</x>
-       <y>100</y>
-       <width>62</width>
-       <height>15</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Name</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_3">
-     <property name="geometry">
-      <rect>
-       <x>620</x>
-       <y>170</y>
-       <width>142</width>
-       <height>15</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Membership Currently:</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="nameLineEdit">
-     <property name="geometry">
-      <rect>
-       <x>650</x>
-       <y>130</y>
-       <width>241</width>
-       <height>21</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="currentLineEdit">
-     <property name="geometry">
-      <rect>
-       <x>650</x>
-       <y>200</y>
-       <width>241</width>
-       <height>21</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_5">
-     <property name="geometry">
-      <rect>
-       <x>620</x>
-       <y>250</y>
-       <width>159</width>
-       <height>15</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Changing Membership to:</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="changeTypeLineEdit">
-     <property name="geometry">
-      <rect>
-       <x>650</x>
-       <y>280</y>
-       <width>241</width>
-       <height>21</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton">
-     <property name="geometry">
-      <rect>
-       <x>690</x>
-       <y>350</y>
-       <width>161</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Change Membership</string>
      </property>
     </widget>
    </widget>

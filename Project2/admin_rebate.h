@@ -20,10 +20,6 @@ private slots:
 
     void on_loadButton_clicked();
 
-    void on_EtoRtable_activated(const QModelIndex &index);
-
-    void on_RtoEtable_activated(const QModelIndex &index);
-
 private:
     Ui::admin_rebate *ui;
 };
