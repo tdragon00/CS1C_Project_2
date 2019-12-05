@@ -54,7 +54,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="executiveList">
     <attribute name="title">
@@ -79,19 +79,19 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>90</y>
-       <width>261</width>
-       <height>301</height>
+       <y>50</y>
+       <width>581</width>
+       <height>181</height>
       </rect>
      </property>
     </widget>
     <widget class="QTableView" name="RtoEtable">
      <property name="geometry">
       <rect>
-       <x>310</x>
-       <y>90</y>
-       <width>261</width>
-       <height>301</height>
+       <x>20</x>
+       <y>300</y>
+       <width>581</width>
+       <height>181</height>
       </rect>
      </property>
     </widget>
@@ -99,7 +99,7 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>60</y>
+       <y>20</y>
        <width>191</width>
        <height>21</height>
       </rect>
@@ -111,22 +111,22 @@
     <widget class="QLabel" name="RtoElable">
      <property name="geometry">
       <rect>
-       <x>320</x>
-       <y>50</y>
+       <x>20</x>
+       <y>260</y>
        <width>241</width>
        <height>30</height>
       </rect>
      </property>
      <property name="text">
       <string>Regular to Executive: 
-Cost for Executive Member $</string>
+Cost for Executive Member $120</string>
      </property>
     </widget>
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>630</x>
-       <y>40</y>
+       <x>650</x>
+       <y>50</y>
        <width>217</width>
        <height>30</height>
       </rect>
@@ -139,7 +139,7 @@ change membership</string>
     <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
-       <x>610</x>
+       <x>620</x>
        <y>100</y>
        <width>62</width>
        <height>15</height>
@@ -152,7 +152,7 @@ change membership</string>
     <widget class="QLabel" name="label_3">
      <property name="geometry">
       <rect>
-       <x>610</x>
+       <x>620</x>
        <y>170</y>
        <width>142</width>
        <height>15</height>
@@ -165,7 +165,7 @@ change membership</string>
     <widget class="QLineEdit" name="nameLineEdit">
      <property name="geometry">
       <rect>
-       <x>632</x>
+       <x>650</x>
        <y>130</y>
        <width>241</width>
        <height>21</height>
@@ -175,7 +175,7 @@ change membership</string>
     <widget class="QLineEdit" name="currentLineEdit">
      <property name="geometry">
       <rect>
-       <x>630</x>
+       <x>650</x>
        <y>200</y>
        <width>241</width>
        <height>21</height>
@@ -185,7 +185,7 @@ change membership</string>
     <widget class="QLabel" name="label_5">
      <property name="geometry">
       <rect>
-       <x>610</x>
+       <x>620</x>
        <y>250</y>
        <width>159</width>
        <height>15</height>
@@ -195,10 +195,10 @@ change membership</string>
       <string>Changing Membership to:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_3">
+    <widget class="QLineEdit" name="changeTypeLineEdit">
      <property name="geometry">
       <rect>
-       <x>630</x>
+       <x>650</x>
        <y>280</y>
        <width>241</width>
        <height>21</height>
@@ -208,7 +208,7 @@ change membership</string>
     <widget class="QPushButton" name="pushButton">
      <property name="geometry">
       <rect>
-       <x>670</x>
+       <x>690</x>
        <y>350</y>
        <width>161</width>
        <height>28</height>
