@@ -6,31 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>956</width>
-    <height>638</height>
+    <width>1250</width>
+    <height>650</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QPushButton" name="loadButton">
-   <property name="geometry">
-    <rect>
-     <x>790</x>
-     <y>20</y>
-     <width>151</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Load Data</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="returnButton">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>30</y>
+     <x>50</x>
+     <y>600</y>
      <width>159</width>
      <height>23</height>
     </rect>
@@ -42,10 +29,10 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>0</x>
      <y>0</y>
-     <width>941</width>
-     <height>141</height>
+     <width>1251</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="text">
@@ -55,10 +42,10 @@
   <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>100</y>
-     <width>931</width>
-     <height>521</height>
+     <x>50</x>
+     <y>50</y>
+     <width>1150</width>
+     <height>550</height>
     </rect>
    </property>
    <property name="currentIndex">
@@ -72,7 +59,7 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>20</y>
+       <y>120</y>
        <width>231</width>
        <height>261</height>
       </rect>
@@ -234,8 +221,8 @@
       <rect>
        <x>230</x>
        <y>20</y>
-       <width>691</width>
-       <height>311</height>
+       <width>901</width>
+       <height>441</height>
       </rect>
      </property>
      <property name="title">
@@ -247,7 +234,7 @@
         <x>10</x>
         <y>40</y>
         <width>211</width>
-        <height>261</height>
+        <height>391</height>
        </rect>
       </property>
      </widget>
@@ -256,8 +243,8 @@
        <rect>
         <x>240</x>
         <y>10</y>
-        <width>441</width>
-        <height>291</height>
+        <width>651</width>
+        <height>421</height>
        </rect>
       </property>
       <property name="sortingEnabled">
@@ -277,14 +264,27 @@
      <widget class="QWidget" name="horizontalLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>460</x>
+        <x>570</x>
         <y>10</y>
         <width>201</width>
-        <height>291</height>
+        <height>421</height>
        </rect>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout"/>
      </widget>
+    </widget>
+    <widget class="QPushButton" name="loadButton">
+     <property name="geometry">
+      <rect>
+       <x>980</x>
+       <y>470</y>
+       <width>151</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Load Data</string>
+     </property>
     </widget>
    </widget>
    <widget class="QWidget" name="ExpiringMembers">
@@ -298,10 +298,23 @@
     </attribute>
    </widget>
   </widget>
+  <widget class="QLabel" name="statusLine">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>630</y>
+     <width>141</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>[+] Status</string>
+   </property>
+  </widget>
   <zorder>label_5</zorder>
-  <zorder>loadButton</zorder>
   <zorder>returnButton</zorder>
   <zorder>tabWidget</zorder>
+  <zorder>statusLine</zorder>
  </widget>
  <resources/>
  <connections/>

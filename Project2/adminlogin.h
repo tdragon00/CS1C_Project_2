@@ -14,7 +14,6 @@ class adminLogin : public QDialog
 
 public:
    MainWindow conn;
-public:
     explicit adminLogin(QWidget *parent = nullptr);
     ~adminLogin();
 
@@ -28,6 +27,8 @@ private slots:
     void on_itemsButton_clicked();
 
     void on_rebateButton_clicked();
+
+    void on_pushButton_3_clicked();
 
 private:
     Ui::adminLogin *ui;

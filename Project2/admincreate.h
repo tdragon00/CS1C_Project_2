@@ -13,7 +13,6 @@ class adminCreate : public QDialog
     Q_OBJECT
 public:
     MainWindow conn;
-public:
     explicit adminCreate(QWidget *parent = nullptr);
     ~adminCreate();
 

@@ -2,12 +2,19 @@
 #include "ui_admin_rebate.h"
 
 #include "adminlogin.h"
+#include "mainwindow.h"
 
 admin_rebate::admin_rebate(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::admin_rebate)
 {
     ui->setupUi(this);
+
+    if (!conn.connOpen())
+        ui->statusLine->setText("Failed to open the database");
+    else
+        ui->statusLine->setText("Database Connected...");
+
     on_loadButton_clicked();
 }
 

@@ -8,6 +8,12 @@ manager_rebate::manager_rebate(QWidget *parent) :
     ui(new Ui::manager_rebate)
 {
     ui->setupUi(this);
+
+    if (!conn.connOpen())
+        ui->statusLine->setText("Failed to open the database");
+    else
+        ui->statusLine->setText("Database Connected...");
+
     on_loadButton_clicked();
 }
 

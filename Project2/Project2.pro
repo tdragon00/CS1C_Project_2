@@ -20,6 +20,7 @@ SOURCES += \
     admin_item_database.cpp \
     admin_member_database.cpp \
     admin_rebate.cpp \
+    admin_sales_report.cpp \
     admincreate.cpp \
     adminlogin.cpp \
     createcheck.cpp \
@@ -38,6 +39,7 @@ HEADERS += \
     admin_item_database.h \
     admin_member_database.h \
     admin_rebate.h \
+    admin_sales_report.h \
     admincreate.h \
     adminlogin.h \
     createcheck.h \
@@ -55,6 +57,7 @@ FORMS += \
     admin_item_database.ui \
     admin_member_database.ui \
     admin_rebate.ui \
+    admin_sales_report.ui \
     admincreate.ui \
     adminlogin.ui \
     createcheck.ui \

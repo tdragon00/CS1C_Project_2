@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>850</width>
-    <height>502</height>
+    <width>1250</width>
+    <height>650</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,14 +16,27 @@
   <widget class="QPushButton" name="returnButton">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>450</y>
+     <x>50</x>
+     <y>600</y>
      <width>159</width>
      <height>23</height>
     </rect>
    </property>
    <property name="text">
     <string>Return to admin page</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="statusLine">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>620</y>
+     <width>141</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>[+] Status</string>
    </property>
   </widget>
  </widget>

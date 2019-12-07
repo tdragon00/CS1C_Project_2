@@ -2,6 +2,7 @@
 #define ADMIN_REBATE_H
 
 #include <QDialog>
+#include "mainwindow.h"
 
 namespace Ui {
 class admin_rebate;
@@ -12,6 +13,7 @@ class admin_rebate : public QDialog
     Q_OBJECT
 
 public:
+    MainWindow conn;
     explicit admin_rebate(QWidget *parent = nullptr);
     ~admin_rebate();
 
