@@ -15,6 +15,9 @@ public:
     explicit Manager_Sales_Report(QWidget *parent = nullptr);
     ~Manager_Sales_Report();
 
+private slots:
+    void on_return_2_clicked();
+
 private:
     Ui::Manager_Sales_Report *ui;
 };
