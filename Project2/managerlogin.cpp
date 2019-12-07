@@ -38,8 +38,6 @@ void managerLogin::on_backLogin_clicked()
     mainWindow->show();
 }
 
-
-
 void managerLogin::on_Member_Data_clicked()
 {
 
