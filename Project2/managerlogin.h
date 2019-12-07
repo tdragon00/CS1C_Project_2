@@ -31,6 +31,8 @@ private slots:
 
     void on_rebateButton_clicked();
 
+    void on_statusLine_linkActivated(const QString &link);
+
 private:
     Ui::managerLogin *ui;
 };
