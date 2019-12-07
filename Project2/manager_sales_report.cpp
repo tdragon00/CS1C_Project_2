@@ -7,6 +7,10 @@ Manager_Sales_Report::Manager_Sales_Report(QWidget *parent) :
     ui(new Ui::Manager_Sales_Report)
 {
     ui->setupUi(this);
+    if (!conn.connOpen())
+        ui->statusLine->setText("Failed to open the database");
+    else
+        ui->statusLine->setText("Database Connected...");
 }
 
 Manager_Sales_Report::~Manager_Sales_Report()

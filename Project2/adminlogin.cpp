@@ -5,6 +5,7 @@
 #include "admin_member_database.h"
 #include "admin_item_database.h"
 #include "admin_rebate.h"
+#include "admin_sales_report.h"
 
 #include <QFile>
 #include <QMessageBox>
@@ -15,6 +16,11 @@ adminLogin::adminLogin(QWidget *parent) :
     ui(new Ui::adminLogin)
 {
     ui->setupUi(this);
+
+    if (!conn.connOpen())
+        ui->statusLine->setText("Failed to open the database");
+    else
+        ui->statusLine->setText("Database Connected...");
 }
 
 adminLogin::~adminLogin()
@@ -343,4 +349,11 @@ void adminLogin::on_rebateButton_clicked()
     hide();
     admin_rebate *adminRebate =new admin_rebate();
     adminRebate->show();
+}
+
+void adminLogin::on_pushButton_3_clicked()
+{
+    hide();
+    admin_sales_report *Admin_Sales_Report =new admin_sales_report();
+    Admin_Sales_Report->show();
 }

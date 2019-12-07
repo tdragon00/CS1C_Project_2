@@ -13,7 +13,6 @@ class managerCreate : public QDialog
     Q_OBJECT
 public:
     MainWindow conn;
-public:
     explicit managerCreate(QWidget *parent = nullptr);
     ~managerCreate();
 

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1250</width>
+    <height>650</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="backLogin">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>560</y>
+     <x>50</x>
+     <y>600</y>
      <width>161</width>
      <height>32</height>
     </rect>
@@ -29,10 +29,10 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>20</y>
-     <width>711</width>
-     <height>71</height>
+     <x>0</x>
+     <y>0</y>
+     <width>1251</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="text">
@@ -53,7 +53,7 @@
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>540</y>
+     <y>630</y>
      <width>141</width>
      <height>16</height>
     </rect>
@@ -62,45 +62,89 @@
     <string>[+] Status</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="Item_Data">
+  <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>440</x>
-     <y>150</y>
-     <width>201</width>
-     <height>111</height>
+     <x>910</x>
+     <y>490</y>
+     <width>331</width>
+     <height>141</height>
     </rect>
    </property>
-   <property name="text">
-    <string>Item Data</string>
+   <property name="title">
+    <string>Database</string>
    </property>
+   <widget class="QPushButton" name="Member_Data">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>30</y>
+      <width>131</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Members</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="itemsButton">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>30</y>
+      <width>131</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Items</string>
+    </property>
+   </widget>
   </widget>
-  <widget class="QPushButton" name="Member_Data">
+  <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>160</y>
-     <width>161</width>
-     <height>111</height>
+     <x>50</x>
+     <y>50</y>
+     <width>1150</width>
+     <height>440</height>
     </rect>
    </property>
-   <property name="text">
-    <string>Member Data</string>
+   <property name="title">
+    <string>GroupBox</string>
    </property>
+   <widget class="QPushButton" name="rebateButton">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>40</y>
+      <width>191</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Rebate</string>
+    </property>
+   </widget>
   </widget>
-  <widget class="QPushButton" name="rebateButton">
-   <property name="geometry">
-    <rect>
-     <x>330</x>
-     <y>390</y>
-     <width>191</width>
-     <height>91</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Rebate</string>
-   </property>
-  </widget>
+  <zorder>groupBox_2</zorder>
+  <zorder>backLogin</zorder>
+  <zorder>label</zorder>
+  <zorder>lineEdit</zorder>
+  <zorder>statusLine</zorder>
+  <zorder>groupBox</zorder>
  </widget>
  <resources/>
  <connections/>

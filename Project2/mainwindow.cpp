@@ -1,9 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-//#include "customerlogin.h"
-//#include "secadminlogin.h"
-//#include "viewdatabase.h"
 #include "admincreate.h"
 #include "adminlogin.h"
 #include "managerlogin.h"

@@ -59,3 +59,10 @@ void managerLogin::on_rebateButton_clicked()
     manager_rebate *managerRebate =new manager_rebate();
     managerRebate->show();
 }
+
+void managerLogin::on_itemsButton_clicked()
+{
+    hide();
+    manager_item_database *Manager_Item_Database =new manager_item_database();
+    Manager_Item_Database->show();
+}

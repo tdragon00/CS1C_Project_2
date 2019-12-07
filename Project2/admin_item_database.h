@@ -20,22 +20,6 @@ public:
 private slots:
     void on_returnButton_clicked();
 
-    void on_comboBox_currentIndexChanged();
-
-    void on_memberFilter_currentIndexChanged();
-
-    void on_checkMemberFilter_stateChanged();
-
-    void on_checkDateFilter_stateChanged();
-
-    void on_pushButton_clicked();
-
-    void on_pushButton_2_clicked();
-
-    void on_pushButton_3_clicked();
-
-    void on_checkMemberFilter_stateChanged(int arg1);
-
 private:
     Ui::admin_item_database *ui;
 };

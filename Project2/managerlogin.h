@@ -13,11 +13,9 @@ class managerLogin : public QDialog
     Q_OBJECT
 
 public:
+    MainWindow conn;
     explicit managerLogin( QWidget *parent = nullptr);
     ~managerLogin();
-
-public:
-    MainWindow conn;
 private slots:
     void on_backLogin_clicked();
 
@@ -30,6 +28,8 @@ private slots:
     void on_Item_Data_clicked();
 
     void on_rebateButton_clicked();
+
+    void on_itemsButton_clicked();
 
 private:
     Ui::managerLogin *ui;

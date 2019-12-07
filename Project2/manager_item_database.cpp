@@ -13,6 +13,11 @@ manager_item_database::manager_item_database(QWidget *parent) :
     ui(new Ui::manager_item_database)
 {
     ui->setupUi(this);
+
+    if (!conn.connOpen())
+        ui->statusLine->setText("Failed to open the database");
+    else
+        ui->statusLine->setText("Database Connected...");
 }
 
 manager_item_database::~manager_item_database()

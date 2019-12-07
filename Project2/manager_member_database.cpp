@@ -14,6 +14,11 @@ manager_member_database::manager_member_database(QWidget *parent) :
     ui(new Ui::manager_member_database)
 {
     ui->setupUi(this);
+
+    if (!conn.connOpen())
+        ui->statusLine->setText("Failed to open the database");
+    else
+        ui->statusLine->setText("Database Connected...");
 }
 
 manager_member_database::~manager_member_database()
