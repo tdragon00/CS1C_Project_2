@@ -1,3 +1,7 @@
+/** @file addMember.h
+*	@brief Displays a window for adding a member to the database.
+*/
+
 #ifndef ADDMEMBER_H
 #define ADDMEMBER_H
 
@@ -8,6 +12,9 @@ namespace Ui {
 class addMember;
 }
 
+/**
+*	@brief Adding a member to the database.
+*/
 class addMember : public QWidget
 {
     Q_OBJECT

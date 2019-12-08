@@ -25,6 +25,7 @@ SOURCES += \
     admincreate.cpp \
     adminlogin.cpp \
     createcheck.cpp \
+    itemtype.cpp \
     main.cpp \
     mainwindow.cpp \
     manager_item_database.cpp \
@@ -33,6 +34,7 @@ SOURCES += \
     manager_sales_report.cpp \
     managercreate.cpp \
     managerlogin.cpp \
+    membertype.cpp \
     userdata.cpp
 
 HEADERS += \
@@ -45,6 +47,7 @@ HEADERS += \
     admincreate.h \
     adminlogin.h \
     createcheck.h \
+    itemtype.h \
     mainwindow.h \
     manager_item_database.h \
     manager_member_database.h \
@@ -52,6 +55,7 @@ HEADERS += \
     manager_sales_report.h \
     managercreate.h \
     managerlogin.h \
+    membertype.h \
     userdata.h
 
 FORMS += \

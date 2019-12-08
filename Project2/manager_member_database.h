@@ -1,3 +1,7 @@
+/** @file manager_member_database.h
+*	@brief Displays a window for the manager to view the members list.
+*/
+
 #ifndef MANAGER_MEMBER_DATABASE_H
 #define MANAGER_MEMBER_DATABASE_H
 
@@ -8,6 +12,9 @@ namespace Ui {
 class manager_member_database;
 }
 
+/**
+*	@brief Displays a window for the manager to view the members list.
+*/
 class manager_member_database : public QDialog
 {
     Q_OBJECT

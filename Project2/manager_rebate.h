@@ -1,3 +1,7 @@
+/** @file manager_rebate.h
+*	@brief Displays a window for the manager to view the members info regarding rebate.
+*/
+
 #ifndef MANAGER_REBATE_H
 #define MANAGER_REBATE_H
 
@@ -8,6 +12,9 @@ namespace Ui {
 class manager_rebate;
 }
 
+/**
+*	@brief Displays a window for the manager to view the members info regarding rebate.
+*/
 class manager_rebate : public QDialog
 {
     Q_OBJECT

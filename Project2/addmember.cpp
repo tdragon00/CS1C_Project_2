@@ -43,10 +43,9 @@ void addMember::on_addButton_clicked()
 {
     conn.connOpen();
     QSqlQuery* qry = new QSqlQuery(conn.mydb);
-   // int zero = 0;
 
     if(qry->exec("insert into customers (name, memberNum, status, expDate,totalPurchases, totalRebate )"
-                 "values ('"+ui->nameEdit->text()+"','"+ui->idEdit->text()+"','"+ui->statusEdit->currentText()+"','"+ui->dateEdit->text()+"', 0.0 , 0.0 )"))
+                       "values ('"+ui->nameEdit->text()+"','"+ui->idEdit->text()+"','"+ui->statusEdit->currentText()+"','"+ui->dateEdit->text()+"', 0.0 , 0.0 )"))
     {
         hide();
     }

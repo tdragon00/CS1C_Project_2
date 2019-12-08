@@ -1,3 +1,7 @@
+/** @file managerCreate.h
+*	@brief Displays a window letting the user create an account for manager.
+*/
+
 #ifndef MANAGERCREATE_H
 #define MANAGERCREATE_H
 
@@ -8,6 +12,9 @@ namespace Ui {
 class managerCreate;
 }
 
+/**
+*	@brief Lets the user create an account for manager.
+*/
 class managerCreate : public QDialog
 {
     Q_OBJECT

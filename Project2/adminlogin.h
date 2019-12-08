@@ -1,3 +1,7 @@
+/** @file adminLogin.h
+*	@brief Displays a window for the adminstrator a menu page once logged in.
+*/
+
 #ifndef ADMINLOGIN_H
 #define ADMINLOGIN_H
 
@@ -8,6 +12,9 @@ namespace Ui {
 class adminLogin;
 }
 
+/**
+*	@brief A menu page for the adminstrator once logged in.
+*/
 class adminLogin : public QDialog
 {
     Q_OBJECT

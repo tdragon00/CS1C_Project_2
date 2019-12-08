@@ -1,3 +1,7 @@
+/** @file adminCreate.h
+*	@brief Displays a window for the user to create an administrator account.
+*/
+
 #ifndef ADMINCREATE_H
 #define ADMINCREATE_H
 
@@ -8,6 +12,9 @@ namespace Ui {
 class adminCreate;
 }
 
+/**
+*	@brief Lets the user to create an administrator account.
+*/
 class adminCreate : public QDialog
 {
     Q_OBJECT

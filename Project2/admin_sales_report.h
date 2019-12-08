@@ -1,3 +1,7 @@
+/** @file admin_sales_report.h
+*	@brief Displays a window for administrator the sales report.
+*/
+
 #ifndef ADMIN_SALES_REPORT_H
 #define ADMIN_SALES_REPORT_H
 
@@ -8,6 +12,9 @@ namespace Ui {
 class admin_sales_report;
 }
 
+/**
+*	@brief Displays a window for administrator the sales report.
+*/
 class admin_sales_report : public QWidget
 {
     Q_OBJECT

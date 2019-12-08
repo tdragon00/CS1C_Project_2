@@ -1,3 +1,7 @@
+/** @file Manager_Sales_Report.h
+*	@brief Displays a window for the administrator and manager to view the sales report.
+*/
+
 #ifndef MANAGER_SALES_REPORT_H
 #define MANAGER_SALES_REPORT_H
 
@@ -8,6 +12,9 @@ namespace Ui {
 class Manager_Sales_Report;
 }
 
+/**
+*	@brief Displays the sales report.
+*/
 class Manager_Sales_Report : public QDialog
 {
     Q_OBJECT

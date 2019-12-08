@@ -1,3 +1,7 @@
+/** @file admin_rebate.h
+*	@brief Displays a window letting the user view the members info regarding rebate.
+*/
+
 #ifndef ADMIN_REBATE_H
 #define ADMIN_REBATE_H
 
@@ -7,6 +11,10 @@
 namespace Ui {
 class admin_rebate;
 }
+
+/**
+*	@brief Lets the administrator view the members info regarding rebate and membership status upgrade/downgrade.
+*/
 
 class admin_rebate : public QDialog
 {

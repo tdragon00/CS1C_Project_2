@@ -1,3 +1,7 @@
+/** @file admin_item_database.h
+*	@brief Displays a window for the admin to see the items list and be able to add and delete items.
+*/
+
 #ifndef ADMIN_ITEM_DATABASE_H
 #define ADMIN_ITEM_DATABASE_H
 
@@ -8,6 +12,9 @@ namespace Ui {
 class admin_item_database;
 }
 
+/**
+*	@brief Admin side UI to see the items list and be able to add and delete items.
+*/
 class admin_item_database : public QDialog
 {
     Q_OBJECT

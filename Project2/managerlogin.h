@@ -1,3 +1,7 @@
+/** @file managerLogin.h
+*	@brief Displays a menu for the manager once logged in.
+*/
+
 #ifndef MANAGERLOGIN_H
 #define MANAGERLOGIN_H
 
@@ -8,6 +12,9 @@ namespace Ui {
 class managerLogin;
 }
 
+/**
+*	@brief Displays a menu for the manager once logged in.
+*/
 class managerLogin : public QDialog
 {
     Q_OBJECT

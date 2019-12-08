@@ -1,3 +1,7 @@
+/** @file CreateCheck.h
+*	@brief Displays a window letting the user choose which type of an account to create.
+*/
+
 #ifndef CREATECHECK_H
 #define CREATECHECK_H
 
@@ -7,6 +11,9 @@ namespace Ui {
 class CreateCheck;
 }
 
+/**
+*	@brief Lets the user choose which type of an account to create.
+*/
 class CreateCheck : public QDialog
 {
     Q_OBJECT

@@ -1,3 +1,7 @@
+/** @file Admin_Member_Database.h
+*	@brief Displays a window for the admin to view the members list and be able to edit, add and delete members.
+*/
+
 #ifndef ADMIN_MEMBER_DATABASE_H
 #define ADMIN_MEMBER_DATABASE_H
 
@@ -7,6 +11,10 @@
 namespace Ui {
 class Admin_Member_Database;
 }
+
+/**
+*	@brief Admin UI to view the members list and be able to edit, add and delete members.
+*/
 
 class Admin_Member_Database : public QDialog
 {

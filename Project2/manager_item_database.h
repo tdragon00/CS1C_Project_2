@@ -1,3 +1,7 @@
+/** @file manager_item_database.h
+*	@brief Displays a window for the manager to view the items list.
+*/
+
 #ifndef MANAGER_ITEM_DATABASE_H
 #define MANAGER_ITEM_DATABASE_H
 
@@ -8,6 +12,9 @@ namespace Ui {
 class manager_item_database;
 }
 
+/**
+*	@brief A window for the manager to view the items list.
+*/
 class manager_item_database : public QDialog
 {
     Q_OBJECT

@@ -1,3 +1,7 @@
+/** @file MainWindow.h
+*	@brief Main login window for the user.
+*/
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
@@ -17,6 +21,9 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
+/**
+*	@brief Main login window for the user.
+*/
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -36,11 +43,6 @@ public:
     bool connOpen()
     {
         mydb=QSqlDatabase::addDatabase("QSQLITE");
-
-        //notes leave for ayako
-        //QString homeLocation = QStandardPaths::locate(QStandardPaths::HomeLocation, QString(), QStandardPaths::LocateDirectory);
-        // QString databaseFile = QStandardPaths::displayName(QStandardPaths::DocumentsLocation) + "/GitHub/CS1C_Project_2/Project2/database.db" ;
-
 
         QString databaseFile = QStandardPaths::locate(QStandardPaths::DocumentsLocation,QString("/GitHub/CS1C_Project_2/Project2/database.db"))  ;
         mydb.setDatabaseName(databaseFile);

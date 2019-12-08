@@ -1,3 +1,7 @@
+/** @file userData.h
+*	@brief Class for the accounts created for the program.
+*/
+
 #ifndef USERDATA_H
 #define USERDATA_H
 #include <iomanip>
@@ -5,19 +9,15 @@
 
 using namespace std;
 
-// Class userData is the base class for all the user's information.
-// It will contain all the common information needed for all types
-// of the users, interacting with the application.
+/**
+*	@brief Class userData is the base class for all the user's information.  It will contain all the common information needed for all types of the users, interacting with the application.
+*/
+
 class userData
 {
 private:
     string fName;       //string variable to store user's first name
     string lName;       //string variable to store user's last name
-    string membershipNum;
-    string membershipType;
-    string membershipExp;
-    double totalSpent;
-    double rebateAmt;
     string userID;      //string variable to store user's userID
     string password;    //string variable to store user's password
 
@@ -34,17 +34,13 @@ private:
 public:
     userData();
     //default constructor of the class, will set all variables to null
-    userData(string first, string last, string mn, string mt, string me, string user, string pass, int r);
+    userData(string first, string last, string user, string pass, int r);
     //constructor using special parameters, taking string fName, string lName, string email
     // string phoneNumber, string userId, string password, and an int rank.
     void setfName (string f);
     //Set the first name of the user
     void setlName (string l);
     // set the last name of the user
-
-    void setmembershipNum(string mn);
-    void setmembershipType(string mt);
-    void setmembershipExp(string me);
 
     void setUserID (string u);
     // set the userId of the user
@@ -56,10 +52,6 @@ public:
     void getfName (string& f) const;
     // get the first name of the user
     void getlName (string& l) const;
-
-    void getmembershipNum(string& mn) const;
-    void getmembershipType(string& mt) const;
-    void getmembershipExp(string& me) const;
 
     void getUserId (string& u) const;
     // get the userId of the user
