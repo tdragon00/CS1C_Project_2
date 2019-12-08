@@ -105,19 +105,23 @@ void adminLogin::on_pushButton_clicked()
                 }
             }
             else if(ui->dbBox->currentText() == "Items")
-            {
+            {//Refreshing Items table
                 qDebug() << "Deleting items db";
                 db.exec("delete from items");
 
                 qDebug() << "Begining extraction of Items from sales report";
 
                 db.prepare("INSERT into items (name, price) "
-                           "SELECT DISTINCT salesReport.productName, salesReport.price "
-                           "FROM salesReport "
-                           "LEFT JOIN items "
-                           "ON salesReport.productName=items.name "
-                           "WHERE items.name IS NULL");
-
+                        "SELECT DISTINCT salesReport.productName, salesReport.price "
+                        "FROM salesReport "
+                        "LEFT JOIN items ON salesReport.productName=items.name "
+                        "WHERE items.name IS NULL");
+               /*db.prepare("UPDATE items "
+                          "SET qtySold = "
+                          "(SELECT SUM(purchaseQty) "
+                          "FROM salesReport "
+                          "GROUP BY productName)X "
+                          "WHERE x.productName = name");*/
                if(db.exec())
                {
 
