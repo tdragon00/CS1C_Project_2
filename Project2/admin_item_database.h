@@ -17,12 +17,9 @@ public:
     explicit admin_item_database(QWidget *parent = nullptr);
     ~admin_item_database();
 
-<<<<<<< HEAD
 private slots:
     void on_returnButton_clicked();
 
-=======
->>>>>>> Lamson
 private:
     Ui::admin_item_database *ui;
 };

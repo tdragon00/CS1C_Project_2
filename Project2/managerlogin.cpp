@@ -1,12 +1,16 @@
+#include "manager_member_database.h"
+#include "manager_item_database.h"
+
 #include "managerlogin.h"
+#include "ui_managerlogin.h"
 #include "adminlogin.h"
 #include "mainwindow.h"
-#include "ui_managerlogin.h"
+
+#include "manager_rebate.h"
+
 #include <QUrl>
 #include <QDesktopServices>
 #include <QMessageBox>
-#include "manager_member_database.h"
-#include "manager_item_database.h"
 
 
 managerLogin::managerLogin( QWidget *parent) :
@@ -48,7 +52,6 @@ void managerLogin::on_Item_Data_clicked()
     manager_item_database *Manager_Item_database =new manager_item_database();
     Manager_Item_database->show();
 }
-<<<<<<< HEAD
 
 void managerLogin::on_rebateButton_clicked()
 {
@@ -63,5 +66,3 @@ void managerLogin::on_itemsButton_clicked()
     manager_item_database *Manager_Item_Database =new manager_item_database();
     Manager_Item_Database->show();
 }
-=======
->>>>>>> Lamson

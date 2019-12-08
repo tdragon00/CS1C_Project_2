@@ -13,7 +13,6 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-<<<<<<< HEAD
   <widget class="QPushButton" name="returnButton">
    <property name="geometry">
     <rect>
@@ -40,8 +39,6 @@
     <string>[+] Status</string>
    </property>
   </widget>
-=======
->>>>>>> Lamson
  </widget>
  <resources/>
  <connections/>

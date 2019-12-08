@@ -2,12 +2,6 @@
 #define ADMINLOGIN_H
 
 #include <QDialog>
-#include <QtSql>
-#include <QList>
-#include <QFile>
-#include <QString>
-#include <fstream>
-#include <string>
 #include "mainwindow.h"
 
 namespace Ui {
@@ -30,9 +24,9 @@ private slots:
 
     void on_pushButton_clicked();
 
-//    void on_comboBox_currentIndexChanged(const QString &arg1);
+    void on_itemsButton_clicked();
 
-    void on_Item_Database_clicked();
+    void on_rebateButton_clicked();
 
     void on_pushButton_3_clicked();
 

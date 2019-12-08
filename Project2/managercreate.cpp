@@ -1,7 +1,9 @@
 #include "managercreate.h"
 #include "ui_managercreate.h"
+
 #include "accountconfirm.h"
 #include "mainwindow.h"
+
 #include <QFile>
 #include <QTextStream>
 #include <QMessageBox>

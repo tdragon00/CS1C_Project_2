@@ -18,8 +18,6 @@ public:
 private slots:
     void on_typeConfirm_clicked();
 
-    void on_pushButton_clicked();
-
 private:
     Ui::CreateCheck *ui;
 };
