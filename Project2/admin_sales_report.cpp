@@ -1207,7 +1207,7 @@ void admin_sales_report::on_statusDescSort_clicked()
         qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
                      "FROM salesReport "
                      "INNER JOIN customers ON salesReport.id=customers.memberNum "
-                     "ORDER BY salesReport.status ASC");
+                     "ORDER BY salesReport.status DESC");
     }
 
     if(qry->exec())
