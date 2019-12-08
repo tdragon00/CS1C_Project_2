@@ -106,6 +106,7 @@ void MainWindow::on_pushLogin_clicked()
                 connClose();
                 adminLogin *administratorLogin = new adminLogin;
                 administratorLogin -> show();
+                MainWindow::Is_Admin=true;
             }
                 else
                 {

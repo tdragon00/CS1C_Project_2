@@ -1,5 +1,6 @@
 #include "manager_member_database.h"
 #include "manager_item_database.h"
+#include "ui_admin_sales_report.h"
 
 #include "managerlogin.h"
 #include "ui_managerlogin.h"
