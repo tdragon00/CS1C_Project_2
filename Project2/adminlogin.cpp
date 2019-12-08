@@ -133,6 +133,7 @@ void adminLogin::on_pushButton_clicked()
                     QString price;
                     QString purchaseQty;
                     QString status;
+                    QString totalPurchases;
 
                     QFile file(":/textfiles/Resource Stuff/Database textfiles/day1.txt");
                     if(!file.open(QIODevice::ReadOnly  | QIODevice::Text))
@@ -153,10 +154,21 @@ void adminLogin::on_pushButton_clicked()
                         purchaseQty = in.readLine();
                         status = in.readLine();
 
+                        double Price = price.toDouble();
+                        int PurchaseQty = purchaseQty.toInt();
+
+                        double subtotal = Price * PurchaseQty;
+                        double total = subtotal - (Price * PurchaseQty * 0.0775);
+
+                        QString Subtotal = QString::number(subtotal);
+                        QString Total = QString::number(total);
+
                         qDebug() << "Inserting purchase of " << productName << " for customer " << id;
 
-                        db.exec("insert into salesReport (purchaseDate, id, productName, price, purchaseQty, status, day)"
-                                "values ('"+purchaseDate+"','"+id+"','"+productName+"','"+price+"','"+purchaseQty+"','"+status+"','"+"1"+"')");
+                        db.exec("insert into salesReport (purchaseDate, id, productName, price, purchaseQty, status, day, subtotal, total)"
+                                "values ('"+purchaseDate+"','"+id+"','"+productName+"','"+price+"','"+purchaseQty+"','"+status+"','"+"1"+"', '"+Subtotal+"', '"+Total+"')");
+
+
                     }
                 }
                 {//Refreshing Day 2 Sales Report db
@@ -184,10 +196,19 @@ void adminLogin::on_pushButton_clicked()
                         purchaseQty = in.readLine();
                         status = in.readLine();
 
+                        double Price = price.toDouble();
+                        int PurchaseQty = purchaseQty.toInt();
+
+                        double subtotal = Price * PurchaseQty;
+                        double total = subtotal - (Price * PurchaseQty * 0.0775);
+
+                        QString Subtotal = QString::number(subtotal);
+                        QString Total = QString::number(total);
+
                         qDebug() << "Inserting purchase of " << productName << " for customer " << id;
 
-                        db.exec("insert into salesReport (purchaseDate, id, productName, price, purchaseQty, status, day)"
-                                "values ('"+purchaseDate+"','"+id+"','"+productName+"','"+price+"','"+purchaseQty+"','"+status+"','"+"2"+"')");
+                        db.exec("insert into salesReport (purchaseDate, id, productName, price, purchaseQty, status, day, subtotal, total)"
+                                "values ('"+purchaseDate+"','"+id+"','"+productName+"','"+price+"','"+purchaseQty+"','"+status+"','"+"2"+"', '"+Subtotal+"', '"+Total+"')");
                     }
                 }
                 {//Refreshing Day 3 Sales Report db
@@ -215,10 +236,19 @@ void adminLogin::on_pushButton_clicked()
                         purchaseQty = in.readLine();
                         status = in.readLine();
 
+                        double Price = price.toDouble();
+                        int PurchaseQty = purchaseQty.toInt();
+
+                        double subtotal = Price * PurchaseQty;
+                        double total = subtotal - (Price * PurchaseQty * 0.0775);
+
+                        QString Subtotal = QString::number(subtotal);
+                        QString Total = QString::number(total);
+
                         qDebug() << "Inserting purchase of " << productName << " for customer " << id;
 
-                        db.exec("insert into salesReport (purchaseDate, id, productName, price, purchaseQty, status, day)"
-                                "values ('"+purchaseDate+"','"+id+"','"+productName+"','"+price+"','"+purchaseQty+"','"+status+"','"+"3"+"')");
+                        db.exec("insert into salesReport (purchaseDate, id, productName, price, purchaseQty, status, day, subtotal, total)"
+                                "values ('"+purchaseDate+"','"+id+"','"+productName+"','"+price+"','"+purchaseQty+"','"+status+"','"+"3"+"', '"+Subtotal+"', '"+Total+"')");
                     }
                 }
                 {//Refreshing Day 4 Sales Report db
@@ -246,10 +276,19 @@ void adminLogin::on_pushButton_clicked()
                         purchaseQty = in.readLine();
                         status = in.readLine();
 
+                        double Price = price.toDouble();
+                        int PurchaseQty = purchaseQty.toInt();
+
+                        double subtotal = Price * PurchaseQty;
+                        double total = subtotal - (Price * PurchaseQty * 0.0775);
+
+                        QString Subtotal = QString::number(subtotal);
+                        QString Total = QString::number(total);
+
                         qDebug() << "Inserting purchase of " << productName << " for customer " << id;
 
-                        db.exec("insert into salesReport (purchaseDate, id, productName, price, purchaseQty, status, day)"
-                                "values ('"+purchaseDate+"','"+id+"','"+productName+"','"+price+"','"+purchaseQty+"','"+status+"','"+"4"+"')");
+                        db.exec("insert into salesReport (purchaseDate, id, productName, price, purchaseQty, status, day, subtotal, total)"
+                                "values ('"+purchaseDate+"','"+id+"','"+productName+"','"+price+"','"+purchaseQty+"','"+status+"','"+"4"+"', '"+Subtotal+"', '"+Total+"')");
                     }
                 }
                 {//Refreshing Day 5 Sales Report db
@@ -277,10 +316,19 @@ void adminLogin::on_pushButton_clicked()
                         purchaseQty = in.readLine();
                         status = in.readLine();
 
+                        double Price = price.toDouble();
+                        int PurchaseQty = purchaseQty.toInt();
+
+                        double subtotal = Price * PurchaseQty;
+                        double total = subtotal - (Price * PurchaseQty * 0.0775);
+
+                        QString Subtotal = QString::number(subtotal);
+                        QString Total = QString::number(total);
+
                         qDebug() << "Inserting purchase of " << productName << " for customer " << id;
 
-                        db.exec("insert into salesReport (purchaseDate, id, productName, price, purchaseQty, status, day)"
-                                "values ('"+purchaseDate+"','"+id+"','"+productName+"','"+price+"','"+purchaseQty+"','"+status+"','"+"5"+"')");
+                        db.exec("insert into salesReport (purchaseDate, id, productName, price, purchaseQty, status, day, subtotal, total)"
+                                "values ('"+purchaseDate+"','"+id+"','"+productName+"','"+price+"','"+purchaseQty+"','"+status+"','"+"5"+"', '"+Subtotal+"', '"+Total+"')");
                     }
                 }
                 {//Refreshing Day 6 Sales Report db
@@ -308,10 +356,19 @@ void adminLogin::on_pushButton_clicked()
                         purchaseQty = in.readLine();
                         status = in.readLine();
 
+                        double Price = price.toDouble();
+                        int PurchaseQty = purchaseQty.toInt();
+
+                        double subtotal = Price * PurchaseQty;
+                        double total = subtotal - (Price * PurchaseQty * 0.0775);
+
+                        QString Subtotal = QString::number(subtotal);
+                        QString Total = QString::number(total);
+
                         qDebug() << "Inserting purchase of " << productName << " for customer " << id;
 
-                        db.exec("insert into salesReport (purchaseDate, id, productName, price, purchaseQty, status, day)"
-                                "values ('"+purchaseDate+"','"+id+"','"+productName+"','"+price+"','"+purchaseQty+"','"+status+"','"+"6"+"')");
+                        db.exec("insert into salesReport (purchaseDate, id, productName, price, purchaseQty, status, day, subtotal, total)"
+                                "values ('"+purchaseDate+"','"+id+"','"+productName+"','"+price+"','"+purchaseQty+"','"+status+"','"+"6"+"', '"+Subtotal+"', '"+Total+"')");
                     }
                 }
                 {//Refreshing Day 7 Sales Report db
@@ -339,10 +396,19 @@ void adminLogin::on_pushButton_clicked()
                         purchaseQty = in.readLine();
                         status = in.readLine();
 
+                        double Price = price.toDouble();
+                        int PurchaseQty = purchaseQty.toInt();
+
+                        double subtotal = Price * PurchaseQty;
+                        double total = subtotal - (Price * PurchaseQty * 0.0775);
+
+                        QString Subtotal = QString::number(subtotal);
+                        QString Total = QString::number(total);
+
                         qDebug() << "Inserting purchase of " << productName << " for customer " << id;
 
-                        db.exec("insert into salesReport (purchaseDate, id, productName, price, purchaseQty, status, day)"
-                                   "values ('"+purchaseDate+"','"+id+"','"+productName+"','"+price+"','"+purchaseQty+"','"+status+"','"+"7"+"')");
+                        db.exec("insert into salesReport (purchaseDate, id, productName, price, purchaseQty, status, day, subtotal, total)"
+                                "values ('"+purchaseDate+"','"+id+"','"+productName+"','"+price+"','"+purchaseQty+"','"+status+"','"+"7"+"', '"+Subtotal+"', '"+Total+"')");
 
                     }
                 }
