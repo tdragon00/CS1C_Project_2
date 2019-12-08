@@ -8,27 +8,7 @@ addMember::addMember(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    conn.connOpen();
-    QSqlQuery* qry = new QSqlQuery(conn.mydb);
-    int idGenerator = 00000;
-    bool pass = true;
-    //while(pass)
-    {
-        idGenerator = qrand()% 89999 + 10000;
-        qry->prepare("SELECT memberNum"
-                     "FROM Customers "
-                     "where salesReport.purchaseDate='"+QString::number(idGenerator)+"'");
-        if(qry->exec())
-        {
-            pass = false;
-        }
-        else
-        {
-            qDebug() << "ERROR";
-        }
-    }
-    conn.close();
-
+    int idGenerator = qrand()% 89999 + 10000;
     ui->idEdit->setText(QString::number(idGenerator));
 }
 
