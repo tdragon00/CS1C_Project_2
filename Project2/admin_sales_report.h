@@ -51,6 +51,10 @@ private slots:
 
     void on_statusDescSort_clicked();
 
+    void on_checkStatusFilter_stateChanged();
+
+    void on_statusFilter_currentIndexChanged();
+
 private:
     Ui::admin_sales_report *ui;
 };
