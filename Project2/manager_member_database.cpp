@@ -80,6 +80,7 @@ void manager_member_database::on_comboBox_currentIndexChanged()
             ui->memberNumEdit->setText(db.value(1).toString());
             ui->statusEdit->setText(db.value(2).toString());
             ui->expirationEdit->setText(db.value(3).toString());
+            ui->PurchaseEdit->setText(db.value(4).toString());
         }
         conn.connClose();
     }
@@ -110,6 +111,7 @@ void manager_member_database::on_listView_clicked(const QModelIndex &index)
             ui->memberNumEdit->setText(db.value(1).toString());
             ui->statusEdit->setText(db.value(2).toString());
             ui->expirationEdit->setText(db.value(3).toString());
+            ui->PurchaseEdit->setText(db.value(4).toString());
         }
         conn.connClose();
     }
@@ -139,6 +141,7 @@ void manager_member_database::on_tableView_activated(const QModelIndex &index)
             ui->memberNumEdit->setText(db.value(1).toString());
             ui->statusEdit->setText(db.value(2).toString());
             ui->expirationEdit->setText(db.value(3).toString());
+            ui->PurchaseEdit->setText(db.value(4).toString());
         }
         conn.connClose();
     }

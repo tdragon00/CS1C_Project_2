@@ -49,7 +49,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -61,7 +61,7 @@
        <x>10</x>
        <y>40</y>
        <width>271</width>
-       <height>181</height>
+       <height>201</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout">
@@ -126,6 +126,16 @@
       </item>
       <item row="3" column="1">
        <widget class="QLineEdit" name="expirationEdit"/>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="Purchase_Value_Label">
+        <property name="text">
+         <string>Total Purchase Value $</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLineEdit" name="PurchaseEdit"/>
       </item>
      </layout>
     </widget>
