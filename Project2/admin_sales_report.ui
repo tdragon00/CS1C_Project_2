@@ -308,6 +308,32 @@
       <string>Item Filter</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="statusAscSort">
+     <property name="geometry">
+      <rect>
+       <x>530</x>
+       <y>0</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Status Sort ASC</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="statusDescSort">
+     <property name="geometry">
+      <rect>
+       <x>530</x>
+       <y>20</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Status Sort DSEC</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="tab_2">
     <attribute name="title">
