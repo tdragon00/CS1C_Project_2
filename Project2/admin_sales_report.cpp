@@ -22,43 +22,17 @@ admin_sales_report::admin_sales_report(QWidget *parent) :
         ui->statusLine->setText("Database Connected...");
 
     {
-        MainWindow conn;
-        QSqlQueryModel * modal = new QSqlQueryModel();
+        QSqlQueryModel *modal = new QSqlQueryModel();
 
         conn.connOpen();
         QSqlQuery* qry = new QSqlQuery(conn.mydb);
 
-        if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == true)
-        {
-            qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
-                         "FROM salesReport "
-                         "INNER JOIN customers ON salesReport.id=customers.memberNum "
-                         "where salesReport.purchaseDate='"+ui->dateFilter->currentText()+"' and customers.name='"+ui->memberFilter->currentText()+"'");
-        }
-        else if(ui->checkDateFilter->isChecked() == false && ui->checkMemberFilter->isChecked() == true)
-        {
-            ui->dateFilter->setEnabled(false);
-            qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
-                         "FROM salesReport "
-                         "INNER JOIN customers ON salesReport.id=customers.memberNum "
-                         "where customers.name='"+ui->memberFilter->currentText()+"'");
-        }
-        else if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == false)
-        {
-            ui->memberFilter->setEnabled(false);
-            qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
-                         "FROM salesReport "
-                         "INNER JOIN customers ON salesReport.id=customers.memberNum "
-                         "where salesReport.purchaseDate='"+ui->dateFilter->currentText()+"'");
-        }
-        else
-        {
-            ui->memberFilter->setEnabled(false);
-            ui->dateFilter->setEnabled(false);
-            qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
-                         "FROM salesReport "
-                         "INNER JOIN customers ON salesReport.id=customers.memberNum");
-        }
+        ui->memberFilter->setEnabled(false);
+        ui->dateFilter->setEnabled(false);
+        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
+                     "FROM salesReport "
+                     "INNER JOIN customers ON salesReport.id=customers.memberNum");
+
         if(qry->exec())
         {
             modal->setQuery(*qry);
@@ -81,9 +55,7 @@ admin_sales_report::admin_sales_report(QWidget *parent) :
         conn.connClose();
     }
     {
-        MainWindow conn;
-        QSqlQueryModel * modal = new QSqlQueryModel();
-
+        QSqlQueryModel *modal = new QSqlQueryModel();
         conn.connOpen();
         QSqlQuery* qry = new QSqlQuery(conn.mydb);
 
@@ -93,7 +65,24 @@ admin_sales_report::admin_sales_report(QWidget *parent) :
             modal->setQuery(*qry);
             ui->memberTable->setModel(modal);
             ui->memberFilter->setModel(modal);
-            ui->salesRepTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+            ui->memberTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+        }
+        else
+        {
+            qDebug() << "ERROR";
+        }
+        conn.connClose();
+    }
+    {
+        QSqlQueryModel *modal = new QSqlQueryModel();
+        conn.connOpen();
+        QSqlQuery* qry = new QSqlQuery(conn.mydb);
+
+        qry->prepare("Select name from items");
+        if(qry->exec())
+        {
+            modal->setQuery(*qry);
+            ui->itemFilter->setModel(modal);
         }
         else
         {
@@ -117,290 +106,27 @@ void admin_sales_report::on_returnButton_clicked()
 
 void admin_sales_report::on_dateFilter_currentIndexChanged()
 {
-    QSqlQueryModel * modal = new QSqlQueryModel();
-
-    conn.connOpen();
-    QSqlQuery* qry = new QSqlQuery(conn.mydb);
-    qry->prepare("select purchaseDate, id, productName, price, purchaseQty, status from salesReport where purchaseDate='"+ui->dateFilter->currentText()+"'");
-    if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == true)
-    {
-        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
-                     "FROM salesReport "
-                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
-                     "where salesReport.purchaseDate='"+ui->dateFilter->currentText()+"' and customers.name='"+ui->memberFilter->currentText()+"'");
-    }
-    else if(ui->checkDateFilter->isChecked() == false && ui->checkMemberFilter->isChecked() == true)
-    {
-        ui->dateFilter->setEnabled(false);
-        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
-                     "FROM salesReport "
-                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
-                     "where customers.name='"+ui->memberFilter->currentText()+"'");
-    }
-    else if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == false)
-    {
-        ui->memberFilter->setEnabled(false);
-        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
-                     "FROM salesReport "
-                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
-                     "where salesReport.purchaseDate='"+ui->dateFilter->currentText()+"'");
-    }
-    else
-    {
-        ui->memberFilter->setEnabled(false);
-        ui->dateFilter->setEnabled(false);
-        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
-                     "FROM salesReport "
-                     "INNER JOIN customers ON salesReport.id=customers.memberNum");
-    }
-
-    if(qry->exec())
-    {
-        modal->setQuery(*qry);
-        qDebug() << "Setting Header Titles . . . ";
-        modal->setHeaderData(0, Qt::Horizontal, tr("Date"));
-        modal->setHeaderData(1, Qt::Horizontal, tr("Name"));
-        modal->setHeaderData(2, Qt::Horizontal, tr("ID"));
-        modal->setHeaderData(3, Qt::Horizontal, tr("Product"));
-        modal->setHeaderData(4, Qt::Horizontal, tr("Price"));
-        modal->setHeaderData(5, Qt::Horizontal, tr("Quantity"));
-        modal->setHeaderData(6, Qt::Horizontal, tr("Status"));
-        qDebug() << "Loading Model into Table . . . ";
-        ui->salesRepTable->setModel(modal);
-    }
-    else
-    {
-        qDebug() << "ERROR";
-    }
-    conn.connClose();
+    refreshDb();
 }
 
 void admin_sales_report::on_memberFilter_currentIndexChanged()
 {
-    QSqlQueryModel * modal = new QSqlQueryModel();
-
-    conn.connOpen();
-    QSqlQuery* qry = new QSqlQuery(conn.mydb);
-    if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == true)
-    {
-        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
-                     "FROM salesReport "
-                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
-                     "where salesReport.purchaseDate='"+ui->dateFilter->currentText()+"' and customers.name='"+ui->memberFilter->currentText()+"'");
-    }
-    else if(ui->checkDateFilter->isChecked() == false && ui->checkMemberFilter->isChecked() == true)
-    {
-        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
-                     "FROM salesReport "
-                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
-                     "where customers.name='"+ui->memberFilter->currentText()+"'");
-    }
-    else if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == false)
-    {
-        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
-                     "FROM salesReport "
-                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
-                     "where salesReport.purchaseDate='"+ui->dateFilter->currentText()+"'");
-    }
-    else
-    {
-        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
-                     "FROM salesReport "
-                     "INNER JOIN customers ON salesReport.id=customers.memberNum");
-    }
-
-    if(qry->exec())
-    {
-        modal->setQuery(*qry);
-        qDebug() << "Setting Header Titles . . . ";
-        modal->setHeaderData(0, Qt::Horizontal, tr("Date"));
-        modal->setHeaderData(1, Qt::Horizontal, tr("Name"));
-        modal->setHeaderData(2, Qt::Horizontal, tr("ID"));
-        modal->setHeaderData(3, Qt::Horizontal, tr("Product"));
-        modal->setHeaderData(4, Qt::Horizontal, tr("Price"));
-        modal->setHeaderData(5, Qt::Horizontal, tr("Quantity"));
-        modal->setHeaderData(6, Qt::Horizontal, tr("Status"));
-        qDebug() << "Loading Model into Table . . . ";
-        ui->salesRepTable->setModel(modal);
-    }
-    else
-    {
-        qDebug() << "ERROR";
-    }
-    conn.connClose();
+    refreshDb();
 }
 
 void admin_sales_report::on_checkMemberFilter_stateChanged()
 {
-    QSqlQueryModel * modal = new QSqlQueryModel();
-
-    conn.connOpen();
-    QSqlQuery* qry = new QSqlQuery(conn.mydb);
-    if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == true)
-    {
-        ui->memberFilter->setEnabled(true);
-        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
-                     "FROM salesReport "
-                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
-                     "where salesReport.purchaseDate='"+ui->dateFilter->currentText()+"' and customers.name='"+ui->memberFilter->currentText()+"'");
-    }
-    else if(ui->checkDateFilter->isChecked() == false && ui->checkMemberFilter->isChecked() == true)
-    {
-        ui->memberFilter->setEnabled(false);
-        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
-                     "FROM salesReport "
-                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
-                     "where customers.name='"+ui->memberFilter->currentText()+"'");
-    }
-    else if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == false)
-    {
-        ui->memberFilter->setEnabled(true);
-        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
-                     "FROM salesReport "
-                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
-                     "where salesReport.purchaseDate='"+ui->dateFilter->currentText()+"'");
-    }
-    else
-    {
-        ui->memberFilter->setEnabled(false);
-        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
-                     "FROM salesReport "
-                     "INNER JOIN customers ON salesReport.id=customers.memberNum");
-    }
-
-    if(qry->exec())
-    {
-        modal->setQuery(*qry);
-        qDebug() << "Setting Header Titles . . . ";
-        modal->setHeaderData(0, Qt::Horizontal, tr("Date"));
-        modal->setHeaderData(1, Qt::Horizontal, tr("Name"));
-        modal->setHeaderData(2, Qt::Horizontal, tr("ID"));
-        modal->setHeaderData(3, Qt::Horizontal, tr("Product"));
-        modal->setHeaderData(4, Qt::Horizontal, tr("Price"));
-        modal->setHeaderData(5, Qt::Horizontal, tr("Quantity"));
-        modal->setHeaderData(6, Qt::Horizontal, tr("Status"));
-        qDebug() << "Loading Model into Table . . . ";
-        ui->salesRepTable->setModel(modal);
-    }
-    else
-    {
-        qDebug() << "ERROR";
-    }
-    conn.connClose();
+    refreshDb();
 }
 
 void admin_sales_report::on_checkDateFilter_stateChanged()
 {
-    QSqlQueryModel * modal = new QSqlQueryModel();
-
-    conn.connOpen();
-    QSqlQuery* qry = new QSqlQuery(conn.mydb);
-    if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == true)
-    {
-        ui->dateFilter->setEnabled(true);
-        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
-                     "FROM salesReport "
-                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
-                     "where salesReport.purchaseDate='"+ui->dateFilter->currentText()+"' and customers.name='"+ui->memberFilter->currentText()+"'");
-    }
-    else if(ui->checkDateFilter->isChecked() == false && ui->checkMemberFilter->isChecked() == true)
-    {
-        ui->dateFilter->setEnabled(false);
-        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
-                     "FROM salesReport "
-                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
-                     "where customers.name='"+ui->memberFilter->currentText()+"'");
-    }
-    else if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == false)
-    {
-        ui->dateFilter->setEnabled(true);
-        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
-                     "FROM salesReport "
-                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
-                     "where salesReport.purchaseDate='"+ui->dateFilter->currentText()+"'");
-    }
-    else
-    {
-        ui->dateFilter->setEnabled(false);
-        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
-                     "FROM salesReport "
-                     "INNER JOIN customers ON salesReport.id=customers.memberNum");
-    }
-
-    if(qry->exec())
-    {
-        modal->setQuery(*qry);
-        qDebug() << "Setting Header Titles . . . ";
-        modal->setHeaderData(0, Qt::Horizontal, tr("Date"));
-        modal->setHeaderData(1, Qt::Horizontal, tr("Name"));
-        modal->setHeaderData(2, Qt::Horizontal, tr("ID"));
-        modal->setHeaderData(3, Qt::Horizontal, tr("Product"));
-        modal->setHeaderData(4, Qt::Horizontal, tr("Price"));
-        modal->setHeaderData(5, Qt::Horizontal, tr("Quantity"));
-        modal->setHeaderData(6, Qt::Horizontal, tr("Status"));
-        qDebug() << "Loading Model into Table . . . ";
-        ui->salesRepTable->setModel(modal);
-    }
-    else
-    {
-        qDebug() << "ERROR";
-    }
-    conn.connClose();
+    refreshDb();
 }
 
 void admin_sales_report::on_originalSort_clicked()
 {
-    QSqlQueryModel * modal = new QSqlQueryModel();
-
-    conn.connOpen();
-    QSqlQuery* qry = new QSqlQuery(conn.mydb);
-    if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == true)
-    {
-        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
-                     "FROM salesReport "
-                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
-                     "where salesReport.purchaseDate='"+ui->dateFilter->currentText()+"' and customers.name='"+ui->memberFilter->currentText()+"' ");
-    }
-    else if(ui->checkDateFilter->isChecked() == false && ui->checkMemberFilter->isChecked() == true)
-    {
-        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
-                     "FROM salesReport "
-                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
-                     "where customers.name='"+ui->memberFilter->currentText()+"' ");
-    }
-    else if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == false)
-    {
-        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
-                     "FROM salesReport "
-                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
-                     "where salesReport.purchaseDate='"+ui->dateFilter->currentText()+"' ");
-    }
-    else
-    {
-        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
-                     "FROM salesReport "
-                     "INNER JOIN customers ON salesReport.id=customers.memberNum ");
-    }
-
-    if(qry->exec())
-    {
-        modal->setQuery(*qry);
-        qDebug() << "Setting Header Titles . . . ";
-        modal->setHeaderData(0, Qt::Horizontal, tr("Date"));
-        modal->setHeaderData(1, Qt::Horizontal, tr("Name"));
-        modal->setHeaderData(2, Qt::Horizontal, tr("ID"));
-        modal->setHeaderData(3, Qt::Horizontal, tr("Product"));
-        modal->setHeaderData(4, Qt::Horizontal, tr("Price"));
-        modal->setHeaderData(5, Qt::Horizontal, tr("Quantity"));
-        modal->setHeaderData(6, Qt::Horizontal, tr("Status"));
-        qDebug() << "Loading Model into Table . . . ";
-        ui->salesRepTable->setModel(modal);
-    }
-    else
-    {
-        qDebug() << "ERROR";
-    }
-    conn.connClose();
+    refreshDb();
 }
 
 void admin_sales_report::on_idAscSort_clicked()
@@ -409,32 +135,88 @@ void admin_sales_report::on_idAscSort_clicked()
 
     conn.connOpen();
     QSqlQuery* qry = new QSqlQuery(conn.mydb);
-    if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == true)
+    if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == true && ui->checkItemFilter->isChecked() == true)
     {
+        ui->memberFilter->setEnabled(true);
+        ui->dateFilter->setEnabled(true);
+        ui->itemFilter->setEnabled(true);
+        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
+                     "FROM salesReport "
+                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
+                     "where salesReport.purchaseDate='"+ui->dateFilter->currentText()+"' and customers.name='"+ui->memberFilter->currentText()+"' and salesReport.productName='"+ui->itemFilter->currentText()+"' "
+                     "ORDER by salesReport.id ASC");
+    }
+    else if(ui->checkDateFilter->isChecked() == false && ui->checkMemberFilter->isChecked() == true && ui->checkItemFilter->isChecked() == true)
+    {
+        ui->memberFilter->setEnabled(false);
+        ui->itemFilter->setEnabled(true);
+        ui->dateFilter->setEnabled(false);
+        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
+                     "FROM salesReport "
+                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
+                     "where customers.name='"+ui->memberFilter->currentText()+"' and salesReport.productName'"+ui->itemFilter->currentText()+"' "
+                     "ORDER BY salesReport.id ASC");
+    }
+    else if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == false && ui->checkItemFilter->isChecked() == true)
+    {
+        ui->memberFilter->setEnabled(false);
+        ui->itemFilter->setEnabled(true);
+        ui->dateFilter->setEnabled(true);
+        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
+                     "FROM salesReport "
+                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
+                     "where salesReport.purchaseDate='"+ui->dateFilter->currentText()+"' and salesReport.productName'"+ui->itemFilter->currentText()+"' "
+                     "ORDER BY salesReport.id ASC");
+    }
+    else if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == true && ui->checkItemFilter->isChecked() == false)
+    {
+        ui->memberFilter->setEnabled(true);
+        ui->itemFilter->setEnabled(false);
+        ui->dateFilter->setEnabled(true);
         qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
                      "FROM salesReport "
                      "INNER JOIN customers ON salesReport.id=customers.memberNum "
                      "where salesReport.purchaseDate='"+ui->dateFilter->currentText()+"' and customers.name='"+ui->memberFilter->currentText()+"' "
                      "ORDER BY salesReport.id ASC");
     }
-    else if(ui->checkDateFilter->isChecked() == false && ui->checkMemberFilter->isChecked() == true)
+    else if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == false && ui->checkItemFilter->isChecked() == false)
     {
-        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
-                     "FROM salesReport "
-                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
-                     "where customers.name='"+ui->memberFilter->currentText()+"' "
-                     "ORDER BY salesReport.id ASC");
-    }
-    else if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == false)
-    {
+        ui->memberFilter->setEnabled(false);
+        ui->itemFilter->setEnabled(false);
+        ui->dateFilter->setEnabled(true);
         qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
                      "FROM salesReport "
                      "INNER JOIN customers ON salesReport.id=customers.memberNum "
                      "where salesReport.purchaseDate='"+ui->dateFilter->currentText()+"' "
                      "ORDER BY salesReport.id ASC");
     }
+    else if(ui->checkDateFilter->isChecked() == false && ui->checkMemberFilter->isChecked() == true && ui->checkItemFilter->isChecked() == false)
+    {
+        ui->memberFilter->setEnabled(true);
+        ui->itemFilter->setEnabled(false);
+        ui->dateFilter->setEnabled(false);
+        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
+                     "FROM salesReport "
+                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
+                     "where customers.name='"+ui->memberFilter->currentText()+"' "
+                     "ORDER BY salesReport.id ASC");
+    }
+    else if(ui->checkDateFilter->isChecked() == false && ui->checkMemberFilter->isChecked() == false && ui->checkItemFilter->isChecked() == true)
+    {
+        ui->memberFilter->setEnabled(false);
+        ui->itemFilter->setEnabled(true);
+        ui->dateFilter->setEnabled(false);
+        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
+                     "FROM salesReport "
+                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
+                     "where salesReport.productName='"+ui->itemFilter->currentText()+"' "
+                     "ORDER BY salesReport.id ASC");
+    }
     else
     {
+        ui->memberFilter->setEnabled(false);
+        ui->itemFilter->setEnabled(false);
+        ui->dateFilter->setEnabled(false);
         qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
                      "FROM salesReport "
                      "INNER JOIN customers ON salesReport.id=customers.memberNum "
@@ -468,36 +250,209 @@ void admin_sales_report::on_idDescSort_clicked()
 
     conn.connOpen();
     QSqlQuery* qry = new QSqlQuery(conn.mydb);
-    if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == true)
+    if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == true && ui->checkItemFilter->isChecked() == true)
     {
+        ui->memberFilter->setEnabled(true);
+        ui->dateFilter->setEnabled(true);
+        ui->itemFilter->setEnabled(true);
+        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
+                     "FROM salesReport "
+                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
+                     "where salesReport.purchaseDate='"+ui->dateFilter->currentText()+"' and customers.name='"+ui->memberFilter->currentText()+"' and salesReport.productName='"+ui->itemFilter->currentText()+"' "
+                     "ORDER by salesReport.id DESC");
+    }
+    else if(ui->checkDateFilter->isChecked() == false && ui->checkMemberFilter->isChecked() == true && ui->checkItemFilter->isChecked() == true)
+    {
+        ui->memberFilter->setEnabled(false);
+        ui->itemFilter->setEnabled(true);
+        ui->dateFilter->setEnabled(false);
+        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
+                     "FROM salesReport "
+                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
+                     "where customers.name='"+ui->memberFilter->currentText()+"' and salesReport.productName'"+ui->itemFilter->currentText()+"' "
+                     "ORDER BY salesReport.id DESC");
+    }
+    else if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == false && ui->checkItemFilter->isChecked() == true)
+    {
+        ui->memberFilter->setEnabled(false);
+        ui->itemFilter->setEnabled(true);
+        ui->dateFilter->setEnabled(true);
+        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
+                     "FROM salesReport "
+                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
+                     "where salesReport.purchaseDate='"+ui->dateFilter->currentText()+"' and salesReport.productName'"+ui->itemFilter->currentText()+"' "
+                     "ORDER BY salesReport.id DESC");
+    }
+    else if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == true && ui->checkItemFilter->isChecked() == false)
+    {
+        ui->memberFilter->setEnabled(true);
+        ui->itemFilter->setEnabled(false);
+        ui->dateFilter->setEnabled(true);
         qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
                      "FROM salesReport "
                      "INNER JOIN customers ON salesReport.id=customers.memberNum "
                      "where salesReport.purchaseDate='"+ui->dateFilter->currentText()+"' and customers.name='"+ui->memberFilter->currentText()+"' "
                      "ORDER BY salesReport.id DESC");
     }
-    else if(ui->checkDateFilter->isChecked() == false && ui->checkMemberFilter->isChecked() == true)
+    else if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == false && ui->checkItemFilter->isChecked() == false)
     {
-        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
-                     "FROM salesReport "
-                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
-                     "where customers.name='"+ui->memberFilter->currentText()+"' "
-                     "ORDER BY salesReport.id DESC");
-    }
-    else if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == false)
-    {
+        ui->memberFilter->setEnabled(false);
+        ui->itemFilter->setEnabled(false);
+        ui->dateFilter->setEnabled(true);
         qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
                      "FROM salesReport "
                      "INNER JOIN customers ON salesReport.id=customers.memberNum "
                      "where salesReport.purchaseDate='"+ui->dateFilter->currentText()+"' "
                      "ORDER BY salesReport.id DESC");
     }
+    else if(ui->checkDateFilter->isChecked() == false && ui->checkMemberFilter->isChecked() == true && ui->checkItemFilter->isChecked() == false)
+    {
+        ui->memberFilter->setEnabled(true);
+        ui->itemFilter->setEnabled(false);
+        ui->dateFilter->setEnabled(false);
+        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
+                     "FROM salesReport "
+                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
+                     "where customers.name='"+ui->memberFilter->currentText()+"' "
+                     "ORDER BY salesReport.id DESC");
+    }
+    else if(ui->checkDateFilter->isChecked() == false && ui->checkMemberFilter->isChecked() == false && ui->checkItemFilter->isChecked() == true)
+    {
+        ui->memberFilter->setEnabled(false);
+        ui->itemFilter->setEnabled(true);
+        ui->dateFilter->setEnabled(false);
+        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
+                     "FROM salesReport "
+                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
+                     "where salesReport.productNamee='"+ui->itemFilter->currentText()+"' "
+                     "ORDER BY salesReport.id DESC");
+    }
     else
     {
+        ui->memberFilter->setEnabled(false);
+        ui->itemFilter->setEnabled(false);
+        ui->dateFilter->setEnabled(false);
         qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
                      "FROM salesReport "
                      "INNER JOIN customers ON salesReport.id=customers.memberNum "
                      "ORDER BY salesReport.id DESC");
+    }
+
+    if(qry->exec())
+    {
+        modal->setQuery(*qry);
+        qDebug() << "Setting Header Titles . . . ";
+        modal->setHeaderData(0, Qt::Horizontal, tr("Date"));
+        modal->setHeaderData(1, Qt::Horizontal, tr("Name"));
+        modal->setHeaderData(2, Qt::Horizontal, tr("ID"));
+        modal->setHeaderData(3, Qt::Horizontal, tr("Product"));
+        modal->setHeaderData(4, Qt::Horizontal, tr("Price"));
+        modal->setHeaderData(5, Qt::Horizontal, tr("Quantity"));
+        modal->setHeaderData(6, Qt::Horizontal, tr("Status"));
+        qDebug() << "Loading Model into Table . . . ";
+        ui->salesRepTable->setModel(modal);
+    }
+    else
+    {
+        qDebug() << "ERROR";
+    }
+    conn.connClose();
+}
+
+void admin_sales_report::on_checkItemFilter_stateChanged()
+{
+    refreshDb();
+}
+
+void admin_sales_report::on_itemFilter_currentIndexChanged()
+{
+    refreshDb();
+}
+
+void admin_sales_report::refreshDb()
+{
+    QSqlQueryModel * modal = new QSqlQueryModel();
+
+    conn.connOpen();
+    QSqlQuery* qry = new QSqlQuery(conn.mydb);
+    if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == true && ui->checkItemFilter->isChecked() == true)
+    {
+        ui->memberFilter->setEnabled(true);
+        ui->dateFilter->setEnabled(true);
+        ui->itemFilter->setEnabled(true);
+        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
+                     "FROM salesReport "
+                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
+                     "where salesReport.purchaseDate='"+ui->dateFilter->currentText()+"' and customers.name='"+ui->memberFilter->currentText()+"' and salesReport.productName='"+ui->itemFilter->currentText()+"'");
+    }
+    else if(ui->checkDateFilter->isChecked() == false && ui->checkMemberFilter->isChecked() == true && ui->checkItemFilter->isChecked() == true)
+    {
+        ui->memberFilter->setEnabled(false);
+        ui->itemFilter->setEnabled(true);
+        ui->dateFilter->setEnabled(false);
+        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
+                     "FROM salesReport "
+                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
+                     "where customers.name='"+ui->memberFilter->currentText()+"' and salesReport.productName'"+ui->itemFilter->currentText()+"'");
+    }
+    else if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == false && ui->checkItemFilter->isChecked() == true)
+    {
+        ui->memberFilter->setEnabled(false);
+        ui->itemFilter->setEnabled(true);
+        ui->dateFilter->setEnabled(true);
+        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
+                     "FROM salesReport "
+                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
+                     "where salesReport.purchaseDate='"+ui->dateFilter->currentText()+"' and salesReport.productName'"+ui->itemFilter->currentText()+"'");
+    }
+    else if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == true && ui->checkItemFilter->isChecked() == false)
+    {
+        ui->memberFilter->setEnabled(true);
+        ui->itemFilter->setEnabled(false);
+        ui->dateFilter->setEnabled(true);
+        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
+                     "FROM salesReport "
+                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
+                     "where salesReport.purchaseDate='"+ui->dateFilter->currentText()+"' and customers.name='"+ui->memberFilter->currentText()+"'");
+    }
+    else if(ui->checkDateFilter->isChecked() == true && ui->checkMemberFilter->isChecked() == false && ui->checkItemFilter->isChecked() == false)
+    {
+        ui->memberFilter->setEnabled(false);
+        ui->itemFilter->setEnabled(false);
+        ui->dateFilter->setEnabled(true);
+        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
+                     "FROM salesReport "
+                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
+                     "where salesReport.purchaseDate='"+ui->dateFilter->currentText()+"'");
+    }
+    else if(ui->checkDateFilter->isChecked() == false && ui->checkMemberFilter->isChecked() == true && ui->checkItemFilter->isChecked() == false)
+    {
+        ui->memberFilter->setEnabled(true);
+        ui->itemFilter->setEnabled(false);
+        ui->dateFilter->setEnabled(false);
+        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
+                     "FROM salesReport "
+                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
+                     "where customers.name='"+ui->memberFilter->currentText()+"'");
+    }
+    else if(ui->checkDateFilter->isChecked() == false && ui->checkMemberFilter->isChecked() == false && ui->checkItemFilter->isChecked() == true)
+    {
+        ui->memberFilter->setEnabled(false);
+        ui->itemFilter->setEnabled(true);
+        ui->dateFilter->setEnabled(false);
+        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
+                     "FROM salesReport "
+                     "INNER JOIN customers ON salesReport.id=customers.memberNum "
+                     "where salesReport.productName='"+ui->itemFilter->currentText()+"'");
+    }
+    else
+    {
+        ui->memberFilter->setEnabled(false);
+        ui->itemFilter->setEnabled(false);
+        ui->dateFilter->setEnabled(false);
+        qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
+                     "FROM salesReport "
+                     "INNER JOIN customers ON salesReport.id=customers.memberNum");
     }
 
     if(qry->exec())

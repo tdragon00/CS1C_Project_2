@@ -17,6 +17,8 @@ public:
     explicit admin_sales_report(QWidget *parent = nullptr);
     ~admin_sales_report();
 
+    void refreshDb();
+
 private slots:
     void on_returnButton_clicked();
 
@@ -33,6 +35,10 @@ private slots:
     void on_idAscSort_clicked();
 
     void on_idDescSort_clicked();
+
+    void on_checkItemFilter_stateChanged();
+
+    void on_itemFilter_currentIndexChanged();
 
 private:
     Ui::admin_sales_report *ui;
