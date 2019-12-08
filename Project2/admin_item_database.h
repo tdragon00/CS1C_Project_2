@@ -39,6 +39,8 @@ private slots:
 
     void on_itemsTable_activated(const QModelIndex &index);
 
+    void on_addButton_clicked();
+
 private:
     Ui::admin_item_database *ui;
 };

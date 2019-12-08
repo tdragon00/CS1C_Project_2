@@ -51,7 +51,7 @@
      </rect>
     </property>
     <property name="readOnly">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QLabel" name="nameLabel">
@@ -129,7 +129,7 @@
      </rect>
     </property>
     <property name="readOnly">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
    </widget>
   </widget>

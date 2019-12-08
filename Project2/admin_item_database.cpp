@@ -2,6 +2,7 @@
 #include "ui_admin_item_database.h"
 
 #include "adminlogin.h"
+#include "addItem.h"
 
 #include <QMessageBox>
 #include <QPixmap>
@@ -184,4 +185,10 @@ void admin_item_database::on_itemsTable_activated(const QModelIndex &index)
     {
         qDebug() << "ERROR";
     }
+}
+
+void admin_item_database::on_addButton_clicked()
+{
+    addItem *AddItem = new addItem;
+    AddItem -> show();
 }
