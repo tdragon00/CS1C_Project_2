@@ -106,7 +106,26 @@ void adminLogin::on_pushButton_clicked()
             }
             else if(ui->dbBox->currentText() == "Items")
             {
+                qDebug() << "Deleting items db";
+                db.exec("delete from items");
 
+                qDebug() << "Begining extraction of Items from sales report";
+
+                db.prepare("INSERT into items (name, price) "
+                           "SELECT DISTINCT salesReport.productName, salesReport.price "
+                           "FROM salesReport "
+                           "LEFT JOIN items "
+                           "ON salesReport.productName=items.name "
+                           "WHERE items.name IS NULL");
+
+               if(db.exec())
+               {
+
+               }
+               else
+               {
+                   qDebug() << "ERROR";
+               }
             }
             else if(ui->dbBox->currentText() == "Sales Report")
             {
