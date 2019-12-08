@@ -117,6 +117,7 @@ void admin_sales_report::on_returnButton_clicked()
 
 void admin_sales_report::on_dateFilter_currentIndexChanged()
 {
+    MainWindow conn;
     QSqlQueryModel * modal = new QSqlQueryModel();
 
     conn.connOpen();
@@ -177,6 +178,7 @@ void admin_sales_report::on_dateFilter_currentIndexChanged()
 
 void admin_sales_report::on_memberFilter_currentIndexChanged()
 {
+    MainWindow conn;
     QSqlQueryModel * modal = new QSqlQueryModel();
 
     conn.connOpen();
@@ -232,6 +234,7 @@ void admin_sales_report::on_memberFilter_currentIndexChanged()
 
 void admin_sales_report::on_checkMemberFilter_stateChanged()
 {
+    MainWindow conn;
     QSqlQueryModel * modal = new QSqlQueryModel();
 
     conn.connOpen();
@@ -291,6 +294,7 @@ void admin_sales_report::on_checkMemberFilter_stateChanged()
 
 void admin_sales_report::on_checkDateFilter_stateChanged()
 {
+    MainWindow conn;
     QSqlQueryModel * modal = new QSqlQueryModel();
 
     conn.connOpen();
@@ -350,6 +354,7 @@ void admin_sales_report::on_checkDateFilter_stateChanged()
 
 void admin_sales_report::on_originalSort_clicked()
 {
+    MainWindow conn;
     QSqlQueryModel * modal = new QSqlQueryModel();
 
     conn.connOpen();
@@ -405,6 +410,7 @@ void admin_sales_report::on_originalSort_clicked()
 
 void admin_sales_report::on_idAscSort_clicked()
 {
+    MainWindow conn;
     QSqlQueryModel * modal = new QSqlQueryModel();
 
     conn.connOpen();
@@ -464,6 +470,7 @@ void admin_sales_report::on_idAscSort_clicked()
 
 void admin_sales_report::on_idDescSort_clicked()
 {
+    MainWindow conn;
     QSqlQueryModel * modal = new QSqlQueryModel();
 
     conn.connOpen();
