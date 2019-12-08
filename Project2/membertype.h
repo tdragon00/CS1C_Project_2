@@ -80,6 +80,9 @@ public:
 
     //! Returns the member's total rebate from the total purchases
     double getRebate() const;
+
+    //OVERLOAD
+    memberType operator = ( memberType const & other);
 };
 
 #endif // MEMBERTYPE_H

@@ -8,6 +8,7 @@ userData::userData()
     password = "null";
     rank = 0;
 }
+
  userData::userData(string first, string last, string user, string pass, int r)
  {
      fName = first;
@@ -16,10 +17,12 @@ userData::userData()
      password = pass;
      rank = r;
  }
+
  void userData::setfName(string first)
  {
      fName = first;
  }
+
  void userData::setlName(string last)
  {
      lName = last;
@@ -29,10 +32,12 @@ userData::userData()
  {
      userID = user;
  }
+
  void userData::setPassword(string pass)
  {
      password = pass;
  }
+
  void userData::setRank(int r)
  {
      rank = r;
@@ -42,26 +47,32 @@ userData::userData()
  {
      first = fName;
  }
+
  void userData::getlName(string& last) const
  {
      last = lName;
  }
+
  void userData::getUserId(string& user) const
  {
      user = userID;
  }
+
  void userData::getPassword(string& pass) const
  {
      pass = password;
  }
+
  void userData::getRank(int& r) const
  {
      r = rank;
  }
+
  void userData::incUserCount()
  {
      userCount++;
  }
+
  void userData::decUserCount()
  {
      userCount--;
