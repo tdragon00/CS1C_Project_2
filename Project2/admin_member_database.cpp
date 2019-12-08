@@ -2,6 +2,7 @@
 #include "ui_admin_member_database.h"
 
 #include "adminlogin.h"
+#include "addmember.h"
 
 #include <QMessageBox>
 #include <QPixmap>
@@ -187,4 +188,10 @@ void Admin_Member_Database::on_deleteButton_clicked()
     {
         qDebug() << "ERROR";
     }
+}
+
+void Admin_Member_Database::on_pushButton_clicked()
+{
+    addMember *AddMember = new addMember;
+    AddMember -> show();
 }
