@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+
     QPixmap pix(":/images/Resource Stuff/BulkClubLogo.png");
 
     int w = ui->Logo->width();

@@ -26,6 +26,11 @@ class MainWindow : public QMainWindow
 
 public:
     QSqlDatabase mydb;
+    static bool Superadmin;
+    bool Is_Admin;
+
+
+
     void connClose()
     {
         mydb.close();
