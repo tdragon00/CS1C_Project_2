@@ -31,6 +31,8 @@ private slots:
 
     void on_itemsButton_clicked();
 
+    void on_Sales_Report_clicked();
+
 private:
     Ui::managerLogin *ui;
 };

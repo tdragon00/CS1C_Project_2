@@ -1,5 +1,8 @@
 #include "admin_sales_report.h"
 #include "ui_admin_sales_report.h"
+#include "mainwindow.h"
+#include "manager_sales_report.h"
+#include "managerlogin.h"
 
 #include "adminlogin.h"
 
@@ -111,8 +114,18 @@ admin_sales_report::~admin_sales_report()
 void admin_sales_report::on_returnButton_clicked()
 {
     hide();
-    adminLogin *administratorLogin = new adminLogin;
-    administratorLogin -> show();
+    if(MainWindow::Is_Admin)
+    {
+    adminLogin *Login = new adminLogin;
+    Login -> show();
+
+    }
+    else if(!MainWindow::Is_Admin)
+    {
+    managerLogin *Login = new managerLogin;
+    Login->show();
+    }
+
 }
 
 void admin_sales_report::on_dateFilter_currentIndexChanged()

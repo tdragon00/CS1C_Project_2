@@ -2,7 +2,7 @@
 
 #include <QApplication>
 
-    bool MainWindow:: Superadmin=false;
+    bool MainWindow:: Superadmin=true;
     bool MainWindow::Is_Admin=false;
 int main(int argc, char *argv[])
 {

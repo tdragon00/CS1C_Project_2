@@ -21,6 +21,10 @@ adminLogin::adminLogin(QWidget *parent) :
         ui->statusLine->setText("Failed to open the database");
     else
         ui->statusLine->setText("Database Connected...");
+    if(!MainWindow::Superadmin)
+    {
+        ui->pushButton_3->hide();
+    }
 }
 
 adminLogin::~adminLogin()
