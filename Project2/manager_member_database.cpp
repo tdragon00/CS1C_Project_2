@@ -208,7 +208,7 @@ void manager_member_database::on_monthSelect_currentIndexChanged()
     conn.connOpen();
     QSqlQuery qry;
     QSqlQueryModel * modal = new QSqlQueryModel();
-    qry.prepare("select * from customers where instr(expDate, '"+numMonth+"', 1)");
+    qry.prepare("select * from customers where instr(expDate, '"+numMonth+"')");
     qry.exec();
     modal->setQuery(qry);
     ui->tableView_2->setModel(modal);
