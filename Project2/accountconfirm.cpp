@@ -1,6 +1,5 @@
 #include "accountconfirm.h"
 #include "ui_accountconfirm.h"
-
 #include "mainwindow.h"
 
 accountConfirm::accountConfirm(QWidget *parent) :

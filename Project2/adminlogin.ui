@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Return to Login Screen</string>
+    <string>Return to login Screen</string>
    </property>
   </widget>
   <widget class="QLabel" name="label">
@@ -71,7 +71,7 @@
      <string>Members</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="itemsButton">
+   <widget class="QPushButton" name="Item_Database">
     <property name="geometry">
      <rect>
       <x>170</x>
@@ -105,9 +105,9 @@
    <widget class="QComboBox" name="dbBox">
     <property name="geometry">
      <rect>
-      <x>48</x>
+      <x>68</x>
       <y>130</y>
-      <width>111</width>
+      <width>91</width>
       <height>22</height>
      </rect>
     </property>
@@ -128,6 +128,7 @@
     </item>
    </widget>
   </widget>
+<<<<<<< HEAD
   <widget class="QLabel" name="statusLine">
    <property name="geometry">
     <rect>
@@ -152,14 +153,34 @@
    </property>
    <property name="title">
     <string/>
+=======
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>100</y>
+     <width>381</width>
+     <height>301</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Sales Reports</string>
+>>>>>>> Lamson
    </property>
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
+<<<<<<< HEAD
       <x>40</x>
       <y>50</y>
       <width>200</width>
       <height>80</height>
+=======
+      <x>20</x>
+      <y>30</y>
+      <width>131</width>
+      <height>71</height>
+>>>>>>> Lamson
      </rect>
     </property>
     <property name="font">
@@ -168,6 +189,7 @@
      </font>
     </property>
     <property name="text">
+<<<<<<< HEAD
      <string>Sales Report</string>
     </property>
    </widget>
@@ -187,6 +209,9 @@
     </property>
     <property name="text">
      <string>Rebate</string>
+=======
+     <string>Purchases</string>
+>>>>>>> Lamson
     </property>
    </widget>
   </widget>

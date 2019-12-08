@@ -1,14 +1,14 @@
 #include "manager_member_database.h"
 #include "ui_manager_member_database.h"
-
+#include "admincreate.h"
+#include "adminlogin.h"
 #include "managerlogin.h"
-
+#include "accountconfirm.h"
+#include "createcheck.h"
 #include <QMessageBox>
 #include <QPixmap>
 #include <QDesktopServices>
 #include <QUrl>
-
-
 manager_member_database::manager_member_database(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::manager_member_database)
@@ -29,8 +29,8 @@ manager_member_database::~manager_member_database()
 void manager_member_database::on_returnButton_clicked()
 {
     hide();
-    managerLogin *managerALogin = new managerLogin;
-    managerALogin -> show();
+    adminLogin *administratorLogin = new adminLogin;
+    administratorLogin -> show();
 }
 
 void manager_member_database::on_loadButton_clicked()
@@ -46,13 +46,17 @@ void manager_member_database::on_loadButton_clicked()
     qry->exec();
     modal->setQuery(*qry);
     ui->tableView->setModel(modal);
-    ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->comboBox->setModel(modal);
     ui->listView->setModel(modal);
     conn.connClose();
 }
 
-void manager_member_database::on_comboBox_currentIndexChanged()
+void manager_member_database::on_tableView_doubleClicked(const QModelIndex &index)
+{
+
+}
+
+void manager_member_database::on_comboBox_currentIndexChanged(const QString &arg1)
 {
     QString name = ui->comboBox->currentText();
 

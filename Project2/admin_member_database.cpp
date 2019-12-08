@@ -1,8 +1,13 @@
 #include "admin_member_database.h"
 #include "ui_admin_member_database.h"
-
 #include "adminlogin.h"
-
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+#include "admincreate.h"
+#include "adminlogin.h"
+#include "managerlogin.h"
+#include "accountconfirm.h"
+#include "createcheck.h"
 #include <QMessageBox>
 #include <QPixmap>
 #include <QDesktopServices>
@@ -46,13 +51,17 @@ void Admin_Member_Database::on_loadButton_clicked()
     qry->exec();
     modal->setQuery(*qry);
     ui->tableView->setModel(modal);
-    ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->comboBox->setModel(modal);
     ui->listView->setModel(modal);
     conn.connClose();
 }
 
-void Admin_Member_Database::on_comboBox_currentIndexChanged()
+void Admin_Member_Database::on_tableView_doubleClicked(const QModelIndex &index)
+{
+
+}
+
+void Admin_Member_Database::on_comboBox_currentIndexChanged(const QString &arg1)
 {
     QString name = ui->comboBox->currentText();
 

@@ -1,12 +1,17 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+<<<<<<< HEAD
 
+=======
+//#include "customerlogin.h"
+//#include "secadminlogin.h"
+//#include "viewdatabase.h"
+>>>>>>> Lamson
 #include "admincreate.h"
 #include "adminlogin.h"
 #include "managerlogin.h"
 #include "accountconfirm.h"
 #include "createcheck.h"
-
 #include <QMessageBox>
 #include <QPixmap>
 #include <QDesktopServices>

@@ -27,10 +27,13 @@ private slots:
 
     void on_Item_Data_clicked();
 
+<<<<<<< HEAD
     void on_rebateButton_clicked();
 
     void on_itemsButton_clicked();
 
+=======
+>>>>>>> Lamson
 private:
     Ui::managerLogin *ui;
 };

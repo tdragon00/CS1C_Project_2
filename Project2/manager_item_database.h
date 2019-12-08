@@ -17,9 +17,6 @@ public:
     explicit manager_item_database(QWidget *parent = nullptr);
     ~manager_item_database();
 
-private slots:
-    void on_returnButton_clicked();
-
 private:
     Ui::manager_item_database *ui;
 };

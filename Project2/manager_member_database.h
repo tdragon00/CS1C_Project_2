@@ -22,7 +22,9 @@ private slots:
 
     void on_loadButton_clicked();
 
-    void on_comboBox_currentIndexChanged();
+    void on_tableView_doubleClicked(const QModelIndex &index);
+
+    void on_comboBox_currentIndexChanged(const QString &arg1);
 
     void on_listView_clicked(const QModelIndex &index);
 
