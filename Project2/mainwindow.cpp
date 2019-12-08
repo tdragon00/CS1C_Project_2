@@ -88,6 +88,7 @@ void MainWindow::on_pushLogin_clicked()
             connClose();
             managerLogin *manLogin = new managerLogin();
             manLogin->show();
+            MainWindow::Is_Admin=false;
         }
         else if (count != 1)
         {
