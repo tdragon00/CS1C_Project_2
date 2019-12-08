@@ -18,7 +18,10 @@ manager_member_database::manager_member_database(QWidget *parent) :
     if (!conn.connOpen())
         ui->statusLine->setText("Failed to open the database");
     else
+    {
         ui->statusLine->setText("Database Connected...");
+    Load_Member_Data();
+    }
 }
 
 manager_member_database::~manager_member_database()
@@ -33,7 +36,7 @@ void manager_member_database::on_returnButton_clicked()
     managerALogin -> show();
 }
 
-void manager_member_database::on_loadButton_clicked()
+void manager_member_database::Load_Member_Data()
 {
     MainWindow conn;
     QSqlQueryModel * modal = new QSqlQueryModel();
@@ -50,6 +53,11 @@ void manager_member_database::on_loadButton_clicked()
     ui->comboBox->setModel(modal);
     ui->listView->setModel(modal);
     conn.connClose();
+}
+
+void manager_member_database::on_loadButton_clicked()
+{
+    Load_Member_Data();
 }
 
 void manager_member_database::on_comboBox_currentIndexChanged()
