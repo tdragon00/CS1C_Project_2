@@ -7,6 +7,7 @@
 #include <QPixmap>
 #include <QDesktopServices>
 #include <QUrl>
+#include <string.h>
 
 
 manager_member_database::manager_member_database(QWidget *parent) :
@@ -131,6 +132,7 @@ void manager_member_database::on_tableView_activated(const QModelIndex &index)
     }
     conn.connOpen();
     QSqlQuery db;
+
     db.prepare("select * from customers where memberNum='"+selected+"' or name='"+selected+"'");
 
     if (db.exec())
@@ -160,51 +162,51 @@ void manager_member_database::on_monthSelect_currentIndexChanged()
 
     if(month == "January")
     {
-        numMonth = "01";
+        numMonth = "01%";
     }
     else if(month == "Feburary")
     {
-        numMonth = "02/";
+        numMonth = "02%";
     }
     else if(month == "March")
     {
-        numMonth = "03";
+        numMonth = "03%";
     }
     else if(month == "April")
     {
-        numMonth = "04";
+        numMonth = "04%";
     }
     else if(month == "May")
     {
-        numMonth = "05";
+        numMonth = "05%";
     }
     else if(month == "June")
     {
-        numMonth = "06";
+        numMonth = "06%";
     }
     else if(month == "July")
     {
-        numMonth = "07";
+        numMonth = "07%";
     }
     else if(month == "August")
     {
-        numMonth = "08";
+        numMonth = "08%";
     }
     else if(month == "September")
     {
-        numMonth = "09";
+        numMonth = "09%";
     }
     else if(month == "October")
     {
-        numMonth = "10";
+        numMonth = "10%";
     }
     else if(month == "November")
     {
-        numMonth = "11";
+        numMonth = "11%";
     }
     else if(month == "December")
     {
-        numMonth = "12";
+        numMonth = "12%";
     }
     else
     {
@@ -219,7 +221,9 @@ void manager_member_database::on_monthSelect_currentIndexChanged()
     conn.connOpen();
     QSqlQuery qry;
     QSqlQueryModel * modal = new QSqlQueryModel();
-    qry.prepare("select * from customers where instr(expDate, '"+numMonth+"')");
+
+    qry.prepare("select * from customers where expDate LIKE '"+numMonth+"' ");
+
     qry.exec();
     modal->setQuery(qry);
     ui->tableView_2->setModel(modal);
@@ -238,7 +242,12 @@ void manager_member_database::on_searchButton_clicked()
     conn.connOpen();
     QSqlQuery qry;
     QSqlQueryModel * modal = new QSqlQueryModel();
-    qry.prepare("select * from customers where memberNum='"+keyTerm+"' or name='"+keyTerm+"'");
+
+
+    qry.prepare("select * from customers "
+                       "WHERE memberNum='"+keyTerm+"' OR (UPPER(name) LIKE UPPER('%"+keyTerm+"%') )");
+
+    //qry.prepare("select * from customers where memberNum='"+keyTerm+"' or name='"+keyTerm+"'");
     qry.exec();
     modal->setQuery(qry);
     ui->tableView_3->setModel(modal);

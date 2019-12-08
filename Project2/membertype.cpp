@@ -114,3 +114,20 @@ double memberType::getRebate() const
 {
     return totalRebate;
 }
+
+//OVERLOAD
+memberType memberType::operator = ( memberType const & otherMember)
+{
+    delete name;
+    name = new QString;
+    *name=otherMember.getName();
+
+    idNumber = otherMember.idNumber;
+    membershipType =  otherMember.membershipType;
+    expirationDate =   otherMember.expirationDate;
+    totalPurchases = otherMember.totalPurchases;
+    totalRebate = otherMember.totalRebate;
+
+    return *this;
+}
+
