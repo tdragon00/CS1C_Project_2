@@ -1,6 +1,7 @@
 #include "manager_member_database.h"
 #include "manager_item_database.h"
 #include "ui_admin_sales_report.h"
+#include "admin_sales_report.h"
 
 #include "managerlogin.h"
 #include "ui_managerlogin.h"
@@ -66,4 +67,11 @@ void managerLogin::on_itemsButton_clicked()
     hide();
     manager_item_database *Manager_Item_Database =new manager_item_database();
     Manager_Item_Database->show();
+}
+
+void managerLogin::on_Sales_Report_clicked()
+{
+    hide();
+    admin_sales_report *Sales_Report =new admin_sales_report();
+    Sales_Report->show();
 }
