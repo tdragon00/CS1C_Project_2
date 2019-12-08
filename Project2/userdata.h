@@ -16,54 +16,66 @@ using namespace std;
 class userData
 {
 private:
-    string fName;       //string variable to store user's first name
-    string lName;       //string variable to store user's last name
-    string userID;      //string variable to store user's userID
-    string password;    //string variable to store user's password
+    //! string variable to store user's first name-INPUT
+    string fName;
 
+    //! string variable to store user's last name-INPUT
+    string lName;
+
+     //! string variable to store user's userID-INPUT
+    string userID;
+
+     //! string variable to store user's password-INPUT
+    string password;
+
+    //! a variable of type int; it will be used to keep count of the total number of users using the application.
+    //! userCount will only be used with increment and decrement operations.
     int userCount;
-    // userCount is a variable of type int; it will be used to keep count of
-    // the total number of users using the application.
-    // userCount will only be used with increment and decrement operations.
+
+    //! int rank will be used as a method to develop a heirarchy. Such that depending on the
+    //! interface you create your account you will be assigned a corresponding rank.
+    //! Example: rank = 1; Admin
+    //!                 rank = 2; Manager
+    //!                 rank = 0; Null (will have no access to any operations)
     int rank;
-    // int rank will be used as a method to develop a heirarchy. Such that depending on the
-    // interface you create your account you will be assigned a corresponding rank.
-    //              Example: rank = 1; Admin
-    //                       rank = 2; Manager
-    //                       rank = 0; Null (will have no access to any operations)
+
+
 public:
+    //! default constructor of the class, will set all variables to null or 0
     userData();
-    //default constructor of the class, will set all variables to null
+
+    //!constructor using special parameters, taking string fName, string lName, string email
+    //!string phoneNumber, string userId, string password, and an int rank.
     userData(string first, string last, string user, string pass, int r);
-    //constructor using special parameters, taking string fName, string lName, string email
-    // string phoneNumber, string userId, string password, and an int rank.
+
+    //!Set the first name of the user
     void setfName (string f);
-    //Set the first name of the user
+    //! Set the last name of the user
     void setlName (string l);
-    // set the last name of the user
 
+    //! Set the userId of the user
     void setUserID (string u);
-    // set the userId of the user
+    //! Set the password of the user
     void setPassword (string pass);
-    // set the password of the user
+    //! Set the rank of the user
     void setRank (int r);
-    // set the rank of the user
 
+    //! Gets the first name of the user
     void getfName (string& f) const;
-    // get the first name of the user
+    //! Gets the last name of the user
     void getlName (string& l) const;
-
+    //! Get the userId of the user
     void getUserId (string& u) const;
-    // get the userId of the user
+    //! Get the password of the user
     void getPassword (string& pass) const;
-    // get the password of the user
+    //! Get the rank of the user
     void getRank (int& r)const;
-    // get the rank of the user
 
+    //! Function to increment the userCount variable
     void incUserCount();
-    // function to increment the userCount variable
+    //! Function to decrement the userCount variable
     void decUserCount();
-    //function to decrement the userCount variable
+
 
     //~userData();
     //destructor for the class, will delete the object once it is out of scope.
