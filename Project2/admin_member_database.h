@@ -42,6 +42,10 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_monthSelect_currentIndexChanged();
+
+    void on_searchButton_clicked();
+
 
 
 private:
