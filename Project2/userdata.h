@@ -75,13 +75,6 @@ public:
     void incUserCount();
     //! Function to decrement the userCount variable
     void decUserCount();
-
-
-    //~userData();
-    //destructor for the class, will delete the object once it is out of scope.
-    //void print();
-    // print function for the class. Will print all necessary information
-    // related to the class neatly.
 };
 
 #endif // USERDATA_H
