@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     accountconfirm.cpp \
+    additem.cpp \
     addmember.cpp \
     admin_item_database.cpp \
     admin_member_database.cpp \
@@ -39,6 +40,7 @@ SOURCES += \
 
 HEADERS += \
     accountconfirm.h \
+    additem.h \
     addmember.h \
     admin_item_database.h \
     admin_member_database.h \
@@ -60,6 +62,7 @@ HEADERS += \
 
 FORMS += \
     accountconfirm.ui \
+    additem.ui \
     addmember.ui \
     admin_item_database.ui \
     admin_member_database.ui \

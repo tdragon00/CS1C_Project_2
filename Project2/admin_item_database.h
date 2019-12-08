@@ -27,6 +27,18 @@ public:
 private slots:
     void on_returnButton_clicked();
 
+    void on_comboBox_currentIndexChanged(const QString &arg1);
+
+    void on_listView_clicked(const QModelIndex &index);
+
+    void on_updateButton_clicked();
+
+    void on_deleteButton_clicked();
+
+    void on_loadButton_clicked();
+
+    void on_itemsTable_activated(const QModelIndex &index);
+
 private:
     Ui::admin_item_database *ui;
 };
