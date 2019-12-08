@@ -43,3 +43,5 @@ target_wrapper.*
 CMakeLists.txt.user*
 *.user
 Project2/Project2.pro.user
+Project2/Resource Stuff/.DS_Store
+.DS_Store

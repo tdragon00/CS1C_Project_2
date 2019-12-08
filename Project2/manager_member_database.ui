@@ -49,7 +49,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -167,11 +167,237 @@
     <attribute name="title">
      <string>Expiring Members</string>
     </attribute>
+    <widget class="QTableView" name="tableView_2">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>10</y>
+       <width>671</width>
+       <height>481</height>
+      </rect>
+     </property>
+     <property name="sortingEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>261</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>18</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Show Members Expiring In...</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="monthSelect">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>281</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Month</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>January</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Feburary</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>March</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>April</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>May</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>June</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>July</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>August</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>September</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>October</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>November</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>December</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>421</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>18</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Regular Membership Fee- $65.00</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>180</y>
+       <width>441</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>18</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Executive Membership Fee- $120.00</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>291</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+       <weight>75</weight>
+       <italic>true</italic>
+       <bold>true</bold>
+       <underline>true</underline>
+      </font>
+     </property>
+     <property name="text">
+      <string>Reminder...</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="tab_3">
     <attribute name="title">
      <string>Search Members</string>
     </attribute>
+    <widget class="QTableView" name="tableView_3">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>50</y>
+       <width>901</width>
+       <height>481</height>
+      </rect>
+     </property>
+     <property name="sortingEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>20</y>
+       <width>391</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Search for members by name or member number:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="searchBar">
+     <property name="geometry">
+      <rect>
+       <x>430</x>
+       <y>20</y>
+       <width>311</width>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="searchButton">
+     <property name="geometry">
+      <rect>
+       <x>740</x>
+       <y>20</y>
+       <width>113</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Search</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QLabel" name="statusLine">

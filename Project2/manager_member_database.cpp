@@ -149,3 +149,96 @@ void manager_member_database::on_tableView_activated(const QModelIndex &index)
 }
 
 
+
+void manager_member_database::on_monthSelect_currentIndexChanged()
+{
+    QString month = ui->monthSelect->currentText();
+    QString numMonth;
+
+    if(month == "January")
+    {
+        numMonth = "01";
+    }
+    else if(month == "Feburary")
+    {
+        numMonth = "02/";
+    }
+    else if(month == "March")
+    {
+        numMonth = "03";
+    }
+    else if(month == "April")
+    {
+        numMonth = "04";
+    }
+    else if(month == "May")
+    {
+        numMonth = "05";
+    }
+    else if(month == "June")
+    {
+        numMonth = "06";
+    }
+    else if(month == "July")
+    {
+        numMonth = "07";
+    }
+    else if(month == "August")
+    {
+        numMonth = "08";
+    }
+    else if(month == "September")
+    {
+        numMonth = "09";
+    }
+    else if(month == "October")
+    {
+        numMonth = "10";
+    }
+    else if(month == "November")
+    {
+        numMonth = "11";
+    }
+    else if(month == "December")
+    {
+        numMonth = "12";
+    }
+    else
+    {
+        numMonth = "00";
+    }
+
+
+    if (!conn.connOpen())
+    {
+        qDebug() << "Failed To Open the Database";
+    }
+    conn.connOpen();
+    QSqlQuery qry;
+    QSqlQueryModel * modal = new QSqlQueryModel();
+    qry.prepare("select * from customers where instr(expDate, '"+numMonth+"')");
+    qry.exec();
+    modal->setQuery(qry);
+    ui->tableView_2->setModel(modal);
+    ui->tableView_2->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    conn.connClose();
+}
+
+void manager_member_database::on_searchButton_clicked()
+{
+    QString keyTerm = ui->searchBar->text();
+
+    if (!conn.connOpen())
+    {
+        qDebug() << "Failed To Open the Database";
+    }
+    conn.connOpen();
+    QSqlQuery qry;
+    QSqlQueryModel * modal = new QSqlQueryModel();
+    qry.prepare("select * from customers where memberNum='"+keyTerm+"' or name='"+keyTerm+"'");
+    qry.exec();
+    modal->setQuery(qry);
+    ui->tableView_3->setModel(modal);
+    ui->tableView_3->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    conn.connClose();
+}
