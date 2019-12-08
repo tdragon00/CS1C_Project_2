@@ -28,6 +28,10 @@ private slots:
 
     void on_tableView_activated(const QModelIndex &index);
 
+    void on_monthSelect_currentIndexChanged();
+
+    void on_searchButton_clicked();
+
 private:
     Ui::manager_member_database *ui;
 };

@@ -1,7 +1,7 @@
 #include "addmember.h"
 #include "ui_addmember.h"
 
-#include <QRandomGenerator>
+//#include <QRandomGenerator>
 
 addMember::addMember(QWidget *parent) :
     QWidget(parent),
