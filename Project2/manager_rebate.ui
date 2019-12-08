@@ -26,99 +26,6 @@
     <string>Return to Manager</string>
    </property>
   </widget>
-  <widget class="QTabWidget" name="tabWidget">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>50</y>
-     <width>1150</width>
-     <height>550</height>
-    </rect>
-   </property>
-   <property name="currentIndex">
-    <number>1</number>
-   </property>
-   <widget class="QWidget" name="executiveList">
-    <attribute name="title">
-     <string>Executive List</string>
-    </attribute>
-    <widget class="QTableView" name="executiveTable">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>40</y>
-       <width>871</width>
-       <height>431</height>
-      </rect>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="membershipChange">
-    <attribute name="title">
-     <string>Membership Change</string>
-    </attribute>
-    <widget class="QTableView" name="EtoRtable">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>50</y>
-       <width>1111</width>
-       <height>181</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTableView" name="RtoEtable">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>300</y>
-       <width>1111</width>
-       <height>181</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="EtoRlable">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>20</y>
-       <width>191</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Executive to Regular</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="RtoElable">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>260</y>
-       <width>241</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Regular to Executive: 
-Cost for Executive Member $120</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="loadButton">
-     <property name="geometry">
-      <rect>
-       <x>1040</x>
-       <y>490</y>
-       <width>93</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Load Data</string>
-     </property>
-    </widget>
-   </widget>
-  </widget>
   <widget class="QLabel" name="title">
    <property name="geometry">
     <rect>
@@ -143,6 +50,29 @@ Cost for Executive Member $120</string>
    </property>
    <property name="text">
     <string>[+] Status</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="executiveTable">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>110</y>
+     <width>1001</width>
+     <height>431</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="loadButton">
+   <property name="geometry">
+    <rect>
+     <x>1050</x>
+     <y>580</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Load Data</string>
    </property>
   </widget>
  </widget>
