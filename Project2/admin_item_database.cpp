@@ -25,6 +25,7 @@ admin_item_database::admin_item_database(QWidget *parent) :
         ui->statusLine->setText("Database Connected...");
 
     on_loadButton_clicked();
+    Update_Items();
 
 if(!MainWindow::Is_Admin)
 {
@@ -34,6 +35,31 @@ if(!MainWindow::Is_Admin)
 
 
     on_loadButton_clicked();
+
+}
+void admin_item_database::Update_Items()
+{
+    conn.connOpen();
+
+
+
+
+
+
+    QSqlQuery qry;
+    QSqlQueryModel * modal = new QSqlQueryModel();
+
+    qry.prepare("Select productName,purchaseQty,price FROM salesReport GROUP BY productName");
+
+    qry.exec();
+    modal->setQuery(qry);
+    ui->test->setModel(modal);
+    while (qry.next())
+    {
+        qry.prepare("UPDATE ")
+    }
+
+
 
 }
 

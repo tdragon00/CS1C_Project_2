@@ -23,6 +23,7 @@ public:
     MainWindow conn;
     explicit admin_item_database(QWidget *parent = nullptr);
     ~admin_item_database();
+    void Update_Items();
 
 private slots:
     void on_returnButton_clicked();
