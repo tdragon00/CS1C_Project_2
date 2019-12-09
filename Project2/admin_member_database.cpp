@@ -279,7 +279,8 @@ void Admin_Member_Database::on_monthSelect_2_currentIndexChanged()
     QSqlQuery qry;
     QSqlQueryModel * modal = new QSqlQueryModel();
 
-    qry.prepare("select * from customers where expDate LIKE '"+numMonth+"' ");
+    qry.prepare("select * from customers where expDate LIKE '"+numMonth+"' "
+                        "ORDER BY expDate");
 
     qry.exec();
     modal->setQuery(qry);
@@ -312,7 +313,8 @@ void Admin_Member_Database::on_searchButton_5_clicked()
 
 
     qry.prepare("select * from customers "
-                       "WHERE memberNum='"+keyTerm+"' OR (UPPER(name) LIKE UPPER('%"+keyTerm+"%') )");
+                       "WHERE memberNum='"+keyTerm+"' OR (UPPER(name) LIKE UPPER('%"+keyTerm+"%') ) "
+                       "ORDER BY name");
 
     qry.exec();
     modal->setQuery(qry);
