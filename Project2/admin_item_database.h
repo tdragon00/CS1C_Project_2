@@ -41,6 +41,8 @@ private slots:
 
     void on_addButton_clicked();
 
+    void on_searchButton_clicked();
+
 protected:
         void keyPressEvent(QKeyEvent* pe);
 
