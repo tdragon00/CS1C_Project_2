@@ -25,6 +25,8 @@ public:
     explicit Admin_Member_Database(QWidget *parent = nullptr);
     ~Admin_Member_Database();
 
+    void LoadData();
+    
 private slots:
     void on_returnButton_clicked();
 

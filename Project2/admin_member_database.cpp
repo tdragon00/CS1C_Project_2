@@ -41,7 +41,7 @@ void Admin_Member_Database::on_returnButton_clicked()
     administratorLogin -> show();
 }
 
-void Admin_Member_Database::on_loadButton_clicked()
+void Admin_Member_Database::LoadData()
 {
     MainWindow conn;
     QSqlQueryModel * modal = new QSqlQueryModel();
@@ -58,6 +58,11 @@ void Admin_Member_Database::on_loadButton_clicked()
     ui->comboBox->setModel(modal);
     ui->listView->setModel(modal);
     conn.connClose();
+}
+
+void Admin_Member_Database::on_loadButton_clicked()
+{
+    LoadData();
 }
 
 void Admin_Member_Database::on_comboBox_currentIndexChanged()
@@ -114,6 +119,7 @@ void Admin_Member_Database::on_updateButton_clicked()
     {
         qDebug() << "ERROR";
     }
+    LoadData();
 }
 
 void Admin_Member_Database::on_listView_clicked(const QModelIndex &index)
@@ -195,12 +201,15 @@ void Admin_Member_Database::on_deleteButton_clicked()
     {
         qDebug() << "ERROR";
     }
+    LoadData();
 }
 
 void Admin_Member_Database::on_pushButton_clicked()
 {
     addMember *AddMember = new addMember;
     AddMember -> show();
+    //LoadData();
+
 }
 
 void Admin_Member_Database::on_monthSelect_2_currentIndexChanged()
