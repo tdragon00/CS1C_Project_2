@@ -23,7 +23,7 @@ admin_item_database::admin_item_database(QWidget *parent) :
         ui->statusLine->setText("Failed to open the database");
     else
         ui->statusLine->setText("Database Connected...");
-<<<<<<< HEAD
+
     on_loadButton_clicked();
 
 if(!MainWindow::Is_Admin)
@@ -31,10 +31,10 @@ if(!MainWindow::Is_Admin)
     ui->addButton->hide();
     ui->deleteButton->hide();
 }
-=======
+
 
     on_loadButton_clicked();
->>>>>>> b41f593e444cf3be72bc416405392b530fe63a94
+
 }
 
 admin_item_database::~admin_item_database()
