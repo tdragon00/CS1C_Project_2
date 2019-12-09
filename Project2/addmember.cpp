@@ -1,6 +1,6 @@
 #include "addmember.h"
 #include "ui_addmember.h"
-
+#include "admin_member_database.h"
 //#include <QRandomGenerator>
 
 addMember::addMember(QWidget *parent) :
@@ -33,6 +33,7 @@ void addMember::on_addButton_clicked()
     {
         qDebug() << "ERROR";
     }
+
 }
 
 void addMember::on_cancelButton_clicked()

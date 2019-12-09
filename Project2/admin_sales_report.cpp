@@ -32,6 +32,8 @@ admin_sales_report::admin_sales_report(QWidget *parent) :
 
         ui->memberFilter->setEnabled(false);
         ui->dateFilter->setEnabled(false);
+        QString tRev = QString::number(totalRevenue);
+        ui->lineEdit->setText(tRev);
         qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
                      "FROM salesReport "
                      "INNER JOIN customers ON salesReport.id=customers.memberNum");
@@ -98,6 +100,11 @@ admin_sales_report::admin_sales_report(QWidget *parent) :
 admin_sales_report::~admin_sales_report()
 {
     delete ui;
+}
+
+void admin_sales_report::keyPressEvent(QKeyEvent* pe)
+{
+if(pe->key() == Qt::Key_Escape) on_returnButton_clicked();                   //Enter Key works as input for buttonLogin()
 }
 
 void admin_sales_report::on_returnButton_clicked()

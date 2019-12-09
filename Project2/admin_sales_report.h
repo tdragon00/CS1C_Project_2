@@ -8,6 +8,8 @@
 #include <QWidget>
 #include "mainwindow.h"
 
+extern double totalRevenue;
+
 namespace Ui {
 class admin_sales_report;
 }
@@ -54,6 +56,9 @@ private slots:
     void on_checkStatusFilter_stateChanged();
 
     void on_statusFilter_currentIndexChanged();
+
+protected:
+        void keyPressEvent(QKeyEvent* pe);
 
 private:
     Ui::admin_sales_report *ui;

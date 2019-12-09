@@ -26,6 +26,8 @@ public:
 
     void Load_Member_Data();
     
+    void UpdateMembersTotal();
+
 private slots:
     void on_returnButton_clicked();
 
@@ -40,6 +42,9 @@ private slots:
     void on_monthSelect_currentIndexChanged();
 
     void on_searchButton_clicked();
+
+protected:
+        void keyPressEvent(QKeyEvent* pe);
 
 private:
     Ui::manager_member_database *ui;

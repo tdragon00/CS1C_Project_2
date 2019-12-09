@@ -29,6 +29,9 @@ private slots:
 
     void on_loadButton_clicked();
 
+protected:
+        void keyPressEvent(QKeyEvent* pe);
+
 private:
     Ui::manager_rebate *ui;
 };

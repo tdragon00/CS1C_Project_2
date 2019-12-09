@@ -13,30 +13,22 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QPushButton" name="returnButton">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>600</y>
-     <width>149</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Return to Admin Page</string>
-   </property>
-  </widget>
   <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>50</y>
+     <y>70</y>
      <width>1150</width>
-     <height>550</height>
+     <height>531</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="executiveList">
     <attribute name="title">
@@ -45,10 +37,10 @@
     <widget class="QTableView" name="executiveTable">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>30</x>
        <y>30</y>
-       <width>871</width>
-       <height>381</height>
+       <width>1081</width>
+       <height>441</height>
       </rect>
      </property>
     </widget>
@@ -60,9 +52,9 @@
     <widget class="QTableView" name="EtoRtable">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>50</y>
-       <width>871</width>
+       <x>60</x>
+       <y>70</y>
+       <width>1021</width>
        <height>181</height>
       </rect>
      </property>
@@ -70,9 +62,9 @@
     <widget class="QTableView" name="RtoEtable">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>300</y>
-       <width>871</width>
+       <x>60</x>
+       <y>310</y>
+       <width>1021</width>
        <height>181</height>
       </rect>
      </property>
@@ -80,28 +72,56 @@
     <widget class="QLabel" name="EtoRlable">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>20</y>
-       <width>191</width>
-       <height>21</height>
+       <x>40</x>
+       <y>30</y>
+       <width>241</width>
+       <height>31</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>15</pointsize>
+      </font>
+     </property>
      <property name="text">
-      <string>Executive to Regular</string>
+      <string>Executive to Regular:</string>
      </property>
     </widget>
     <widget class="QLabel" name="RtoElable">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>260</y>
+       <x>40</x>
+       <y>270</y>
        <width>241</width>
-       <height>30</height>
+       <height>31</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>15</pointsize>
+      </font>
+     </property>
      <property name="text">
-      <string>Regular to Executive: 
-Cost for Executive Member $120</string>
+      <string>Regular to Executive:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="costLabel">
+     <property name="geometry">
+      <rect>
+       <x>760</x>
+       <y>10</y>
+       <width>371</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>13</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Cost for Regular Membership: $65
+Cost for Executive Membership: $120</string>
      </property>
     </widget>
    </widget>
@@ -109,8 +129,8 @@ Cost for Executive Member $120</string>
   <widget class="QPushButton" name="loadButton">
    <property name="geometry">
     <rect>
-     <x>770</x>
-     <y>30</y>
+     <x>1120</x>
+     <y>610</y>
      <width>93</width>
      <height>28</height>
     </rect>
@@ -119,31 +139,56 @@ Cost for Executive Member $120</string>
     <string>Load Data</string>
    </property>
   </widget>
-  <widget class="QLabel" name="statusLine">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>630</y>
-     <width>141</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>[+] Status</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="title">
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>0</y>
+     <y>10</y>
      <width>1251</width>
-     <height>51</height>
+     <height>61</height>
     </rect>
    </property>
    <property name="text">
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:36pt; font-weight:600;&quot;&gt;REBATE STATUS ADMIN&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>610</y>
+     <width>301</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QPushButton" name="returnButton">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Return to Admin Page</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="statusLine">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>[+] Status</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>
