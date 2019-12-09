@@ -23,6 +23,7 @@ admin_item_database::admin_item_database(QWidget *parent) :
         ui->statusLine->setText("Failed to open the database");
     else
         ui->statusLine->setText("Database Connected...");
+<<<<<<< HEAD
     on_loadButton_clicked();
 
 if(!MainWindow::Is_Admin)
@@ -30,6 +31,10 @@ if(!MainWindow::Is_Admin)
     ui->addButton->hide();
     ui->deleteButton->hide();
 }
+=======
+
+    on_loadButton_clicked();
+>>>>>>> b41f593e444cf3be72bc416405392b530fe63a94
 }
 
 admin_item_database::~admin_item_database()
@@ -171,7 +176,8 @@ void admin_item_database::on_loadButton_clicked()
     conn.connOpen();
     QSqlQuery* qry = new QSqlQuery(conn.mydb);
 
-    qry->prepare("Select name,price, qty, totalRevenue, qtySold from items");
+    qry->prepare("Select name,price, qty, totalRevenue, qtySold from items "
+                          "ORDER BY name ");
 
     qry->exec();
     modal->setQuery(*qry);
@@ -240,7 +246,8 @@ void admin_item_database::on_searchButton_clicked()
 
 
     qry.prepare("SELECT * from items "
-                       "WHERE (UPPER(name) LIKE UPPER('%"+keyTerm+"%') )");
+                       "WHERE (UPPER(name) LIKE UPPER('%"+keyTerm+"%')) "
+                       "ORDER BY name");
 
     qry.exec();
     modal->setQuery(qry);
