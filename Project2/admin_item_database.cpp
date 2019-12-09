@@ -2,6 +2,8 @@
 #include "ui_admin_item_database.h"
 #include "mainwindow.h"
 #include "managerlogin.h"
+#include <QtDebug>
+#include "QDebug"
 
 #include "adminlogin.h"
 #include "addItem.h"
@@ -25,6 +27,7 @@ admin_item_database::admin_item_database(QWidget *parent) :
         ui->statusLine->setText("Database Connected...");
 
     on_loadButton_clicked();
+    Update_Items();
 
 if(!MainWindow::Is_Admin)
 {
@@ -35,6 +38,38 @@ if(!MainWindow::Is_Admin)
 
     on_loadButton_clicked();
 
+}
+void admin_item_database::Update_Items()
+{
+    conn.connOpen();
+    QSqlQuery qry;
+    QSqlQuery updater;
+    QSqlQueryModel * modal = new QSqlQueryModel();
+
+    qry.prepare("Select productName,purchaseQty,price FROM salesReport GROUP BY productName");
+
+    qry.exec();
+    modal->setQuery(qry);
+    ui->test->setModel(modal);
+
+    qDebug() << "BEFORE WHILE LOOP ";
+    qry. first();
+    do
+    {
+        qDebug() << "ENTERING WHILE LOOP qr.next()";
+        qDebug() << "PRODUCT "<< qry.value(0).toString();
+
+        double TR2 = qry.value(1).toInt() * qry.value(2).toDouble();
+
+        updater.prepare("UPDATE items "
+                        "SET qtySold='"+qry.value(1).toString()+"', totalRevenue='"+QString::number(TR2)+"' "
+                        "WHERE name='"+qry.value(0).toString()+"'");
+
+        updater.exec();
+
+
+    }
+    while (qry.next());
 }
 
 admin_item_database::~admin_item_database()
