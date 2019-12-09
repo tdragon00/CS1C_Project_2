@@ -225,7 +225,8 @@ void admin_item_database::on_searchButton_clicked()
 
 
     qry.prepare("SELECT * from items "
-                       "WHERE (UPPER(name) LIKE UPPER('%"+keyTerm+"%') )");
+                       "WHERE (UPPER(name) LIKE UPPER('%"+keyTerm+"%')) "
+                       "ORDER BY name");
 
     qry.exec();
     modal->setQuery(qry);
