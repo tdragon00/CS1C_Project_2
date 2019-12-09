@@ -64,6 +64,11 @@ manager_member_database::~manager_member_database()
     delete ui;
 }
 
+void manager_member_database::keyPressEvent(QKeyEvent* pe)
+{
+if(pe->key() == Qt::Key_Escape) on_returnButton_clicked();
+}
+
 void manager_member_database::on_returnButton_clicked()
 {
     hide();
@@ -283,7 +288,6 @@ void manager_member_database::on_searchButton_clicked()
     qry.prepare("select * from customers "
                        "WHERE memberNum='"+keyTerm+"' OR (UPPER(name) LIKE UPPER('%"+keyTerm+"%') )");
 
-    //qry.prepare("select * from customers where memberNum='"+keyTerm+"' or name='"+keyTerm+"'");
     qry.exec();
     modal->setQuery(qry);
     ui->tableView_3->setModel(modal);

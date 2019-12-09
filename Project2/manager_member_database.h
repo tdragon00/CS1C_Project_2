@@ -43,6 +43,9 @@ private slots:
 
     void on_searchButton_clicked();
 
+protected:
+        void keyPressEvent(QKeyEvent* pe);
+
 private:
     Ui::manager_member_database *ui;
 };

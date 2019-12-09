@@ -23,6 +23,11 @@ admin_rebate::~admin_rebate()
     delete ui;
 }
 
+void admin_rebate::keyPressEvent(QKeyEvent* pe)
+{
+if(pe->key() == Qt::Key_Escape) on_returnButton_clicked();
+}
+
 //return to admin login page
 void admin_rebate::on_returnButton_clicked()
 {

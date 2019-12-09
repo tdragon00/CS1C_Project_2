@@ -28,6 +28,11 @@ admin_item_database::~admin_item_database()
     delete ui;
 }
 
+void admin_item_database::keyPressEvent(QKeyEvent* pe)
+{
+if(pe->key() == Qt::Key_Escape) on_returnButton_clicked();
+}
+
 void admin_item_database::on_returnButton_clicked()
 {
     hide();
@@ -191,4 +196,36 @@ void admin_item_database::on_addButton_clicked()
 {
     addItem *AddItem = new addItem;
     AddItem -> show();
+}
+
+void admin_item_database::on_searchButton_clicked()
+{
+    QString keyTerm = ui->searchLineEdit->text();
+
+    if (!conn.connOpen())
+    {
+        qDebug() << "Failed To Open the Database";
+    }
+
+    conn.connOpen();
+
+    QSqlQuery qry;
+    QSqlQueryModel * modal = new QSqlQueryModel();
+
+
+    qry.prepare("SELECT * from items "
+                       "WHERE (UPPER(name) LIKE UPPER('%"+keyTerm+"%') )");
+
+    qry.exec();
+    modal->setQuery(qry);
+
+    modal->setHeaderData(0, Qt::Horizontal, tr("Name"));
+    modal->setHeaderData(1, Qt::Horizontal, tr("Price"));
+    modal->setHeaderData(2, Qt::Horizontal, tr("Quantity"));
+    modal->setHeaderData(3, Qt::Horizontal, tr("Total Revenue"));
+    modal->setHeaderData(4, Qt::Horizontal, tr("Quantity Sold"));
+
+    ui->searchItemTable->setModel(modal);
+    ui->searchItemTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    conn.connClose();
 }

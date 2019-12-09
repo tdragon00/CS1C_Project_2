@@ -22,6 +22,11 @@ manager_rebate::~manager_rebate()
     delete ui;
 }
 
+void manager_rebate::keyPressEvent(QKeyEvent* pe)
+{
+if(pe->key() == Qt::Key_Escape) on_returnButton_clicked();
+}
+
 void manager_rebate::on_returnButton_clicked()
 {
     hide();

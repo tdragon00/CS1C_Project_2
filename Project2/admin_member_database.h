@@ -42,11 +42,12 @@ private slots:
 
     void on_pushButton_clicked();
 
-    void on_monthSelect_currentIndexChanged();
+    void on_monthSelect_2_currentIndexChanged();
 
-    void on_searchButton_clicked();
+    void on_searchButton_5_clicked();
 
-
+protected:
+        void keyPressEvent(QKeyEvent* pe);
 
 private:
     Ui::Admin_Member_Database *ui;
