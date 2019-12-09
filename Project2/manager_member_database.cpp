@@ -1,5 +1,6 @@
 #include "manager_member_database.h"
 #include "ui_manager_member_database.h"
+#include  "mainwindow.h"
 
 #include "managerlogin.h"
 
@@ -10,10 +11,38 @@
 #include <string.h>
 
 
+void manager_member_database::UpdateMembersTotal()
+{
+    MainWindow connection;
+    connection.connOpen();
+
+
+        //Automatically summing up all members purchases
+        QSqlQuery  db;
+        db.prepare("SELECT SUM(totalPurchases) FROM CUSTOMERS ");
+    db.exec();
+        int SumContainer=0;
+        int counter=0;
+
+        while(db.next())
+        {
+        SumContainer=SumContainer+db.value(counter).toInt();
+        counter++;
+        }
+        QString s = QString::number(SumContainer);
+        ui->TotalPurchaseEdit->setText(s);
+
+    connection.connClose();
+}
+
 manager_member_database::manager_member_database(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::manager_member_database)
 {
+
+
+
+
     ui->setupUi(this);
 
     if (!conn.connOpen())
@@ -23,7 +52,12 @@ manager_member_database::manager_member_database(QWidget *parent) :
         ui->statusLine->setText("Database Connected...");
     Load_Member_Data();
     }
+
+//opening up the connection
+UpdateMembersTotal();
 }
+
+
 
 manager_member_database::~manager_member_database()
 {
@@ -54,11 +88,13 @@ void manager_member_database::Load_Member_Data()
     ui->comboBox->setModel(modal);
     ui->listView->setModel(modal);
     conn.connClose();
+    UpdateMembersTotal();
 }
 
 void manager_member_database::on_loadButton_clicked()
 {
     Load_Member_Data();
+
 }
 
 void manager_member_database::on_comboBox_currentIndexChanged()

@@ -49,7 +49,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -170,6 +170,29 @@
      </property>
      <property name="sortingEnabled">
       <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="TotalPurchaseEdit">
+     <property name="geometry">
+      <rect>
+       <x>830</x>
+       <y>330</y>
+       <width>130</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>330</y>
+       <width>221</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Total Purchases By All Members : $</string>
      </property>
     </widget>
    </widget>
