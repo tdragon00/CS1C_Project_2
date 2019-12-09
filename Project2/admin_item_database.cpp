@@ -75,17 +75,13 @@ void admin_item_database::Update_Items()
     do
     {
         qDebug() << "ENTERING WHILE LOOP qr.next()";
-        updater.prepare("UPDATE items SET qty=:number, totalRevenue=:total WHERE name=:pname");
-        int number2= qry.value(1).toInt();
-        qDebug()<<"number2 " << number2;
+        qDebug() << "PRODUCT "<< qry.value(0).toString();
 
-        updater.bindValue(":number",number2 );
-        QString pname2= qry.value(0).toString();
-        updater.bindValue(":pname",pname2);
-        qDebug() << "ENTERING WHILE"<<pname2;
+        updater.prepare("UPDATE items SET qtySold='"+qry.value(1).toString()+"', totalRevenue=:total WHERE name='"+qry.value(0).toString()+"'");
 
-        double TR2= number2 *qry.value(2).toDouble();
-        updater.bindValue(":totalRevenue",TR2);
+        double TR2= qry.value(1).toInt() *qry.value(2).toDouble();
+        updater.bindValue(":totalRevenue",QString::number(TR2));
+
         updater.exec();
 
 
