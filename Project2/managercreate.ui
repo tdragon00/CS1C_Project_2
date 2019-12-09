@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Return to Login page</string>
+    <string>Return to Login Page</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_last">
@@ -217,8 +217,8 @@
     <rect>
      <x>380</x>
      <y>330</y>
-     <width>101</width>
-     <height>17</height>
+     <width>127</width>
+     <height>19</height>
     </rect>
    </property>
    <property name="text">

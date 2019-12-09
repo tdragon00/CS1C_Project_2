@@ -283,6 +283,14 @@ void Admin_Member_Database::on_monthSelect_2_currentIndexChanged()
 
     qry.exec();
     modal->setQuery(qry);
+
+    modal->setHeaderData(0, Qt::Horizontal, tr("Name"));
+    modal->setHeaderData(1, Qt::Horizontal, tr("Member Number"));
+    modal->setHeaderData(2, Qt::Horizontal, tr("Membership"));
+    modal->setHeaderData(3, Qt::Horizontal, tr("Expiration Date"));
+    modal->setHeaderData(4, Qt::Horizontal, tr("Total Purchases"));
+    modal->setHeaderData(5, Qt::Horizontal, tr("Total Rebate"));
+
     ui->tableView_5->setModel(modal);
     ui->tableView_5->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     conn.connClose();
@@ -308,6 +316,14 @@ void Admin_Member_Database::on_searchButton_5_clicked()
 
     qry.exec();
     modal->setQuery(qry);
+
+    modal->setHeaderData(0, Qt::Horizontal, tr("Name"));
+    modal->setHeaderData(1, Qt::Horizontal, tr("Member Number"));
+    modal->setHeaderData(2, Qt::Horizontal, tr("Membership"));
+    modal->setHeaderData(3, Qt::Horizontal, tr("Expiration Date"));
+    modal->setHeaderData(4, Qt::Horizontal, tr("Total Purchases"));
+    modal->setHeaderData(5, Qt::Horizontal, tr("Total Rebate"));
+
     ui->tableView_15->setModel(modal);
     ui->tableView_15->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     conn.connClose();
