@@ -49,6 +49,7 @@ void admin_item_database::Update_Items()
 
 
     QSqlQuery qry;
+    QSqlQuery updater;
     QSqlQueryModel * modal = new QSqlQueryModel();
 
     qry.prepare("Select productName,purchaseQty,price FROM salesReport GROUP BY productName");
@@ -57,24 +58,39 @@ void admin_item_database::Update_Items()
     modal->setQuery(qry);
     ui->test->setModel(modal);
     qDebug() << "BEFORE WHILE LOOP ";
-    while (qry.next())
+    //qry.exec();
+
+
+
+
+   {
+
+
+
+
+
+
+   }
+   qry. first();
+    do
     {
         qDebug() << "ENTERING WHILE LOOP qr.next()";
-        qry.prepare("UPDATE items SET qty=:number, totalRevenue=:total WHERE name=:pname");
+        updater.prepare("UPDATE items SET qty=:number, totalRevenue=:total WHERE name=:pname");
         int number2= qry.value(1).toInt();
         qDebug()<<"number2 " << number2;
 
-        qry.bindValue(":number",number2 );
+        updater.bindValue(":number",number2 );
         QString pname2= qry.value(0).toString();
-        qry.bindValue(":pname",pname2);
+        updater.bindValue(":pname",pname2);
+        qDebug() << "ENTERING WHILE"<<pname2;
 
-        int TR2= number2 *qry.value(2).toInt();
-        qry.bindValue(":totalRevenue",TR2);
-        qry.exec();
+        double TR2= number2 *qry.value(2).toDouble();
+        updater.bindValue(":totalRevenue",TR2);
+        updater.exec();
 
 
     }
-
+while (qry.next());
 
 
 }
