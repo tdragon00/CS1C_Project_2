@@ -178,6 +178,10 @@ void adminLogin::on_pushButton_clicked()
                         db.exec("insert into salesReport (purchaseDate, id, productName, price, purchaseQty, day, status, subtotal, total)"
                                 "values ('"+purchaseDate+"','"+id+"','"+productName+"','"+price+"','"+purchaseQty+"','"+"1"+"','"+status+"', '"+Subtotal+"', '"+Total+"')");
 
+//                        db.exec("INSERT INTO salesReport (purchaseDate, id, productName, price, purchaseQty, day, status, subtotal, total) "
+//                                   "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+//                                   "(purchaseDate, id, productName, Price, PurchaseQty, 1, status, subtotal, total");
+
 
                     }
                 }
@@ -220,6 +224,10 @@ void adminLogin::on_pushButton_clicked()
 
                         db.exec("insert into salesReport (purchaseDate, id, productName, price, purchaseQty, day, status, subtotal, total)"
                                 "values ('"+purchaseDate+"','"+id+"','"+productName+"','"+price+"','"+purchaseQty+"','"+"2"+"','"+status+"', '"+Subtotal+"', '"+Total+"')");
+
+//                        db.exec("INSERT INTO salesReport (purchaseDate, id, productName, price, purchaseQty, day, status, subtotal, total) "
+//                                   "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+//                                   "(purchaseDate, id, productName, Price, PurchaseQty, 2, status, subtotal, total");
                     }
                 }
                 {//Refreshing Day 3 Sales Report db
@@ -261,6 +269,10 @@ void adminLogin::on_pushButton_clicked()
 
                         db.exec("insert into salesReport (purchaseDate, id, productName, price, purchaseQty, day, status, subtotal, total)"
                                 "values ('"+purchaseDate+"','"+id+"','"+productName+"','"+price+"','"+purchaseQty+"','"+"3"+"','"+status+"', '"+Subtotal+"', '"+Total+"')");
+
+//                        db.exec("INSERT INTO salesReport (purchaseDate, id, productName, price, purchaseQty, day, status, subtotal, total) "
+//                                   "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+//                                   "(purchaseDate, id, productName, Price, PurchaseQty, 3, status, subtotal, total");
                     }
                 }
                 {//Refreshing Day 4 Sales Report db
@@ -302,6 +314,10 @@ void adminLogin::on_pushButton_clicked()
 
                         db.exec("insert into salesReport (purchaseDate, id, productName, price, purchaseQty, day, status, subtotal, total)"
                                 "values ('"+purchaseDate+"','"+id+"','"+productName+"','"+price+"','"+purchaseQty+"','"+"4"+"','"+status+"', '"+Subtotal+"', '"+Total+"')");
+
+//                        db.exec("INSERT INTO salesReport (purchaseDate, id, productName, price, purchaseQty, day, status, subtotal, total) "
+//                                   "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+//                                   "(purchaseDate, id, productName, Price, PurchaseQty, 4, status, subtotal, total");
                     }
                 }
                 {//Refreshing Day 5 Sales Report db
@@ -343,6 +359,10 @@ void adminLogin::on_pushButton_clicked()
 
                         db.exec("insert into salesReport (purchaseDate, id, productName, price, purchaseQty, day, status, subtotal, total)"
                                 "values ('"+purchaseDate+"','"+id+"','"+productName+"','"+price+"','"+purchaseQty+"','"+"5"+"','"+status+"', '"+Subtotal+"', '"+Total+"')");
+
+//                        db.exec("INSERT INTO salesReport (purchaseDate, id, productName, price, purchaseQty, day, status, subtotal, total) "
+//                                   "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+//                                   "(purchaseDate, id, productName, Price, PurchaseQty, 5, status, subtotal, total");
                     }
                 }
                 {//Refreshing Day 6 Sales Report db
@@ -384,6 +404,10 @@ void adminLogin::on_pushButton_clicked()
 
                         db.exec("insert into salesReport (purchaseDate, id, productName, price, purchaseQty, day, status, subtotal, total)"
                                 "values ('"+purchaseDate+"','"+id+"','"+productName+"','"+price+"','"+purchaseQty+"','"+"6"+"','"+status+"', '"+Subtotal+"', '"+Total+"')");
+
+//                        db.exec("INSERT INTO salesReport (purchaseDate, id, productName, price, purchaseQty, day, status, subtotal, total) "
+//                                   "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+//                                   "(purchaseDate, id, productName, Price, PurchaseQty, 6, status, subtotal, total");
                     }
                 }
                 {//Refreshing Day 7 Sales Report db
@@ -426,11 +450,17 @@ void adminLogin::on_pushButton_clicked()
                         db.exec("insert into salesReport (purchaseDate, id, productName, price, purchaseQty, day, status, subtotal, total)"
                                 "values ('"+purchaseDate+"','"+id+"','"+productName+"','"+price+"','"+purchaseQty+"','"+"7"+"','"+status+"', '"+Subtotal+"', '"+Total+"')");
 
+//                        db.exec("INSERT INTO salesReport (purchaseDate, id, productName, price, purchaseQty, day, status, subtotal, total) "
+//                                   "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+//                                   "(purchaseDate, id, productName, Price, PurchaseQty, 7, status, subtotal, total");
+
                     }
                 }
 
                         qDebug() << "TOTAL REVENUE: " << totalRevenue;
-
+//                        db.exec("SELECT DISTINCT sum(QSqlQuery::value(purchaseQTY))"
+//                                "FROM salesReport"
+//                                "GROUP BY productName")
             }
 
             conn.connClose();
