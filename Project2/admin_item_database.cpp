@@ -198,6 +198,7 @@ void admin_item_database::on_addButton_clicked()
     AddItem -> show();
 }
 
+//When search button is clicked with key word(s)
 void admin_item_database::on_searchButton_clicked()
 {
     QString keyTerm = ui->searchLineEdit->text();
