@@ -57,38 +57,25 @@ void admin_item_database::Update_Items()
     qry.exec();
     modal->setQuery(qry);
     ui->test->setModel(modal);
+
     qDebug() << "BEFORE WHILE LOOP ";
-    //qry.exec();
-
-
-
-
-   {
-
-
-
-
-
-
-   }
-   qry. first();
+    qry. first();
     do
     {
         qDebug() << "ENTERING WHILE LOOP qr.next()";
         qDebug() << "PRODUCT "<< qry.value(0).toString();
 
-        updater.prepare("UPDATE items SET qtySold='"+qry.value(1).toString()+"', totalRevenue=:total WHERE name='"+qry.value(0).toString()+"'");
+        double TR2 = qry.value(1).toInt() * qry.value(2).toDouble();
 
-        double TR2= qry.value(1).toInt() *qry.value(2).toDouble();
-        updater.bindValue(":totalRevenue",QString::number(TR2));
+        updater.prepare("UPDATE items "
+                        "SET qtySold='"+qry.value(1).toString()+"', totalRevenue='"+QString::number(TR2)+"' "
+                        "WHERE name='"+qry.value(0).toString()+"'");
 
         updater.exec();
 
 
     }
-while (qry.next());
-
-
+    while (qry.next());
 }
 
 admin_item_database::~admin_item_database()
