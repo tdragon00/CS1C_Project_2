@@ -20,7 +20,10 @@ void manager_member_database::UpdateMembersTotal()
         //Automatically summing up all members purchases
         QSqlQuery  db;
         db.prepare("SELECT SUM(totalPurchases) FROM CUSTOMERS ");
+
+
     db.exec();
+
         int SumContainer=0;
         int counter=0;
 

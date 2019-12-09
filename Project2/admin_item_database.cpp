@@ -2,6 +2,8 @@
 #include "ui_admin_item_database.h"
 #include "mainwindow.h"
 #include "managerlogin.h"
+#include <QtDebug>
+#include "QDebug"
 
 #include "adminlogin.h"
 #include "addItem.h"
@@ -54,9 +56,23 @@ void admin_item_database::Update_Items()
     qry.exec();
     modal->setQuery(qry);
     ui->test->setModel(modal);
+    qDebug() << "BEFORE WHILE LOOP ";
     while (qry.next())
     {
-        qry.prepare("UPDATE ")
+        qDebug() << "ENTERING WHILE LOOP qr.next()";
+        qry.prepare("UPDATE items SET qty=:number, totalRevenue=:total WHERE name=:pname");
+        int number2= qry.value(1).toInt();
+        qDebug()<<"number2 " << number2;
+
+        qry.bindValue(":number",number2 );
+        QString pname2= qry.value(0).toString();
+        qry.bindValue(":pname",pname2);
+
+        int TR2= number2 *qry.value(2).toInt();
+        qry.bindValue(":totalRevenue",TR2);
+        qry.exec();
+
+
     }
 
 
