@@ -157,6 +157,13 @@ void admin_item_database::on_loadButton_clicked()
 
     qry->exec();
     modal->setQuery(*qry);
+
+    modal->setHeaderData(0, Qt::Horizontal, tr("Name"));
+    modal->setHeaderData(1, Qt::Horizontal, tr("Price"));
+    modal->setHeaderData(2, Qt::Horizontal, tr("Quantity"));
+    modal->setHeaderData(3, Qt::Horizontal, tr("Total Revenue"));
+    modal->setHeaderData(4, Qt::Horizontal, tr("Quantity Sold"));
+
     ui->itemsTable->setModel(modal);
     ui->comboBox->setModel(modal);
     ui->listView->setModel(modal);
