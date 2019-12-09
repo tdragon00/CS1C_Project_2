@@ -49,7 +49,11 @@
     </rect>
    </property>
    <property name="currentIndex">
+<<<<<<< Updated upstream
     <number>0</number>
+=======
+    <number>2</number>
+>>>>>>> Stashed changes
    </property>
    <widget class="QWidget" name="MemberList">
     <attribute name="title">

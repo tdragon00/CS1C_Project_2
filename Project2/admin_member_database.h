@@ -42,7 +42,12 @@ private slots:
 
     void on_pushButton_clicked();
 
+<<<<<<< Updated upstream
+=======
+    void on_monthSelect_2_currentIndexChanged();
+>>>>>>> Stashed changes
 
+    void on_searchButton_5_clicked();
 
 private:
     Ui::Admin_Member_Database *ui;
