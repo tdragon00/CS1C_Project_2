@@ -151,7 +151,7 @@ void adminLogin::on_pushButton_clicked()
                        double TR2 = qry.value(1).toInt() * qry.value(2).toDouble();
 
                        updater.prepare("UPDATE items "
-                                       "SET qtySold='"+qry.value(1).toString()+"', totalRevenue='"+QString::number(TR2)+"' "
+                                       "SET qtySold='"+qry.value(1).toString()+"', qty = 100, totalRevenue='"+QString::number(TR2)+"' "
                                        "WHERE name='"+qry.value(0).toString()+"'");
 
                        updater.exec();

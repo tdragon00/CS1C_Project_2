@@ -65,9 +65,9 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>860</x>
+     <x>895</x>
      <y>610</y>
-     <width>276</width>
+     <width>241</width>
      <height>23</height>
     </rect>
    </property>
@@ -75,7 +75,7 @@
     <item>
      <widget class="QLabel" name="label_8">
       <property name="text">
-       <string>TOTAL REVENUE</string>
+       <string>GRANDTOTAL REVENUE</string>
       </property>
      </widget>
     </item>
@@ -164,10 +164,6 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>880</x>
-     <y>610</y>
-     <width>111</width>
-     <height>20</height>
      <x>20</x>
      <y>80</y>
      <width>321</width>
