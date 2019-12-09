@@ -42,12 +42,6 @@ if(!MainWindow::Is_Admin)
 void admin_item_database::Update_Items()
 {
     conn.connOpen();
-
-
-
-
-
-
     QSqlQuery qry;
     QSqlQuery updater;
     QSqlQueryModel * modal = new QSqlQueryModel();

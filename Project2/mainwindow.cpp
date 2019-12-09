@@ -29,7 +29,6 @@ MainWindow::MainWindow(QWidget *parent)
         ui->Status->setText("Failed to open the database");
     else
         ui->Status->setText("Database Connected...");
-
 }
 
 
