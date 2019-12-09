@@ -2,6 +2,9 @@
 #include "manager_item_database.h"
 #include "ui_admin_sales_report.h"
 #include "admin_sales_report.h"
+#include "admin_item_database.h"
+#include "admin_item_database.h"
+
 
 #include "managerlogin.h"
 #include "ui_managerlogin.h"
@@ -24,6 +27,7 @@ managerLogin::managerLogin( QWidget *parent) :
         ui->statusLine->setText("Failed to open the database");
     else
         ui->statusLine->setText("Database Connected...");
+
 
 //    ui->lineEdit->setText(username);
 }
@@ -70,8 +74,8 @@ void managerLogin::on_rebateButton_clicked()
 void managerLogin::on_itemsButton_clicked()
 {
     hide();
-    manager_item_database *Manager_Item_Database =new manager_item_database();
-    Manager_Item_Database->show();
+    admin_item_database *Manager_Item_database =new admin_item_database();
+    Manager_Item_database->show();
 }
 
 void managerLogin::on_Sales_Report_clicked()

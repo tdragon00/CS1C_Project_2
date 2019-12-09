@@ -1,5 +1,7 @@
 #include "admin_item_database.h"
 #include "ui_admin_item_database.h"
+#include "mainwindow.h"
+#include "managerlogin.h"
 
 #include "adminlogin.h"
 #include "addItem.h"
@@ -21,6 +23,13 @@ admin_item_database::admin_item_database(QWidget *parent) :
         ui->statusLine->setText("Failed to open the database");
     else
         ui->statusLine->setText("Database Connected...");
+    on_loadButton_clicked();
+
+if(!MainWindow::Is_Admin)
+{
+    ui->addButton->hide();
+    ui->deleteButton->hide();
+}
 }
 
 admin_item_database::~admin_item_database()
@@ -36,8 +45,17 @@ if(pe->key() == Qt::Key_Escape) on_returnButton_clicked();
 void admin_item_database::on_returnButton_clicked()
 {
     hide();
+    if(MainWindow::Is_Admin)
+    {
     adminLogin *administratorLogin = new adminLogin;
     administratorLogin -> show();
+    }
+    else if(!MainWindow::Is_Admin)
+    {
+        managerLogin *ManagerLogin = new managerLogin;
+        ManagerLogin->show();
+    }
+
 }
 
 
