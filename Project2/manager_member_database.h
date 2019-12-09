@@ -26,6 +26,8 @@ public:
 
     void Load_Member_Data();
     
+    void UpdateMembersTotal();
+
 private slots:
     void on_returnButton_clicked();
 
