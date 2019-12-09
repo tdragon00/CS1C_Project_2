@@ -8,6 +8,8 @@
 #include <QWidget>
 #include "mainwindow.h"
 
+extern double totalRevenue;
+
 namespace Ui {
 class admin_sales_report;
 }

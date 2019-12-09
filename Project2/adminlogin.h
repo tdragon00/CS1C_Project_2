@@ -8,6 +8,8 @@
 #include <QDialog>
 #include "mainwindow.h"
 
+extern double totalRevenue;
+
 namespace Ui {
 class adminLogin;
 }

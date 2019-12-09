@@ -11,6 +11,8 @@
 #include <QMessageBox>
 #include <QTextStream>
 
+double totalRevenue = 0.0;
+
 adminLogin::adminLogin(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::adminLogin)
@@ -166,6 +168,7 @@ void adminLogin::on_pushButton_clicked()
 
                         double subtotal = Price * PurchaseQty;
                         double total = subtotal - (Price * PurchaseQty * 0.0775);
+                        totalRevenue = totalRevenue + total;
 
                         QString Subtotal = QString::number(subtotal);
                         QString Total = QString::number(total);
@@ -208,6 +211,7 @@ void adminLogin::on_pushButton_clicked()
 
                         double subtotal = Price * PurchaseQty;
                         double total = subtotal - (Price * PurchaseQty * 0.0775);
+                        totalRevenue = totalRevenue + total;
 
                         QString Subtotal = QString::number(subtotal);
                         QString Total = QString::number(total);
@@ -248,6 +252,7 @@ void adminLogin::on_pushButton_clicked()
 
                         double subtotal = Price * PurchaseQty;
                         double total = subtotal - (Price * PurchaseQty * 0.0775);
+                        totalRevenue = totalRevenue + total;
 
                         QString Subtotal = QString::number(subtotal);
                         QString Total = QString::number(total);
@@ -288,6 +293,7 @@ void adminLogin::on_pushButton_clicked()
 
                         double subtotal = Price * PurchaseQty;
                         double total = subtotal - (Price * PurchaseQty * 0.0775);
+                        totalRevenue = totalRevenue + total;
 
                         QString Subtotal = QString::number(subtotal);
                         QString Total = QString::number(total);
@@ -328,6 +334,7 @@ void adminLogin::on_pushButton_clicked()
 
                         double subtotal = Price * PurchaseQty;
                         double total = subtotal - (Price * PurchaseQty * 0.0775);
+                        totalRevenue = totalRevenue + total;
 
                         QString Subtotal = QString::number(subtotal);
                         QString Total = QString::number(total);
@@ -368,6 +375,7 @@ void adminLogin::on_pushButton_clicked()
 
                         double subtotal = Price * PurchaseQty;
                         double total = subtotal - (Price * PurchaseQty * 0.0775);
+                        totalRevenue = totalRevenue + total;
 
                         QString Subtotal = QString::number(subtotal);
                         QString Total = QString::number(total);
@@ -408,6 +416,7 @@ void adminLogin::on_pushButton_clicked()
 
                         double subtotal = Price * PurchaseQty;
                         double total = subtotal - (Price * PurchaseQty * 0.0775);
+                        totalRevenue = totalRevenue + total;
 
                         QString Subtotal = QString::number(subtotal);
                         QString Total = QString::number(total);
@@ -419,6 +428,8 @@ void adminLogin::on_pushButton_clicked()
 
                     }
                 }
+
+                        qDebug() << "TOTAL REVENUE: " << totalRevenue;
 
             }
 
