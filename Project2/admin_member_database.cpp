@@ -197,8 +197,6 @@ void Admin_Member_Database::on_pushButton_clicked()
     addMember *AddMember = new addMember;
     AddMember -> show();
 }
-<<<<<<< Updated upstream
-=======
 
 void Admin_Member_Database::on_monthSelect_2_currentIndexChanged()
 {
@@ -284,7 +282,9 @@ void Admin_Member_Database::on_searchButton_5_clicked()
     {
         qDebug() << "Failed To Open the Database";
     }
+
     conn.connOpen();
+
     QSqlQuery qry;
     QSqlQueryModel * modal = new QSqlQueryModel();
 
@@ -299,4 +299,3 @@ void Admin_Member_Database::on_searchButton_5_clicked()
     conn.connClose();
 }
 
->>>>>>> Stashed changes
