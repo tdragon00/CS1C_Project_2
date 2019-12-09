@@ -84,7 +84,7 @@ void manager_member_database::Load_Member_Data()
     conn.connOpen();
     QSqlQuery* qry = new QSqlQuery(conn.mydb);
 
-    qry->prepare("Select name,memberNum, status, expDate,totalPurchases from customers");
+    qry->prepare("Select name,memberNum, status, expDate,totalPurchases from customers ORDER BY memberNum ASC");
 
     qry->exec();
     modal->setQuery(*qry);
