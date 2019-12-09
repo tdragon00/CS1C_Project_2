@@ -36,7 +36,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab_2">
     <attribute name="title">
@@ -47,7 +47,7 @@
       <rect>
        <x>0</x>
        <y>40</y>
-       <width>321</width>
+       <width>301</width>
        <height>301</height>
       </rect>
      </property>
@@ -57,7 +57,7 @@
      <widget class="QPushButton" name="deleteButton">
       <property name="geometry">
        <rect>
-        <x>190</x>
+        <x>170</x>
         <y>190</y>
         <width>91</width>
         <height>41</height>
@@ -70,7 +70,7 @@
      <widget class="QPushButton" name="updateButton">
       <property name="geometry">
        <rect>
-        <x>50</x>
+        <x>30</x>
         <y>190</y>
         <width>91</width>
         <height>41</height>
@@ -83,7 +83,7 @@
      <widget class="QPushButton" name="addButton">
       <property name="geometry">
        <rect>
-        <x>100</x>
+        <x>80</x>
         <y>250</y>
         <width>131</width>
         <height>41</height>
@@ -93,10 +93,10 @@
        <string>ADD</string>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>0</x>
         <y>30</y>
         <width>301</width>
         <height>121</height>
@@ -163,7 +163,7 @@
     <widget class="QComboBox" name="comboBox">
      <property name="geometry">
       <rect>
-       <x>330</x>
+       <x>310</x>
        <y>10</y>
        <width>211</width>
        <height>51</height>
@@ -173,7 +173,7 @@
     <widget class="QListView" name="listView">
      <property name="geometry">
       <rect>
-       <x>330</x>
+       <x>310</x>
        <y>70</y>
        <width>211</width>
        <height>441</height>
@@ -183,9 +183,9 @@
     <widget class="QTableView" name="itemsTable">
      <property name="geometry">
       <rect>
-       <x>560</x>
+       <x>530</x>
        <y>10</y>
-       <width>621</width>
+       <width>651</width>
        <height>501</height>
       </rect>
      </property>
@@ -208,7 +208,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>100</x>

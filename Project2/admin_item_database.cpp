@@ -21,6 +21,8 @@ admin_item_database::admin_item_database(QWidget *parent) :
         ui->statusLine->setText("Failed to open the database");
     else
         ui->statusLine->setText("Database Connected...");
+
+    on_loadButton_clicked();
 }
 
 admin_item_database::~admin_item_database()
@@ -153,7 +155,8 @@ void admin_item_database::on_loadButton_clicked()
     conn.connOpen();
     QSqlQuery* qry = new QSqlQuery(conn.mydb);
 
-    qry->prepare("Select name,price, qty, totalRevenue, qtySold from items");
+    qry->prepare("Select name,price, qty, totalRevenue, qtySold from items "
+                          "ORDER BY name ");
 
     qry->exec();
     modal->setQuery(*qry);
