@@ -40,6 +40,9 @@ private slots:
 
     void on_Sales_Report_clicked();
 
+protected:
+        void keyPressEvent(QKeyEvent* pe);
+
 private:
     Ui::managerLogin *ui;
 };

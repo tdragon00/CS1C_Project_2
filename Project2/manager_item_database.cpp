@@ -25,6 +25,11 @@ manager_item_database::~manager_item_database()
     delete ui;
 }
 
+void manager_item_database::keyPressEvent(QKeyEvent* pe)
+{
+if(pe->key() == Qt::Key_Escape) on_returnButton_clicked();
+}
+
 void manager_item_database::on_returnButton_clicked()
 {
     hide();

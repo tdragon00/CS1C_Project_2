@@ -24,6 +24,9 @@ public:
     explicit manager_item_database(QWidget *parent = nullptr);
     ~manager_item_database();
 
+protected:
+        void keyPressEvent(QKeyEvent* pe);
+
 private slots:
     void on_returnButton_clicked();
 

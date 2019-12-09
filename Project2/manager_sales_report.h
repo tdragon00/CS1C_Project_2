@@ -27,6 +27,9 @@ public:
 private slots:
     void on_return_2_clicked();
 
+protected:
+        void keyPressEvent(QKeyEvent* pe);
+
 private:
     Ui::Manager_Sales_Report *ui;
 };

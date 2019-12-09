@@ -28,6 +28,11 @@ admin_item_database::~admin_item_database()
     delete ui;
 }
 
+void admin_item_database::keyPressEvent(QKeyEvent* pe)
+{
+if(pe->key() == Qt::Key_Escape) on_returnButton_clicked();
+}
+
 void admin_item_database::on_returnButton_clicked()
 {
     hide();

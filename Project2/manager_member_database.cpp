@@ -30,6 +30,11 @@ manager_member_database::~manager_member_database()
     delete ui;
 }
 
+void manager_member_database::keyPressEvent(QKeyEvent* pe)
+{
+if(pe->key() == Qt::Key_Escape) on_returnButton_clicked();
+}
+
 void manager_member_database::on_returnButton_clicked()
 {
     hide();

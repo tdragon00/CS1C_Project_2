@@ -33,6 +33,11 @@ managerLogin::~managerLogin()
     delete ui;
 }
 
+void managerLogin::keyPressEvent(QKeyEvent* pe)
+{
+if(pe->key() == Qt::Key_Escape) on_backLogin_clicked();
+}
+
 void managerLogin::on_backLogin_clicked()
 {
     hide();

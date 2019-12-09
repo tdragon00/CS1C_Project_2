@@ -55,6 +55,9 @@ private slots:
 
     void on_statusFilter_currentIndexChanged();
 
+protected:
+        void keyPressEvent(QKeyEvent* pe);
+
 private:
     Ui::admin_sales_report *ui;
 };

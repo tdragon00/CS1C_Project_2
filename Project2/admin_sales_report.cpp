@@ -100,6 +100,11 @@ admin_sales_report::~admin_sales_report()
     delete ui;
 }
 
+void admin_sales_report::keyPressEvent(QKeyEvent* pe)
+{
+if(pe->key() == Qt::Key_Escape) on_returnButton_clicked();                   //Enter Key works as input for buttonLogin()
+}
+
 void admin_sales_report::on_returnButton_clicked()
 {
     hide();

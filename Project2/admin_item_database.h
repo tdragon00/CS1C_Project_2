@@ -41,6 +41,9 @@ private slots:
 
     void on_addButton_clicked();
 
+protected:
+        void keyPressEvent(QKeyEvent* pe);
+
 private:
     Ui::admin_item_database *ui;
 };
