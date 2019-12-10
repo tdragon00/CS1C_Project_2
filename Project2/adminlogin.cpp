@@ -105,6 +105,52 @@ void adminLogin::on_pushButton_clicked()
                     db.exec("insert into customers (name, memberNum, status, expDate)"
                             "values ('"+name+"','"+memberNum+"','"+status+"','"+expDate+"')");
                 }
+                {
+                    conn.connOpen();
+                    QSqlQuery qry;
+                    qry.exec("UPDATE customers "
+                             "SET totalPurchases = 0, totalRebate = 0");
+                    QSqlQuery updater;
+                    QSqlQuery update2;
+
+                    int count = -1;
+                    QString tempID[100];
+                    double tempT[100];
+
+                    qry.prepare("Select id,purchaseQty,price FROM salesReport GROUP BY id,productName");
+
+                    qry.exec();
+
+                    qDebug() << "BEFORE WHILE LOOP ";
+                    qry. first();
+                    do
+                    {
+                        count++;
+                        qDebug() << "ENTERING WHILE LOOP qr.next()";
+                        qDebug() << "ID "<< qry.value(0).toString();
+                        tempID[count] = qry.value(0).toString();
+                        double total = qry.value(1).toInt()*qry.value(2).toDouble();
+                        tempT[count] = total;
+                        for(int i = 0; i<count;i++)
+                        {
+                            if(tempID[i] == qry.value(0).toString())
+                            {
+                                tempT[count] = total + tempT[i];
+                            }
+                        }
+
+
+                        updater.prepare("UPDATE customers "
+                                        "SET totalPurchases='"+QString::number(tempT[count])+"', totalRebate='"+QString::number(tempT[count])+"'*.02 "
+                                        "WHERE memberNum='"+qry.value(0).toString()+"'");
+
+                        updater.exec();
+
+
+
+                    }
+                    while (qry.next());
+                }
             }
             else if(ui->dbBox->currentText() == "Items")
             {//Refreshing Items table

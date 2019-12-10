@@ -27,7 +27,6 @@ admin_item_database::admin_item_database(QWidget *parent) :
         ui->statusLine->setText("Database Connected...");
 
     on_loadButton_clicked();
-    Update_Items();
 
 if(!MainWindow::Is_Admin)
 {
