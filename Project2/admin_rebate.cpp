@@ -66,7 +66,7 @@ void admin_rebate::on_loadButton_clicked()
     QSqlQuery* qry2 = new QSqlQuery(conn.mydb);
 
     qry2->prepare("SELECT name, memberNum, totalRebate from customers "
-                           "WHERE totalRebate < 120 AND totalRebate > 0 AND status='Executive' "
+                           "WHERE totalRebate < 120 AND totalRebate >= 0 AND status='Executive' "
                            "ORDER BY memberNum ASC" ) ;
 
     qry2->exec();

@@ -28,7 +28,7 @@ public:
 private slots:
     void on_returnButton_clicked();
 
-    void on_comboBox_currentIndexChanged(const QString &arg1);
+    void on_comboBox_currentIndexChanged();
 
     void on_listView_clicked(const QModelIndex &index);
 

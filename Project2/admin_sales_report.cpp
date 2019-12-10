@@ -48,6 +48,31 @@ admin_sales_report::admin_sales_report(QWidget *parent) :
                      "FROM salesReport "
                      "INNER JOIN customers ON salesReport.id=customers.memberNum");
 
+        QSqlQuery statuses;
+        statuses.exec("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
+                      "FROM salesReport "
+                      "INNER JOIN customers ON salesReport.id=customers.memberNum "
+                      "GROUP BY salesReport.id");
+        int sumE = 0;
+        int sumR = 0;
+        statuses.first();
+        do
+        {
+            if(statuses.value(6) == "Regular")
+            {
+                sumR++;
+            }
+            else
+            {
+                sumE++;
+            }
+        }
+        while(statuses.next());
+
+        ui->lineReg->setText(QString::number(sumR));
+        ui->lineEx->setText(QString::number(sumE));
+
+
         if(qry->exec())
         {
             modal->setQuery(*qry);
@@ -67,6 +92,8 @@ admin_sales_report::admin_sales_report(QWidget *parent) :
         {
             qDebug() << "ERROR";
         }
+
+
         conn.connClose();
     }
     {
@@ -807,6 +834,67 @@ void admin_sales_report::refreshDb()
     {
         qDebug() << "ERROR";
     }
+
+    if(ui->checkDateFilter->isChecked() == true)
+    {
+        QSqlQuery statuses;
+        statuses.prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
+                         "FROM salesReport "
+                         "INNER JOIN customers "
+                         "ON salesReport.id=customers.memberNum "
+                         "GROUP BY salesReport.id,salesReport.purchaseDate");
+        if(!statuses.exec())
+        {
+            qDebug() << "ERROR";
+        }
+        int sumE = 0;
+        int sumR = 0;
+        statuses.first();
+        do
+        {
+            qDebug() << statuses.value(0).toString() << " AND " << ui->dateFilter->currentText();
+            if(statuses.value(0).toString() == ui->dateFilter->currentText())
+            {
+                if(statuses.value(6) == "Regular")
+                {
+                    sumR++;
+                }
+                else
+                {
+                    sumE++;
+                }
+            }
+        }
+        while(statuses.next());
+        ui->lineReg->setText(QString::number(sumR));
+        ui->lineEx->setText(QString::number(sumE));
+    }
+    else
+    {
+        QSqlQuery statuses;
+        statuses.exec("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
+                      "FROM salesReport "
+                      "INNER JOIN customers ON salesReport.id=customers.memberNum "
+                      "GROUP BY salesReport.id");
+        int sumE = 0;
+        int sumR = 0;
+        statuses.first();
+        do
+        {
+            if(statuses.value(6) == "Regular")
+            {
+                sumR++;
+            }
+            else
+            {
+                sumE++;
+            }
+        }
+        while(statuses.next());
+        ui->lineReg->setText(QString::number(sumR));
+        ui->lineEx->setText(QString::number(sumE));
+    }
+
     conn.connClose();
 }
 

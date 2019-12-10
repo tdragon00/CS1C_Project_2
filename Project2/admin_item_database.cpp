@@ -98,7 +98,7 @@ void admin_item_database::on_returnButton_clicked()
 }
 
 
-void admin_item_database::on_comboBox_currentIndexChanged(const QString &arg1)
+void admin_item_database::on_comboBox_currentIndexChanged()
 {
     QString name = ui->comboBox->currentText();
 
@@ -167,7 +167,6 @@ void admin_item_database::on_updateButton_clicked()
     conn.connOpen();
     QSqlQuery db;
     db.prepare("update items set name='"+name+"', price='"+price+"', qty='"+qty+"' where name='"+name+"'");
-
 
     if (db.exec())
     {

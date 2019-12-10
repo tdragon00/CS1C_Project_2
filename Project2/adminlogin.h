@@ -26,6 +26,12 @@ public:
     explicit adminLogin(QWidget *parent = nullptr);
     ~adminLogin();
 
+   void readSalesRep();
+   
+   void readCustomers();
+   
+   void readItems();
+   
 private slots:
     void on_backLogin_clicked();
 
