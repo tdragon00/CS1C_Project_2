@@ -32,7 +32,6 @@ SOURCES += \
     manager_item_database.cpp \
     manager_member_database.cpp \
     manager_rebate.cpp \
-    manager_sales_report.cpp \
     managercreate.cpp \
     managerlogin.cpp \
     membertype.cpp \
@@ -54,7 +53,6 @@ HEADERS += \
     manager_item_database.h \
     manager_member_database.h \
     manager_rebate.h \
-    manager_sales_report.h \
     managercreate.h \
     managerlogin.h \
     membertype.h \
@@ -75,7 +73,6 @@ FORMS += \
     manager_item_database.ui \
     manager_member_database.ui \
     manager_rebate.ui \
-    manager_sales_report.ui \
     managercreate.ui \
     managerlogin.ui
 
