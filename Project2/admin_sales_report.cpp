@@ -31,18 +31,16 @@ admin_sales_report::admin_sales_report(QWidget *parent) :
 
         ui->memberFilter->setEnabled(false);
         ui->dateFilter->setEnabled(false);
-
+/*
         QSqlQuery grab;
-        grab.exec("SELECT totalRevenue "
-                  "FROM items");
+        grab.exec("SELECT SUM(total) "
+                         "FROM salesReport");
         grab.first();
-        double TB = 0.0;
-        do
-        {
-            TB = TB + grab.value(0).toDouble();
-        }
-        while(grab.next());
-        ui->lineEdit->setText(QString::number(TB));
+        double TB = grab.value(0).toDouble();
+
+       qDebug() << "AAAAAA" << QString::number(TB);
+        ui->lineEdit->setText(QString::number(TB));  */
+
         qry->prepare("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
                      "FROM salesReport "
                      "INNER JOIN customers ON salesReport.id=customers.memberNum");
@@ -52,6 +50,7 @@ admin_sales_report::admin_sales_report(QWidget *parent) :
                       "FROM salesReport "
                       "INNER JOIN customers ON salesReport.id=customers.memberNum "
                       "GROUP BY salesReport.id");
+
         int sumE = 0;
         int sumR = 0;
         statuses.first();
@@ -377,7 +376,7 @@ void admin_sales_report::refreshDb()
         int sumR = 0;
         statuses.first();
         do
-        {
+ {
             qDebug() << statuses.value(0).toString() << " AND " << ui->dateFilter->currentText();
             if(statuses.value(0).toString() == ui->dateFilter->currentText())
             {
@@ -390,8 +389,8 @@ void admin_sales_report::refreshDb()
                     sumE++;
                 }
             }
-        }
-        while(statuses.next());
+        } while(statuses.next());
+
         ui->lineReg->setText(QString::number(sumR));
         ui->lineEx->setText(QString::number(sumE));
 
@@ -401,7 +400,8 @@ void admin_sales_report::refreshDb()
             grab.exec("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
                       "FROM salesReport "
                       "INNER JOIN customers ON salesReport.id=customers.memberNum "
-                      "GROUP BY salesReport.productName");
+                      "GROUP BY salesReport.productName, salesReport.purchaseDate ");
+
             grab.first();
             do
             {
@@ -411,6 +411,9 @@ void admin_sales_report::refreshDb()
                 }
             }
             while(grab.next());
+
+            TB = TB + TB * 0.0775;
+
             ui->lineEdit->setText(QString::number(TB));
         }
     }
@@ -441,15 +444,12 @@ void admin_sales_report::refreshDb()
 
         {
             QSqlQuery grab;
-            grab.exec("SELECT totalRevenue "
-                      "FROM items");
+            grab.exec("SELECT SUM(total) "
+                             "FROM salesReport");
             grab.first();
-            double TB = 0.0;
-            do
-            {
-                TB = TB + grab.value(0).toDouble();
-            }
-            while(grab.next());
+            double TB = grab.value(0).toDouble();
+
+           //qDebug() << "AAAAAA" << QString::number(TB);
             ui->lineEdit->setText(QString::number(TB));
         }
     }
