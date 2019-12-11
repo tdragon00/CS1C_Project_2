@@ -28,6 +28,8 @@ public:
     void Calc_Total_Purchases();
 
     void LoadData();
+    void UpdateMembersTotal();
+    void Load_Member_Data();
     
 private slots:
     void on_returnButton_clicked();
@@ -49,6 +51,8 @@ private slots:
     void on_monthSelect_2_currentIndexChanged();
 
     void on_searchButton_5_clicked();
+
+    void on_tableView_5_activated(const QModelIndex &index);
 
 protected:
         void keyPressEvent(QKeyEvent* pe);
