@@ -52,9 +52,9 @@ void Admin_Member_Database::Calc_Total_Purchases()
 
     QSqlQuery qry;
 
-    //!summing up toalpurchases from customers the db
+    //!summing up totalpurchases from customers the db
 
-    qry.prepare("SELECT totalPurchases FROM customers");
+    qry.prepare("SELECT SUM(totalPurchases) FROM customers");
     qry.exec();
 
     //! setting itterator to the front of the values
@@ -62,11 +62,11 @@ void Admin_Member_Database::Calc_Total_Purchases()
 
     //! creating a double to store the total purchases
     double Grand_Total=0;
-    do
+    //do
     {
         Grand_Total=Grand_Total+ qry.value(0).toDouble();
     }
-    while (qry.next());
+    //while (qry.next());
       qDebug()<<"end of loop";
 
     QString QGrand_total= QString::number(Grand_Total);

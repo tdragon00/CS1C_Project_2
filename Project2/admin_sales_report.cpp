@@ -50,7 +50,6 @@ admin_sales_report::admin_sales_report(QWidget *parent) :
                       "FROM salesReport "
                       "INNER JOIN customers ON salesReport.id=customers.memberNum "
                       "GROUP BY salesReport.id");
-
         int sumE = 0;
         int sumR = 0;
         statuses.first();
@@ -85,6 +84,12 @@ admin_sales_report::admin_sales_report(QWidget *parent) :
             qDebug() << "Loading Model into Table . . . ";
             ui->salesRepTable->setModel(modal);
             ui->salesRepTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+            {
+                qry->exec("SELECT DISTINCT purchaseDate "
+                          "FROM salesReport");
+                modal->setQuery(*qry);
+                ui->dateFilter->setModel(modal);
+            }
         }
         else
         {

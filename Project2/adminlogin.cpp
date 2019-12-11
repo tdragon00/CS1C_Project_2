@@ -102,11 +102,12 @@ void adminLogin::readCustomers()
         QSqlQuery updater;
         QSqlQuery update2;
 
-        int count = -1;
+        /*int count = -1;
         QString tempID[100];
-        double tempT[100];
+        double tempT[100];*/
 
-        qry.prepare("Select id,purchaseQty,price FROM salesReport GROUP BY id,productName");
+        qry.prepare("Select id,subtotal "
+                    "FROM salesReport");
 
         qry.exec();
 
@@ -114,7 +115,7 @@ void adminLogin::readCustomers()
         qry. first();
         do
         {
-            count++;
+            /*count++;
             qDebug() << "ENTERING WHILE LOOP qr.next()";
             qDebug() << "ID "<< qry.value(0).toString();
             tempID[count] = qry.value(0).toString();
@@ -126,15 +127,16 @@ void adminLogin::readCustomers()
                 {
                     tempT[count] = total + tempT[i];
                 }
-            }
+            }*/
 
 
-            updater.prepare("UPDATE customers "
-                            "SET totalPurchases='"+QString::number(tempT[count])+"', totalRebate='"+QString::number(tempT[count])+"'*.02 "
+            updater.exec("UPDATE customers "
+                            "SET totalPurchases= totalPurchases + '"+qry.value(1).toString()+"' "
                             "WHERE memberNum='"+qry.value(0).toString()+"'");
 
-            updater.exec();
-
+            updater.exec("UPDATE customers "
+                            "SET totalRebate= totalPurchases *.02 "
+                            "WHERE memberNum='"+qry.value(0).toString()+"'");
 
 
         }
