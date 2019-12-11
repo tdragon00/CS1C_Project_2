@@ -321,6 +321,9 @@
        <height>21</height>
       </rect>
      </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QLineEdit" name="rebateLine">
      <property name="geometry">
@@ -330,6 +333,9 @@
        <width>181</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
      </property>
     </widget>
     <widget class="QLabel" name="label_15">
@@ -366,6 +372,9 @@
        <width>181</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
      </property>
     </widget>
     <widget class="QLabel" name="label_6">
