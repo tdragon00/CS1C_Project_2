@@ -3,12 +3,16 @@
 
 #include "adminlogin.h"
 #include "addmember.h"
+#include"QDebug"
 
 #include <QMessageBox>
 #include <QPixmap>
 #include <QDesktopServices>
 #include <QUrl>
 
+
+
+//constructor
 
 Admin_Member_Database::Admin_Member_Database(QWidget *parent) :
     QDialog(parent),
@@ -23,11 +27,65 @@ Admin_Member_Database::Admin_Member_Database(QWidget *parent) :
 
     on_loadButton_clicked();
 }
-
+//destructor
 Admin_Member_Database::~Admin_Member_Database()
 {
     delete ui;
 }
+
+//refreshor
+void Admin_Member_Database::refresh()
+{
+
+
+Calc_Total_Purchases();
+LoadData();
+
+}
+
+//!calculate purchase total
+
+void Admin_Member_Database::Calc_Total_Purchases()
+{
+MainWindow conn;
+conn.connOpen();
+
+QSqlQuery qry;
+
+//!summing up toalpurchases from customers the db
+
+qry.prepare("SELECT totalPurchases FROM customers");
+qry.exec();
+
+//! setting itterator to the front of the values
+qry.first();
+
+//! creating a double to store the total purchases
+double Grand_Total=0;
+do
+{
+    Grand_Total=Grand_Total+ qry.value(0).toDouble();
+
+
+
+
+
+
+}
+while (qry.next());
+  qDebug()<<"end of loop";
+
+QString QGrand_total= QString::number(Grand_Total);
+ui->TotalPurchaseBox->setText(QGrand_total);
+
+}
+
+
+
+
+
+
+
 
 void Admin_Member_Database::keyPressEvent(QKeyEvent* pe)
 {
@@ -62,7 +120,8 @@ void Admin_Member_Database::LoadData()
 
 void Admin_Member_Database::on_loadButton_clicked()
 {
-    LoadData();
+    //! Triggers a refresh
+    refresh();
 }
 
 void Admin_Member_Database::on_comboBox_currentIndexChanged()
@@ -97,6 +156,7 @@ void Admin_Member_Database::on_comboBox_currentIndexChanged()
 
 void Admin_Member_Database::on_updateButton_clicked()
 {
+    //! triggers a Refresh
     QString name = ui->nameEdit->text();
     QString memberNum = ui->memberNumEdit->text();
     QString status = ui->statusEdit->text();
@@ -121,11 +181,15 @@ void Admin_Member_Database::on_updateButton_clicked()
     {
         qDebug() << "ERROR";
     }
-    LoadData();
+    refresh();
 }
 
 void Admin_Member_Database::on_listView_clicked(const QModelIndex &index)
 {
+
+    //! triggers a refresh
+
+
     QString name = index.data(Qt::DisplayRole).toString();
 
     if (!conn.connOpen())
@@ -204,11 +268,13 @@ void Admin_Member_Database::on_deleteButton_clicked()
     {
         qDebug() << "ERROR";
     }
-    LoadData();
+    refresh();
 }
 
 void Admin_Member_Database::on_pushButton_clicked()
 {
+    //! does not trigger a refresh it opens up a new window
+
     addMember *AddMember = new addMember;
     AddMember -> show();
     //LoadData();

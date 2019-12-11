@@ -513,9 +513,34 @@
     </item>
    </layout>
   </widget>
+  <widget class="QLineEdit" name="TotalPurchaseBox">
+   <property name="geometry">
+    <rect>
+     <x>1090</x>
+     <y>600</y>
+     <width>113</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Totalpurchaselabel">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>600</y>
+     <width>161</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Total purchases by ALL members</string>
+   </property>
+  </widget>
   <zorder>layoutWidget</zorder>
   <zorder>label_5</zorder>
   <zorder>tabWidget</zorder>
+  <zorder>TotalPurchaseBox</zorder>
+  <zorder>Totalpurchaselabel</zorder>
  </widget>
  <resources/>
  <connections/>

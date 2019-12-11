@@ -24,6 +24,8 @@ public:
     MainWindow conn;
     explicit Admin_Member_Database(QWidget *parent = nullptr);
     ~Admin_Member_Database();
+    void refresh();
+    void Calc_Total_Purchases();
 
     void LoadData();
     
