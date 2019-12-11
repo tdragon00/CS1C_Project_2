@@ -49,7 +49,7 @@ void Admin_Member_Database::LoadData()
     conn.connOpen();
     QSqlQuery* qry = new QSqlQuery(conn.mydb);
 
-    qry->prepare("Select name,memberNum, status, expDate from customers");
+    qry->prepare("Select name,memberNum, status, expDate,totalPurchases from customers");
 
     qry->exec();
     modal->setQuery(*qry);
@@ -85,6 +85,7 @@ void Admin_Member_Database::on_comboBox_currentIndexChanged()
             ui->memberNumEdit->setText(db.value(1).toString());
             ui->statusEdit->setText(db.value(2).toString());
             ui->expirationEdit->setText(db.value(3).toString());
+
         }
         conn.connClose();
     }
@@ -100,6 +101,7 @@ void Admin_Member_Database::on_updateButton_clicked()
     QString memberNum = ui->memberNumEdit->text();
     QString status = ui->statusEdit->text();
     QString expDate = ui->expirationEdit->text();
+
 
     if (!conn.connOpen())
     {
@@ -171,6 +173,7 @@ void Admin_Member_Database::on_tableView_activated(const QModelIndex &index)
             ui->memberNumEdit->setText(db.value(1).toString());
             ui->statusEdit->setText(db.value(2).toString());
             ui->expirationEdit->setText(db.value(3).toString());
+
         }
         conn.connClose();
     }

@@ -17,7 +17,7 @@
 #include <QDesktopServices>
 #include <QMessageBox>
 
-
+//
 managerLogin::managerLogin( QWidget *parent) :
     QDialog(parent),
     ui(new Ui::managerLogin)
