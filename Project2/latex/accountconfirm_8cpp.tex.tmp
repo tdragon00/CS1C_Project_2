@@ -1,0 +1,7 @@
+\hypertarget{accountconfirm_8cpp}{}\doxysection{accountconfirm.\+cpp File Reference}
+\label{accountconfirm_8cpp}\index{accountconfirm.cpp@{accountconfirm.cpp}}
+{\ttfamily \#include \char`\"{}accountconfirm.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ui\+\_\+accountconfirm.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mainwindow.\+h\char`\"{}}\newline
+Include dependency graph for accountconfirm.\+cpp\+:
+% FIG 0

@@ -1,0 +1,193 @@
+\hypertarget{classuser_data}{}\doxysection{user\+Data Class Reference}
+\label{classuser_data}\index{userData@{userData}}
+
+
+Class \mbox{\hyperlink{classuser_data}{user\+Data}} is the base class for all the user\textquotesingle{}s information. It will contain all the common information needed for all types of the users, interacting with the application.  
+
+
+
+
+{\ttfamily \#include $<$userdata.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classuser_data_a4571d34d70045774817c83a46cc45f6a}{user\+Data}} ()
+\begin{DoxyCompactList}\small\item\em default constructor of the class, will set all variables to null or 0 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classuser_data_a5162f17798340e84b017645249abc147}{user\+Data}} (string first, string last, string user, string pass, int r)
+\item 
+void \mbox{\hyperlink{classuser_data_a6aaa1c52851810c6a8dc35b19301ea47}{setf\+Name}} (string f)
+\begin{DoxyCompactList}\small\item\em Set the first name of the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classuser_data_ae02c5a80b14524e538d79e1631fea01c}{setl\+Name}} (string l)
+\begin{DoxyCompactList}\small\item\em Set the last name of the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classuser_data_a73cba0d1b1f8e7665518cb13c33625ea}{set\+User\+ID}} (string u)
+\begin{DoxyCompactList}\small\item\em Set the user\+Id of the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classuser_data_a72553160bd07117d9c36046c802d68cb}{set\+Password}} (string pass)
+\begin{DoxyCompactList}\small\item\em Set the password of the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classuser_data_ad85f5ae1a7813f58748ca165d03178ed}{set\+Rank}} (int r)
+\begin{DoxyCompactList}\small\item\em Set the rank of the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classuser_data_aaafe2d46ecda65cd9ae0e186b07bf207}{getf\+Name}} (string \&f) const
+\begin{DoxyCompactList}\small\item\em Gets the first name of the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classuser_data_a1381f826ce227a612494df47bceda8db}{getl\+Name}} (string \&l) const
+\begin{DoxyCompactList}\small\item\em Gets the last name of the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classuser_data_a7c07dba31477aed570cc05bcffa9d86d}{get\+User\+Id}} (string \&u) const
+\begin{DoxyCompactList}\small\item\em Get the user\+Id of the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classuser_data_ac60b670f77e6e27baa37f7bba7c4d795}{get\+Password}} (string \&pass) const
+\begin{DoxyCompactList}\small\item\em Get the password of the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classuser_data_a7c8bd66a58392befad8d8dd297fd2fc8}{get\+Rank}} (int \&r) const
+\begin{DoxyCompactList}\small\item\em Get the rank of the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classuser_data_ab92eb585361bdc22fb6c99a0fc8d56c6}{inc\+User\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Function to increment the user\+Count variable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classuser_data_a7ca27fd73cbb8532e8cf3ff5f540879e}{dec\+User\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Function to decrement the user\+Count variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class \mbox{\hyperlink{classuser_data}{user\+Data}} is the base class for all the user\textquotesingle{}s information. It will contain all the common information needed for all types of the users, interacting with the application. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classuser_data_a4571d34d70045774817c83a46cc45f6a}\label{classuser_data_a4571d34d70045774817c83a46cc45f6a}} 
+\index{userData@{userData}!userData@{userData}}
+\index{userData@{userData}!userData@{userData}}
+\doxysubsubsection{\texorpdfstring{userData()}{userData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily user\+Data\+::user\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+default constructor of the class, will set all variables to null or 0 
+
+\mbox{\Hypertarget{classuser_data_a5162f17798340e84b017645249abc147}\label{classuser_data_a5162f17798340e84b017645249abc147}} 
+\index{userData@{userData}!userData@{userData}}
+\index{userData@{userData}!userData@{userData}}
+\doxysubsubsection{\texorpdfstring{userData()}{userData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily user\+Data\+::user\+Data (\begin{DoxyParamCaption}\item[{string}]{first,  }\item[{string}]{last,  }\item[{string}]{user,  }\item[{string}]{pass,  }\item[{int}]{r }\end{DoxyParamCaption})}
+
+constructor using special parameters, taking string f\+Name, string l\+Name, string email string phone\+Number, string user\+Id, string password, and an int rank. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classuser_data_a7ca27fd73cbb8532e8cf3ff5f540879e}\label{classuser_data_a7ca27fd73cbb8532e8cf3ff5f540879e}} 
+\index{userData@{userData}!decUserCount@{decUserCount}}
+\index{decUserCount@{decUserCount}!userData@{userData}}
+\doxysubsubsection{\texorpdfstring{decUserCount()}{decUserCount()}}
+{\footnotesize\ttfamily void user\+Data\+::dec\+User\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to decrement the user\+Count variable. 
+
+\mbox{\Hypertarget{classuser_data_aaafe2d46ecda65cd9ae0e186b07bf207}\label{classuser_data_aaafe2d46ecda65cd9ae0e186b07bf207}} 
+\index{userData@{userData}!getfName@{getfName}}
+\index{getfName@{getfName}!userData@{userData}}
+\doxysubsubsection{\texorpdfstring{getfName()}{getfName()}}
+{\footnotesize\ttfamily void user\+Data\+::getf\+Name (\begin{DoxyParamCaption}\item[{string \&}]{f }\end{DoxyParamCaption}) const}
+
+
+
+Gets the first name of the user. 
+
+\mbox{\Hypertarget{classuser_data_a1381f826ce227a612494df47bceda8db}\label{classuser_data_a1381f826ce227a612494df47bceda8db}} 
+\index{userData@{userData}!getlName@{getlName}}
+\index{getlName@{getlName}!userData@{userData}}
+\doxysubsubsection{\texorpdfstring{getlName()}{getlName()}}
+{\footnotesize\ttfamily void user\+Data\+::getl\+Name (\begin{DoxyParamCaption}\item[{string \&}]{l }\end{DoxyParamCaption}) const}
+
+
+
+Gets the last name of the user. 
+
+\mbox{\Hypertarget{classuser_data_ac60b670f77e6e27baa37f7bba7c4d795}\label{classuser_data_ac60b670f77e6e27baa37f7bba7c4d795}} 
+\index{userData@{userData}!getPassword@{getPassword}}
+\index{getPassword@{getPassword}!userData@{userData}}
+\doxysubsubsection{\texorpdfstring{getPassword()}{getPassword()}}
+{\footnotesize\ttfamily void user\+Data\+::get\+Password (\begin{DoxyParamCaption}\item[{string \&}]{pass }\end{DoxyParamCaption}) const}
+
+
+
+Get the password of the user. 
+
+\mbox{\Hypertarget{classuser_data_a7c8bd66a58392befad8d8dd297fd2fc8}\label{classuser_data_a7c8bd66a58392befad8d8dd297fd2fc8}} 
+\index{userData@{userData}!getRank@{getRank}}
+\index{getRank@{getRank}!userData@{userData}}
+\doxysubsubsection{\texorpdfstring{getRank()}{getRank()}}
+{\footnotesize\ttfamily void user\+Data\+::get\+Rank (\begin{DoxyParamCaption}\item[{int \&}]{r }\end{DoxyParamCaption}) const}
+
+
+
+Get the rank of the user. 
+
+\mbox{\Hypertarget{classuser_data_a7c07dba31477aed570cc05bcffa9d86d}\label{classuser_data_a7c07dba31477aed570cc05bcffa9d86d}} 
+\index{userData@{userData}!getUserId@{getUserId}}
+\index{getUserId@{getUserId}!userData@{userData}}
+\doxysubsubsection{\texorpdfstring{getUserId()}{getUserId()}}
+{\footnotesize\ttfamily void user\+Data\+::get\+User\+Id (\begin{DoxyParamCaption}\item[{string \&}]{u }\end{DoxyParamCaption}) const}
+
+
+
+Get the user\+Id of the user. 
+
+\mbox{\Hypertarget{classuser_data_ab92eb585361bdc22fb6c99a0fc8d56c6}\label{classuser_data_ab92eb585361bdc22fb6c99a0fc8d56c6}} 
+\index{userData@{userData}!incUserCount@{incUserCount}}
+\index{incUserCount@{incUserCount}!userData@{userData}}
+\doxysubsubsection{\texorpdfstring{incUserCount()}{incUserCount()}}
+{\footnotesize\ttfamily void user\+Data\+::inc\+User\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to increment the user\+Count variable. 
+
+\mbox{\Hypertarget{classuser_data_a6aaa1c52851810c6a8dc35b19301ea47}\label{classuser_data_a6aaa1c52851810c6a8dc35b19301ea47}} 
+\index{userData@{userData}!setfName@{setfName}}
+\index{setfName@{setfName}!userData@{userData}}
+\doxysubsubsection{\texorpdfstring{setfName()}{setfName()}}
+{\footnotesize\ttfamily void user\+Data\+::setf\+Name (\begin{DoxyParamCaption}\item[{string}]{f }\end{DoxyParamCaption})}
+
+
+
+Set the first name of the user. 
+
+\mbox{\Hypertarget{classuser_data_ae02c5a80b14524e538d79e1631fea01c}\label{classuser_data_ae02c5a80b14524e538d79e1631fea01c}} 
+\index{userData@{userData}!setlName@{setlName}}
+\index{setlName@{setlName}!userData@{userData}}
+\doxysubsubsection{\texorpdfstring{setlName()}{setlName()}}
+{\footnotesize\ttfamily void user\+Data\+::setl\+Name (\begin{DoxyParamCaption}\item[{string}]{l }\end{DoxyParamCaption})}
+
+
+
+Set the last name of the user. 
+
+\mbox{\Hypertarget{classuser_data_a72553160bd07117d9c36046c802d68cb}\label{classuser_data_a72553160bd07117d9c36046c802d68cb}} 
+\index{userData@{userData}!setPassword@{setPassword}}
+\index{setPassword@{setPassword}!userData@{userData}}
+\doxysubsubsection{\texorpdfstring{setPassword()}{setPassword()}}
+{\footnotesize\ttfamily void user\+Data\+::set\+Password (\begin{DoxyParamCaption}\item[{string}]{pass }\end{DoxyParamCaption})}
+
+
+
+Set the password of the user. 
+
+\mbox{\Hypertarget{classuser_data_ad85f5ae1a7813f58748ca165d03178ed}\label{classuser_data_ad85f5ae1a7813f58748ca165d03178ed}} 
+\index{userData@{userData}!setRank@{setRank}}
+\index{setRank@{setRank}!userData@{userData}}
+\doxysubsubsection{\texorpdfstring{setRank()}{setRank()}}
+{\footnotesize\ttfamily void user\+Data\+::set\+Rank (\begin{DoxyParamCaption}\item[{int}]{r }\end{DoxyParamCaption})}
+
+
+
+Set the rank of the user. 
+
+\mbox{\Hypertarget{classuser_data_a73cba0d1b1f8e7665518cb13c33625ea}\label{classuser_data_a73cba0d1b1f8e7665518cb13c33625ea}} 
+\index{userData@{userData}!setUserID@{setUserID}}
+\index{setUserID@{setUserID}!userData@{userData}}
+\doxysubsubsection{\texorpdfstring{setUserID()}{setUserID()}}
+{\footnotesize\ttfamily void user\+Data\+::set\+User\+ID (\begin{DoxyParamCaption}\item[{string}]{u }\end{DoxyParamCaption})}
+
+
+
+Set the user\+Id of the user. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{userdata_8h}{userdata.\+h}}\item 
+\mbox{\hyperlink{userdata_8cpp}{userdata.\+cpp}}\end{DoxyCompactItemize}

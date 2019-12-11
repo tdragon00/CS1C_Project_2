@@ -1,0 +1,6 @@
+<map id="addItem" name="addItem">
+<area shape="rect" id="node1" title=" " alt="" coords="45,171,113,197"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,81,79,108"/>
+<area shape="rect" id="node3" href="$class_main_window.html" title="Main login window for the user." alt="" coords="103,81,199,108"/>
+<area shape="rect" id="node4" title=" " alt="" coords="98,5,205,32"/>
+</map>

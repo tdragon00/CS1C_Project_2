@@ -1,0 +1,6 @@
+<map id="admin_item_database.h" name="admin_item_database.h">
+<area shape="rect" id="node1" title="Displays a window for the admin to see the items list and be able to add and delete items." alt="" coords="179,5,339,32"/>
+<area shape="rect" id="node2" href="$admin__item__database_8cpp.html" title=" " alt="" coords="5,80,180,107"/>
+<area shape="rect" id="node3" href="$adminlogin_8cpp.html" title=" " alt="" coords="205,80,314,107"/>
+<area shape="rect" id="node4" href="$managerlogin_8cpp.html" title=" " alt="" coords="339,80,463,107"/>
+</map>

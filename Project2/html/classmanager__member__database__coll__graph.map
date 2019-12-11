@@ -1,0 +1,6 @@
+<map id="manager_member_database" name="manager_member_database">
+<area shape="rect" id="node1" title="Displays a window for the manager to view the members list." alt="" coords="5,171,192,197"/>
+<area shape="rect" id="node2" title=" " alt="" coords="27,81,95,108"/>
+<area shape="rect" id="node3" href="$class_main_window.html" title="Main login window for the user." alt="" coords="120,81,216,108"/>
+<area shape="rect" id="node4" title=" " alt="" coords="115,5,221,32"/>
+</map>

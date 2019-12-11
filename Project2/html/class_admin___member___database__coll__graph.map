@@ -1,0 +1,6 @@
+<map id="Admin_Member_Database" name="Admin_Member_Database">
+<area shape="rect" id="node1" title="Admin UI to view the members list and be able to edit, add and delete members." alt="" coords="5,171,180,197"/>
+<area shape="rect" id="node2" title=" " alt="" coords="21,81,89,108"/>
+<area shape="rect" id="node3" href="$class_main_window.html" title="Main login window for the user." alt="" coords="114,81,210,108"/>
+<area shape="rect" id="node4" title=" " alt="" coords="109,5,215,32"/>
+</map>

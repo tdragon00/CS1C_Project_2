@@ -1,0 +1,8 @@
+digraph "itemType"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{itemType\n||+ itemType()\l+ ~itemType()\l+ setName()\l+ setQuantity()\l+ setCost()\l+ setTotalRevenue()\l+ setQuantitySold()\l+ getName()\l+ getQuantity()\l+ setCost()\l+ setTotalRevenue()\l+ setQuantitySold()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="A class to contain item information."];
+}

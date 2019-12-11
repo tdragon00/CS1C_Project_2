@@ -1,0 +1,8 @@
+digraph "memberType"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{memberType\n||+ memberType()\l+ memberType()\l+ ~memberType()\l+ setName()\l+ setID()\l+ setMemberType()\l+ setExpDate()\l+ setPurchases()\l+ setRebate()\l+ getName()\land 6 more...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Contains data in regard to members within the databse."];
+}

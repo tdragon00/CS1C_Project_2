@@ -1,0 +1,110 @@
+\hypertarget{class_admin___member___database}{}\doxysection{Admin\+\_\+\+Member\+\_\+\+Database Class Reference}
+\label{class_admin___member___database}\index{Admin\_Member\_Database@{Admin\_Member\_Database}}
+
+
+Admin UI to view the members list and be able to edit, add and delete members.  
+
+
+
+
+{\ttfamily \#include $<$admin\+\_\+member\+\_\+database.\+h$>$}
+
+
+
+Inheritance diagram for Admin\+\_\+\+Member\+\_\+\+Database\+:
+% FIG 0
+
+
+Collaboration diagram for Admin\+\_\+\+Member\+\_\+\+Database\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_admin___member___database_a925cefb5564f8be54c60665012c39a5a}{Admin\+\_\+\+Member\+\_\+\+Database}} (Q\+Widget $\ast$parent=nullptr)
+\item 
+\mbox{\hyperlink{class_admin___member___database_afe273e59bf1be4d091c223a8507cd641}{$\sim$\+Admin\+\_\+\+Member\+\_\+\+Database}} ()
+\item 
+void \mbox{\hyperlink{class_admin___member___database_ae344ba1d3579ef2192c1f95bc6845ff6}{refresh}} ()
+\item 
+void \mbox{\hyperlink{class_admin___member___database_a60ee3d6b0bc0f17607086b92c5611d2c}{Calc\+\_\+\+Total\+\_\+\+Purchases}} ()
+\begin{DoxyCompactList}\small\item\em calculate purchase total \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_admin___member___database_a0ee051d0c16a4284b239564672b454d8}{Load\+Data}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_main_window}{Main\+Window}} \mbox{\hyperlink{class_admin___member___database_af33f28509275fd0f3dfa50d0ce0864d7}{conn}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_admin___member___database_adea54c2fc72d5e3776f5e81de4236f6d}{key\+Press\+Event}} (Q\+Key\+Event $\ast$pe)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Admin UI to view the members list and be able to edit, add and delete members. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_admin___member___database_a925cefb5564f8be54c60665012c39a5a}\label{class_admin___member___database_a925cefb5564f8be54c60665012c39a5a}} 
+\index{Admin\_Member\_Database@{Admin\_Member\_Database}!Admin\_Member\_Database@{Admin\_Member\_Database}}
+\index{Admin\_Member\_Database@{Admin\_Member\_Database}!Admin\_Member\_Database@{Admin\_Member\_Database}}
+\doxysubsubsection{\texorpdfstring{Admin\_Member\_Database()}{Admin\_Member\_Database()}}
+{\footnotesize\ttfamily Admin\+\_\+\+Member\+\_\+\+Database\+::\+Admin\+\_\+\+Member\+\_\+\+Database (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_admin___member___database_afe273e59bf1be4d091c223a8507cd641}\label{class_admin___member___database_afe273e59bf1be4d091c223a8507cd641}} 
+\index{Admin\_Member\_Database@{Admin\_Member\_Database}!````~Admin\_Member\_Database@{$\sim$Admin\_Member\_Database}}
+\index{````~Admin\_Member\_Database@{$\sim$Admin\_Member\_Database}!Admin\_Member\_Database@{Admin\_Member\_Database}}
+\doxysubsubsection{\texorpdfstring{$\sim$Admin\_Member\_Database()}{~Admin\_Member\_Database()}}
+{\footnotesize\ttfamily Admin\+\_\+\+Member\+\_\+\+Database\+::$\sim$\+Admin\+\_\+\+Member\+\_\+\+Database (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_admin___member___database_a60ee3d6b0bc0f17607086b92c5611d2c}\label{class_admin___member___database_a60ee3d6b0bc0f17607086b92c5611d2c}} 
+\index{Admin\_Member\_Database@{Admin\_Member\_Database}!Calc\_Total\_Purchases@{Calc\_Total\_Purchases}}
+\index{Calc\_Total\_Purchases@{Calc\_Total\_Purchases}!Admin\_Member\_Database@{Admin\_Member\_Database}}
+\doxysubsubsection{\texorpdfstring{Calc\_Total\_Purchases()}{Calc\_Total\_Purchases()}}
+{\footnotesize\ttfamily void Admin\+\_\+\+Member\+\_\+\+Database\+::\+Calc\+\_\+\+Total\+\_\+\+Purchases (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+calculate purchase total 
+
+summing up toalpurchases from customers the db
+
+setting itterator to the front of the values
+
+creating a double to store the total purchases\mbox{\Hypertarget{class_admin___member___database_adea54c2fc72d5e3776f5e81de4236f6d}\label{class_admin___member___database_adea54c2fc72d5e3776f5e81de4236f6d}} 
+\index{Admin\_Member\_Database@{Admin\_Member\_Database}!keyPressEvent@{keyPressEvent}}
+\index{keyPressEvent@{keyPressEvent}!Admin\_Member\_Database@{Admin\_Member\_Database}}
+\doxysubsubsection{\texorpdfstring{keyPressEvent()}{keyPressEvent()}}
+{\footnotesize\ttfamily void Admin\+\_\+\+Member\+\_\+\+Database\+::key\+Press\+Event (\begin{DoxyParamCaption}\item[{Q\+Key\+Event $\ast$}]{pe }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_admin___member___database_a0ee051d0c16a4284b239564672b454d8}\label{class_admin___member___database_a0ee051d0c16a4284b239564672b454d8}} 
+\index{Admin\_Member\_Database@{Admin\_Member\_Database}!LoadData@{LoadData}}
+\index{LoadData@{LoadData}!Admin\_Member\_Database@{Admin\_Member\_Database}}
+\doxysubsubsection{\texorpdfstring{LoadData()}{LoadData()}}
+{\footnotesize\ttfamily void Admin\+\_\+\+Member\+\_\+\+Database\+::\+Load\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_admin___member___database_ae344ba1d3579ef2192c1f95bc6845ff6}\label{class_admin___member___database_ae344ba1d3579ef2192c1f95bc6845ff6}} 
+\index{Admin\_Member\_Database@{Admin\_Member\_Database}!refresh@{refresh}}
+\index{refresh@{refresh}!Admin\_Member\_Database@{Admin\_Member\_Database}}
+\doxysubsubsection{\texorpdfstring{refresh()}{refresh()}}
+{\footnotesize\ttfamily void Admin\+\_\+\+Member\+\_\+\+Database\+::refresh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_admin___member___database_af33f28509275fd0f3dfa50d0ce0864d7}\label{class_admin___member___database_af33f28509275fd0f3dfa50d0ce0864d7}} 
+\index{Admin\_Member\_Database@{Admin\_Member\_Database}!conn@{conn}}
+\index{conn@{conn}!Admin\_Member\_Database@{Admin\_Member\_Database}}
+\doxysubsubsection{\texorpdfstring{conn}{conn}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_main_window}{Main\+Window}} Admin\+\_\+\+Member\+\_\+\+Database\+::conn}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{admin__member__database_8h}{admin\+\_\+member\+\_\+database.\+h}}\item 
+\mbox{\hyperlink{admin__member__database_8cpp}{admin\+\_\+member\+\_\+database.\+cpp}}\end{DoxyCompactItemize}
