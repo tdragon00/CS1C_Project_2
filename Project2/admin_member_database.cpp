@@ -47,43 +47,32 @@ LoadData();
 
 void Admin_Member_Database::Calc_Total_Purchases()
 {
-MainWindow conn;
-conn.connOpen();
+    MainWindow conn;
+    conn.connOpen();
 
-QSqlQuery qry;
+    QSqlQuery qry;
 
-//!summing up toalpurchases from customers the db
+    //!summing up toalpurchases from customers the db
 
-qry.prepare("SELECT totalPurchases FROM customers");
-qry.exec();
+    qry.prepare("SELECT totalPurchases FROM customers");
+    qry.exec();
 
-//! setting itterator to the front of the values
-qry.first();
+    //! setting itterator to the front of the values
+    qry.first();
 
-//! creating a double to store the total purchases
-double Grand_Total=0;
-do
-{
-    Grand_Total=Grand_Total+ qry.value(0).toDouble();
+    //! creating a double to store the total purchases
+    double Grand_Total=0;
+    do
+    {
+        Grand_Total=Grand_Total+ qry.value(0).toDouble();
+    }
+    while (qry.next());
+      qDebug()<<"end of loop";
 
-
-
-
-
-
-}
-while (qry.next());
-  qDebug()<<"end of loop";
-
-QString QGrand_total= QString::number(Grand_Total);
-ui->TotalPurchaseBox->setText(QGrand_total);
+    QString QGrand_total= QString::number(Grand_Total);
+    ui->TotalPurchaseBox->setText(QGrand_total);
 
 }
-
-
-
-
-
 
 
 
