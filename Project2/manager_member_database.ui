@@ -278,63 +278,90 @@
     <widget class="QLabel" name="label_7">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>120</y>
-       <width>421</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>18</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>Regular Membership Fee- $65.00</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_8">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>180</y>
-       <width>441</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>18</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>Executive Membership Fee- $120.00</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_9">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>90</y>
-       <width>291</width>
-       <height>41</height>
+       <x>20</x>
+       <y>70</y>
+       <width>171</width>
+       <height>16</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <pointsize>16</pointsize>
        <weight>75</weight>
-       <italic>true</italic>
        <bold>true</bold>
-       <underline>true</underline>
       </font>
      </property>
      <property name="text">
-      <string>Reminder...</string>
+      <string>Renewal Information</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Membership Cost:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="costLine">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>100</y>
+       <width>181</width>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="rebateLine">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>130</y>
+       <width>181</width>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>130</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Rebate:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>160</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Renewal Cost:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="renewalCost">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>160</y>
+       <width>181</width>
+       <height>21</height>
+      </rect>
      </property>
     </widget>
    </widget>

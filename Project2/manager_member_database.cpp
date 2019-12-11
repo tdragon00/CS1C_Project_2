@@ -234,3 +234,69 @@ void manager_member_database::on_searchButton_clicked()
     ui->tableView_3->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     conn.connClose();
 }
+
+
+
+
+void manager_member_database::on_tableView_2_activated(const QModelIndex &index)
+{
+    QString selected = ui->tableView_2->model()->data(index).toString();
+    QString status;
+    QString renewalString;
+    double rebate;
+    double renewal;
+
+    if (!conn.connOpen())
+    {
+        qDebug() << "Failed To Open the Database";
+    }
+    conn.connOpen();
+    QSqlQuery db;
+    db.prepare("select * from customers where memberNum='"+selected+"' or name='"+selected+"'");
+
+    if (db.exec())
+    {
+        while(db.next())
+        {
+            status = db.value(2).toString();
+            if(status == "Regular")
+            {
+                ui->costLine->setText("$65");
+                ui->rebateLine->setText("$0");
+                ui->renewalCost->setText("$65");
+            }
+            else if(status == "Executive")
+            {
+                ui->costLine->setText("$120");
+                ui->rebateLine->setText(db.value(5).toString());
+                rebate = db.value(5).toDouble();
+
+                if(rebate == 0)
+                {
+                    ui->renewalCost->setText("$120");
+                }
+                else if((120-rebate) <= 0)
+                {
+                    ui->renewalCost->setText("$0");
+                }
+                else
+                {
+                    renewal = 120-rebate;
+                    renewalString = QString::number(renewal);
+                    ui->renewalCost->setText(renewalString);
+                }
+            }
+            else
+            {
+                ui->costLine->setText("Error");
+                ui->rebateLine->setText("Error");
+                ui->renewalCost->setText("Error");
+            }
+        }
+        conn.connClose();
+    }
+    else
+    {
+        qDebug() << "ERROR";
+    }
+}

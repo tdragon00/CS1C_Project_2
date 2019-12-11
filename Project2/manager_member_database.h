@@ -32,6 +32,8 @@ private slots:
 
     void on_searchButton_clicked();
 
+    void on_tableView_2_activated(const QModelIndex &index);
+
 private:
     Ui::manager_member_database *ui;
 };
