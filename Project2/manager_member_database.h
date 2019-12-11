@@ -25,7 +25,7 @@ public:
     ~manager_member_database();
 
     void Load_Member_Data();
-    
+
     void UpdateMembersTotal();
 
 private slots:
@@ -43,8 +43,7 @@ private slots:
 
     void on_searchButton_clicked();
 
-protected:
-        void keyPressEvent(QKeyEvent* pe);
+    void on_tableView_2_activated(const QModelIndex &index);
 
 private:
     Ui::manager_member_database *ui;
