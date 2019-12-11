@@ -108,6 +108,24 @@
         <string>Rebate</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="Purchase_Test">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>320</y>
+         <width>271</width>
+         <height>81</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Add Purchase</string>
+       </property>
+      </widget>
      </widget>
     </item>
     <item row="0" column="1">
@@ -224,24 +242,10 @@
     </item>
    </layout>
   </widget>
-  <widget class="QPushButton" name="Purchase_Test">
-   <property name="geometry">
-    <rect>
-     <x>330</x>
-     <y>580</y>
-     <width>91</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Purchase Test</string>
-   </property>
-  </widget>
   <zorder>layoutWidget</zorder>
   <zorder>backLogin</zorder>
   <zorder>label</zorder>
   <zorder>statusLine</zorder>
-  <zorder>Purchase_Test</zorder>
  </widget>
  <resources/>
  <connections/>

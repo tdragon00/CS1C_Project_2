@@ -273,6 +273,10 @@ void Purchase_Page::on_Purchase_Button_clicked()
 
     db.exec("insert into salesReport (purchaseDate, id, productName, price, purchaseQty, day, status, subtotal, total)"
             "values ('"+purchaseDate+"','"+id+"','"+productName+"','"+price+"','"+purchaseQty+"','"+"1"+"','"+status+"', '"+Subtotal+"', '"+Total+"')");
+
+    QMessageBox msgBox;
+    msgBox.setText("PURCHASE SUCCESSFUL!");
+    msgBox.exec();
 }
 
 void Purchase_Page::on_Date_Selector_userDateChanged(const QDate &date)

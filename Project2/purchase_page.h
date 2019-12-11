@@ -7,6 +7,7 @@
 #include <QLabel>
 #include <QSpinBox>
 #include <QSignalMapper>
+#include <QMessageBox>
 #include "mainwindow.h"
 
 namespace Ui {
