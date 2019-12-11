@@ -35,6 +35,7 @@ SOURCES += \
     managercreate.cpp \
     managerlogin.cpp \
     membertype.cpp \
+    purchase_page.cpp \
     userdata.cpp
 
 HEADERS += \
@@ -56,6 +57,7 @@ HEADERS += \
     managercreate.h \
     managerlogin.h \
     membertype.h \
+    purchase_page.h \
     userdata.h
 
 FORMS += \
@@ -74,7 +76,8 @@ FORMS += \
     manager_member_database.ui \
     manager_rebate.ui \
     managercreate.ui \
-    managerlogin.ui
+    managerlogin.ui \
+    purchase_page.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

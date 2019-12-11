@@ -6,6 +6,7 @@
 #include "admin_item_database.h"
 #include "admin_rebate.h"
 #include "admin_sales_report.h"
+#include "purchase_page.h"
 
 #include <QFile>
 #include <QMessageBox>
@@ -575,4 +576,14 @@ void adminLogin::on_pushButton_3_clicked()
     hide();
     admin_sales_report *Admin_Sales_Report =new admin_sales_report();
     Admin_Sales_Report->show();
+}
+
+void adminLogin::on_Purchase_Test_clicked()
+{
+    //! function that shows the purchasing page
+    hide();
+Purchase_Page *PurchasePage=new Purchase_Page();
+PurchasePage->show();
+
+
 }
