@@ -341,6 +341,12 @@ void Admin_Member_Database::on_monthSelect_2_currentIndexChanged()
 
     qry.exec();
     modal->setQuery(qry);
+    modal->setHeaderData(0, Qt::Horizontal, tr("Name"));
+    modal->setHeaderData(1, Qt::Horizontal, tr("Member Number"));
+    modal->setHeaderData(2, Qt::Horizontal, tr("Membership"));
+    modal->setHeaderData(3, Qt::Horizontal, tr("Expiration Date"));
+    modal->setHeaderData(4, Qt::Horizontal, tr("Total Purchase"));
+    modal->setHeaderData(5, Qt::Horizontal, tr("Total Rebate"));
     ui->tableView_5->setModel(modal);
     ui->tableView_5->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     conn.connClose();
