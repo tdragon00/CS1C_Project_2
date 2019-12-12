@@ -200,7 +200,7 @@ void adminLogin::readItems()
            qDebug() << "ENTERING WHILE LOOP qr.next()";
            qDebug() << "PRODUCT "<< qry.value(0).toString();
 
-           double TR2 = qry.value(1).toInt() * qry.value(2).toDouble();
+           double TR2 = qry.value(1).toInt() * qry.value(2).toDouble()*1.0775;
 
            updater.prepare("UPDATE items "
                                       "SET qtySold=  '"+qry.value(1).toString()+"', qty = 100, totalRevenue=totalRevenue+'"+QString::number(TR2)+"' "
@@ -346,7 +346,7 @@ void adminLogin::readSalesRep()
             QString Subtotal = QString::number(subtotal);
             QString Total = QString::number(total);
 
-            qDebug() << "Inserting purchase of " << productName << " for customer " << id;
+            qDebug() << "Inserting purchase of " << productName << " for customer " << id << " on day 3";
 
             db.exec("insert into salesReport (purchaseDate, id, productName, price, purchaseQty, day, status, subtotal, total)"
                     "values ('"+purchaseDate+"','"+id+"','"+productName+"','"+price+"','"+purchaseQty+"','"+"3"+"','"+status+"', '"+Subtotal+"', '"+Total+"')");
