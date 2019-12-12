@@ -135,7 +135,7 @@ void adminLogin::readCustomers()
                             "WHERE memberNum='"+qry.value(0).toString()+"'");
 
             updater.exec("UPDATE customers "
-                            "SET totalRebate= totalPurchases *.02 "
+                            "SET totalRebate= totalPurchases / 1.0775 *.02 "
                             "WHERE memberNum='"+qry.value(0).toString()+"'");
 
 
