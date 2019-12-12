@@ -274,6 +274,14 @@ void Purchase_Page::on_Purchase_Button_clicked()
     db.exec("insert into salesReport (purchaseDate, id, productName, price, purchaseQty, day, status, subtotal, total)"
             "values ('"+purchaseDate+"','"+id+"','"+productName+"','"+price+"','"+purchaseQty+"','"+"1"+"','"+status+"', '"+Subtotal+"', '"+Total+"')");
 
+    db.exec("UPDATE customers "
+            "SET totalPurchases = totalPurchases+'"+Total+"' "
+            "WHERE memberNum = '"+id+"'");
+
+    db.exec("UPDATE items "
+            "SET qtySold = qtySold+'"+purchaseQty+"', totalRevenue = totalRevenue+'"+Total+"' "
+            "WHERE name = '"+productName+"'");
+
     QMessageBox msgBox;
     msgBox.setText("PURCHASE SUCCESSFUL!");
     msgBox.exec();
