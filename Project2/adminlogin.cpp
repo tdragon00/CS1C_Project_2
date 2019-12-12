@@ -160,11 +160,14 @@ void adminLogin::readItems()
 
     qDebug() << "Begining extraction of Items from sales report";
 
-    db.prepare("INSERT into items (name, price) "
-            "SELECT DISTINCT salesReport.productName, salesReport.price "
-            "FROM salesReport "
-            "LEFT JOIN items ON salesReport.productName=items.name "
-            "WHERE items.name IS NULL");
+    db.exec("INSERT into items (name, price) "
+                        "SELECT DISTINCT salesReport.productName, salesReport.price "
+                        "FROM salesReport "
+                        "LEFT JOIN items ON salesReport.productName=items.name "
+                        "WHERE items.name IS NULL");
+
+    db.prepare("UPDATE items "
+                       "SET qtySold=  0, totalRevenue=0");
    /*db.prepare("UPDATE items "
               "SET qtySold = "
               "(SELECT SUM(purchaseQty) "
@@ -183,13 +186,15 @@ void adminLogin::readItems()
        conn.connOpen();
        QSqlQuery qry;
        QSqlQuery updater;
-
-       qry.prepare("Select productName,purchaseQty,price FROM salesReport GROUP BY productName");
+//AAAAAAAAAAAA
+       qry.prepare("Select productName,SUM(purchaseQty),price "
+                   "FROM salesReport "
+                   "GROUP BY productName");
 
        qry.exec();
 
        qDebug() << "BEFORE WHILE LOOP ";
-       qry. first();
+       qry.first();
        do
        {
            qDebug() << "ENTERING WHILE LOOP qr.next()";
@@ -198,8 +203,8 @@ void adminLogin::readItems()
            double TR2 = qry.value(1).toInt() * qry.value(2).toDouble();
 
            updater.prepare("UPDATE items "
-                           "SET qtySold='"+qry.value(1).toString()+"', qty = 100, totalRevenue='"+QString::number(TR2)+"' "
-                           "WHERE name='"+qry.value(0).toString()+"'");
+                                      "SET qtySold=  '"+qry.value(1).toString()+"', qty = 100, totalRevenue=totalRevenue+'"+QString::number(TR2)+"' "
+                                      "WHERE name='"+qry.value(0).toString()+"'");
 
            updater.exec();
 

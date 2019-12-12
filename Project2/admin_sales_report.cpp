@@ -372,7 +372,7 @@ void admin_sales_report::refreshDb()
                          "FROM salesReport "
                          "INNER JOIN customers "
                          "ON salesReport.id=customers.memberNum "
-                         "GROUP BY salesReport.id,salesReport.purchaseDate");
+                         "GROUP BY salesReport.id,salesReport.purchaseDate, salesReport.price");
         if(!statuses.exec())
         {
             qDebug() << "ERROR";
@@ -405,7 +405,7 @@ void admin_sales_report::refreshDb()
             grab.exec("SELECT salesReport.purchaseDate, customers.name, salesReport.id, salesReport.productName, salesReport.price, salesReport.purchaseQty, salesReport.status "
                       "FROM salesReport "
                       "INNER JOIN customers ON salesReport.id=customers.memberNum "
-                      "GROUP BY salesReport.productName, salesReport.purchaseDate ");
+                      "GROUP BY salesReport.productName, salesReport.purchaseDate, salesReport.price ");
 
             grab.first();
             do
