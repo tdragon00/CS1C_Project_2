@@ -236,7 +236,7 @@ void Purchase_Page::on_Item_Count_Selector_valueChanged(int arg1)
             qDebug() << "Price of Item: " << price;
 
             double subtotal = newQty * price;
-            double total = subtotal - (subtotal * 0.0775);
+            double total = subtotal + (subtotal * 0.0775);
 
             QString Subtotal = QString::number(subtotal);
             QString Total = QString::number(total, 'f', 2);     //DISPLAYS ONLY 2 DECIMAL PLACES
