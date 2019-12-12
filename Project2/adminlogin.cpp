@@ -131,7 +131,7 @@ void adminLogin::readCustomers()
 
 
             updater.exec("UPDATE customers "
-                            "SET totalPurchases= totalPurchases + '"+qry.value(1).toString()+"' "
+                            "SET totalPurchases= totalPurchases + '"+qry.value(1).toString()+"' * 1.0775 "
                             "WHERE memberNum='"+qry.value(0).toString()+"'");
 
             updater.exec("UPDATE customers "
